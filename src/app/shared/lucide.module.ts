@@ -120,7 +120,9 @@ import {
   PenTool,
   BookOpen,
   Layout,
-  ArrowRight
+  ArrowRight,
+  Lamp,
+  Monitor
 } from 'lucide-angular';
 
 @NgModule({
@@ -135,7 +137,11 @@ import {
       Image,
       BookOpen,
       Layout,
-      MapPin
+      MapPin,
+      Menu,
+      ArrowRight,
+      Lamp,
+      Monitor
     })
   ],
   exports: [

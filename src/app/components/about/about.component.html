@@ -1,63 +1,78 @@
-<section id="about" class="w-full py-20 bg-[#071a14]">
+<section id="about" class="w-full py-20 bg-primary">
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold mb-4 relative">
-      <span class="text-emerald-400">Sobre</span> mí
-      <span class="block h-1 w-20 bg-emerald-400 mt-4"></span>
+    <h2 class="text-3xl md:text-4xl font-bold mb-12 relative">
+      <span class="text-accent">Sobre</span> mí
+      <span class="block h-1 w-20 bg-accent mt-4"></span>
     </h2>
-    <p class="text-gray-300 mb-12 max-w-2xl font-normal">
-      Soy un <span class="font-bold">diseñador gráfico</span> apasionado por crear soluciones visuales que
-      <span class="font-bold">comuniquen efectivamente</span> y dejen una huella memorable.
-    </p>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="bg-[#0a2a1e] p-6 rounded-lg" *ngFor="let skill of skills">
-        <div class="flex items-center gap-4 mb-4">
-          <lucide-icon [name]="skill.icon" [size]="24" class="text-emerald-400"></lucide-icon>
-          <h3 class="text-xl font-bold">{{ skill.name }}</h3>
-        </div>
-        <p class="text-gray-300">
-          {{ skill.description }}
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="text-lg leading-relaxed mb-6 font-normal">
+          Soy diseñador gráfico, especializado en <span class="font-bold">comunicar visualmente</span>
+          mensajes de manera atractiva y clara. Me apasiona crear diseños que
+          <span class="font-bold">equilibren estética y funcionalidad</span>, enfrentando desafíos creativos
+          que transformen ideas en experiencias visuales impactantes.
         </p>
-      </div>
-    </div>
-
-    <div class="mt-12">
-      <h3 class="text-2xl font-bold mb-6">Herramientas</h3>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="bg-[#0a2a1e] p-4 rounded-lg text-center">
-          <lucide-icon name="layout" [size]="24" class="text-emerald-400 mx-auto mb-2"></lucide-icon>
-          <span class="text-gray-300">Figma</span>
-        </div>
-        <div class="bg-[#0a2a1e] p-4 rounded-lg text-center">
-          <lucide-icon name="layout" [size]="24" class="text-emerald-400 mx-auto mb-2"></lucide-icon>
-          <span class="text-gray-300">Adobe Illustrator</span>
-        </div>
-        <div class="bg-[#0a2a1e] p-4 rounded-lg text-center">
-          <lucide-icon name="layout" [size]="24" class="text-emerald-400 mx-auto mb-2"></lucide-icon>
-          <span class="text-gray-300">Adobe Photoshop</span>
-        </div>
-        <div class="bg-[#0a2a1e] p-4 rounded-lg text-center">
-          <lucide-icon name="layout" [size]="24" class="text-emerald-400 mx-auto mb-2"></lucide-icon>
-          <span class="text-gray-300">Adobe InDesign</span>
+        <p class="text-lg leading-relaxed mb-6 font-normal">
+          Con experiencia en
+          <span class="font-bold">identidad de marca, diseño web y materiales promocionales</span>, mi enfoque
+          se centra en entender las necesidades del cliente para ofrecer soluciones visuales que conecten con su
+          audiencia.
+        </p>
+        <div class="flex space-x-4 mt-8">
+          <a href="#" class="text-accent hover:text-accent/80 transition-colors">
+            <lucide-icon name="instagram" [size]="24"></lucide-icon>
+          </a>
+          <a href="#" class="text-accent hover:text-accent/80 transition-colors">
+            <lucide-icon name="linkedin" [size]="24"></lucide-icon>
+          </a>
+          <a href="#" class="text-accent hover:text-accent/80 transition-colors">
+            <lucide-icon name="github" [size]="24"></lucide-icon>
+          </a>
+          <a href="#" class="text-accent hover:text-accent/80 transition-colors">
+            <lucide-icon name="mail" [size]="24"></lucide-icon>
+          </a>
         </div>
       </div>
-    </div>
-
-    <div class="mt-12">
-      <h3 class="text-2xl font-bold mb-6">Redes Sociales</h3>
-      <div class="flex gap-4">
-        <a href="#" class="text-gray-300 hover:text-emerald-400 transition-colors">
-          <lucide-icon name="instagram" [size]="24"></lucide-icon>
-        </a>
-        <a href="#" class="text-gray-300 hover:text-emerald-400 transition-colors">
-          <lucide-icon name="linkedin" [size]="24"></lucide-icon>
-        </a>
-        <a href="#" class="text-gray-300 hover:text-emerald-400 transition-colors">
-          <lucide-icon name="github" [size]="24"></lucide-icon>
-        </a>
-        <a href="#" class="text-gray-300 hover:text-emerald-400 transition-colors">
-          <lucide-icon name="mail" [size]="24"></lucide-icon>
-        </a>
+      <div class="bg-secondary p-8 rounded-lg">
+        <h3 class="text-2xl font-bold mb-8">Habilidades técnicas</h3>
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="w-14 h-14 bg-[#0a2a1e] rounded-lg flex items-center justify-center">
+              <lucide-icon name="pen-tool" [size]="28" class="text-accent"></lucide-icon>
+            </div>
+            <div>
+              <h4 class="text-lg font-medium">Adobe Illustrator</h4>
+              <p class="text-gray-400">Vectorización y diseño de logotipos</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-14 h-14 bg-[#0a2a1e] rounded-lg flex items-center justify-center">
+              <lucide-icon name="image" [size]="28" class="text-accent"></lucide-icon>
+            </div>
+            <div>
+              <h4 class="text-lg font-medium">Adobe Photoshop</h4>
+              <p class="text-gray-400">Edición y composición de imágenes</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-14 h-14 bg-[#0a2a1e] rounded-lg flex items-center justify-center">
+              <lucide-icon name="book-open" [size]="28" class="text-accent"></lucide-icon>
+            </div>
+            <div>
+              <h4 class="text-lg font-medium">Adobe InDesign</h4>
+              <p class="text-gray-400">Maquetación y diseño editorial</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-14 h-14 bg-[#0a2a1e] rounded-lg flex items-center justify-center">
+              <lucide-icon name="monitor" [size]="28" class="text-accent"></lucide-icon>
+            </div>
+            <div>
+              <h4 class="text-lg font-medium">Figma</h4>
+              <p class="text-gray-400">Diseño de interfaces y prototipos</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
