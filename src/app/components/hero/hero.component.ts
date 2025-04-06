@@ -6,7 +6,7 @@ import { LucideModule } from '../../shared/lucide.module';
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [CommonModule, ButtonComponent, LucideModule],
+  imports: [CommonModule, LucideModule],
   templateUrl: './hero.component.html'
 })
-export class HeroComponent {} 
+export class HeroComponent { } 
