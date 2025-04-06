@@ -59,7 +59,16 @@
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "/lautarovulcano/"
+              "baseHref": "/lautarovulcano/",
+              "optimization": true,
+              "extractLicenses": true,
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "serviceWorker": false,
+              "ngswConfigPath": null
             },
             "development": {
               "optimization": false,
