@@ -141,7 +141,8 @@ import {
       Menu,
       ArrowRight,
       Lamp,
-      Monitor
+      Monitor,
+      Pencil
     })
   ],
   exports: [
