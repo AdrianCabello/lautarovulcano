@@ -1,0 +1,39 @@
+<section id="portfolio" class="py-20 bg-[#071a14]">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4 relative">
+      <span class="text-emerald-400">Trabajos</span> seleccionados
+      <span class="block h-1 w-20 bg-emerald-400 mt-4"></span>
+    </h2>
+    <p class="text-gray-300 mb-12 max-w-2xl font-normal">
+      Una muestra de mis <span class="font-bold">mejores proyectos</span> de diseño gráfico y branding.
+    </p>
+
+    <div class="mb-12">
+      <h3 class="text-2xl font-bold mb-8 text-emerald-400">LOGOS / IDENTIDAD DE LA MARCA</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-[#0a2a1e] rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-emerald-900/50" *ngFor="let item of portfolioItems">
+          <div class="relative h-64 overflow-hidden">
+            <img [src]="item.image" [alt]="item.title" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h4 class="text-xl font-bold mb-2">{{ item.title }}</h4>
+            <p class="text-gray-300 mb-4">{{ item.description }}</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-emerald-900/50 text-emerald-400 text-xs px-3 py-1 rounded-full" *ngFor="let tag of item.tags">
+                {{ tag }}
+              </span>
+            </div>
+            <a href="#" class="inline-flex items-center text-emerald-400 hover:text-emerald-300 transition-colors">
+              Ver proyecto
+              <lucide-icon name="arrow-right" [size]="16" class="ml-2"></lucide-icon>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <app-button>Ver más proyectos</app-button>
+    </div>
+  </div>
+</section> 
