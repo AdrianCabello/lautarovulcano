@@ -21,7 +21,12 @@
             <h4 class="text-xl font-bold mb-2">{{ project.title }}</h4>
             <p class="text-gray-300 mb-4">{{ project.description }}</p>
             <div class="flex flex-wrap gap-2 mb-4">
-              <span *ngFor="let tag of project.tags" class="bg-accent/20 text-accent text-xs px-3 py-1 rounded-full">
+              <span *ngFor="let tag of project.tags" class="inline-flex items-center px-3 py-1.5 bg-accent/10 text-accent text-xs font-medium rounded-full  hover:bg-accent/20 transition-colors duration-300">
+                <lucide-icon 
+                  [name]="getTagIcon(tag)" 
+                  [size]="14" 
+                  class="mr-1.5"
+                ></lucide-icon>
                 {{ tag }}
               </span>
             </div>
@@ -37,7 +42,7 @@
     </div>
 
     <div class="text-center mt-12">
-      <a href="https://www.behance.net/lautarovulcano" target="_blank" rel="noopener noreferrer"
+      <a href="https://lautarovulcano.myportfolio.com/" target="_blank" rel="noopener noreferrer"
         class="inline-flex items-center justify-center px-8 py-3 bg-accent text-primary font-medium rounded-lg transition-all duration-300 hover:bg-accent/90 hover:scale-105 group">
         Ver más proyectos
         <lucide-icon name="arrow-right" [size]="20"

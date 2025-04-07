@@ -122,7 +122,8 @@ import {
   Layout,
   ArrowRight,
   Lamp,
-  Monitor
+  Monitor,
+  Film
 } from 'lucide-angular';
 
 @NgModule({
@@ -142,7 +143,8 @@ import {
       ArrowRight,
       Lamp,
       Monitor,
-      Pencil
+      Pencil,
+      Film
     })
   ],
   exports: [
