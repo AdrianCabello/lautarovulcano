@@ -26,7 +26,11 @@ jobs:
           node-version: "20"
           cache: 'npm'
       - name: Install dependencies
-        run: npm ci
+        run: |
+          npm install -g @angular/cli@19
+          npm ci
+      - name: Verify Angular version
+        run: ng version
       - name: Build
         run: npm run build
       - name: Upload artifact
