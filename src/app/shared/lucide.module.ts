@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { LucideAngularModule } from 'lucide-angular';
+import { LucideAngularModule, Monitor, Pencil } from 'lucide-angular';
 import {
   Github,
   Linkedin,
@@ -46,6 +46,8 @@ import {
   Film,
   Lamp,
   MoreVertical,
+  LayoutDashboard,
+  MapPin
 } from 'lucide-angular';
 
 @NgModule({
@@ -96,6 +98,10 @@ import {
       Film,
       Lamp,
       MoreVertical,
+      LayoutDashboard,
+      Monitor,
+      Pencil,
+      MapPin
     }),
   ],
   exports: [LucideAngularModule],

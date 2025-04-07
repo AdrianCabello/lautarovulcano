@@ -68,7 +68,7 @@ export class PortfolioComponent {
       'Adobe Illustrator': 'pen-tool',
       'Adobe Photoshop': 'image',
       'Adobe InDesign': 'book-open',
-      'Figma': 'layout',
+      'Figma': 'layout-dashboard',
       'After Effects': 'film'
     };
 
