@@ -28,7 +28,8 @@ jobs:
       - name: Install dependencies
         run: |
           npm install -g @angular/cli@19.2.5
-          npm ci --legacy-peer-deps
+          rm -f package-lock.json
+          npm install --legacy-peer-deps
       - name: Verify Angular version
         run: ng version
       - name: Build
