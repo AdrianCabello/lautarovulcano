@@ -71,7 +71,7 @@ export class PortfolioComponent {
       'Figma': 'layout',
       'After Effects': 'film'
     };
-    
+
     return iconMap[tag] || 'code';
   }
 } 
