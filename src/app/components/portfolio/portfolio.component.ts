@@ -60,9 +60,6 @@ export class PortfolioComponent {
       tags: ['Adobe Illustrator', 'Adobe Photoshop'],
       url: 'https://lautarovulcano.myportfolio.com/eventloop-social-media'
     }
-
-
-
   ];
 
   getTagIcon(tag: string): string {
