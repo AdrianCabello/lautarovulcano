@@ -1,15 +1,15 @@
 <section id="portfolio" class="w-full py-24 bg-primary">
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold mb-4 relative">
+    <h2 class="text-3xl md:text-4xl font-extrabold mb-4 relative">
       <span class="text-accent">Trabajos</span> seleccionados
       <span class="block h-1 w-20 bg-accent mt-4"></span>
     </h2>
-    <p class="text-xl text-gray-300 mb-16 max-w-2xl font-normal">
+    <p class="text-xl text-gray-300 mb-16 max-w-2xl font-medium">
       Una muestra de mis <span class="font-bold">mejores proyectos</span> de diseño gráfico y branding.
     </p>
 
     <div class="mb-16">
-      <h3 class="text-2xl font-bold mb-12 text-accent">LOGOS / IDENTIDAD DE LA MARCA</h3>
+      <h3 class="text-2xl font-extrabold mb-12 text-accent">LOGOS / IDENTIDAD DE LA MARCA</h3>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div *ngFor="let project of projects"
           class="bg-secondary rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-accent/50">
@@ -18,10 +18,10 @@
           </div>
           <div class="p-8">
             <h4 class="text-xl font-bold mb-4">{{ project.title }}</h4>
-            <p class="text-lg text-gray-300 mb-6 leading-relaxed">{{ project.description }}</p>
+            <p class="text-lg text-gray-300 mb-6 leading-relaxed font-medium">{{ project.description }}</p>
             <div class="flex flex-wrap gap-2 mb-6">
               <span *ngFor="let tag of project.tags" 
-                class="inline-flex items-center px-4 py-2 bg-accent/10 text-accent text-sm font-medium rounded-full hover:bg-accent/20 transition-colors duration-300">
+                class="inline-flex items-center px-4 py-2 bg-accent/10 text-accent text-sm font-semibold rounded-full hover:bg-accent/20 transition-colors duration-300">
                 <lucide-icon 
                   [name]="getTagIcon(tag)" 
                   [size]="16" 
@@ -31,7 +31,7 @@
               </span>
             </div>
             <a [href]="project.url" target="_blank" rel="noopener noreferrer"
-              class="inline-flex items-center px-6 py-3 text-accent hover:text-accent/80 transition-all duration-300 group text-lg font-medium">
+              class="inline-flex items-center px-6 py-3 text-accent hover:text-accent/80 transition-all duration-300 group text-lg font-semibold">
               Ver proyecto
               <lucide-icon name="arrow-right" [size]="20"
                 class="ml-3 transition-transform duration-300 group-hover:translate-x-2"></lucide-icon>
@@ -43,7 +43,7 @@
 
     <div class="text-center mt-16">
       <a href="https://lautarovulcano.myportfolio.com/" target="_blank" rel="noopener noreferrer"
-        class="inline-flex items-center justify-center px-8 py-4 bg-accent text-primary font-medium rounded-lg transition-all duration-300 hover:bg-accent/90 hover:scale-105 group text-lg">
+        class="inline-flex items-center justify-center px-8 py-4 bg-accent text-primary font-semibold rounded-lg transition-all duration-300 hover:bg-accent/90 hover:scale-105 group text-lg">
         Ver más proyectos
         <lucide-icon name="arrow-right" [size]="24"
           class="ml-3 transition-transform duration-300 group-hover:translate-x-2"></lucide-icon>
