@@ -54,7 +54,17 @@
             </div>
           </div>
 
-          <app-button type="submit" [disabled]="contactForm.invalid">Enviar mensaje</app-button>
+          <div class="flex flex-col gap-2">
+            <button class="bg-accent hover:bg-accent/90 text-white font-medium py-3 px-6 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed" type="submit" [disabled]="!contactForm.valid || isSubmitting">
+              {{ isSubmitting ? 'Enviando...' : 'Enviar mensaje' }}
+            </button>
+            
+            @if (showSuccess) {
+            <div class="bg-green-100 text-green-800 px-4 py-2 rounded-lg text-sm">
+              ¡Mensaje enviado! Se abrirá tu cliente de correo para completar el envío.
+            </div>
+            }
+          </div>
         </form>
       </div>
 
