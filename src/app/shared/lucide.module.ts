@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { LucideAngularModule, Monitor, Pencil, Share2, Video } from 'lucide-angular';
+import { LucideAngularModule, Monitor, Pencil, Share2, Video, Code } from 'lucide-angular';
 import {
   Github,
   Linkedin,
@@ -103,7 +103,8 @@ import {
       Pencil,
       MapPin,
       Share2,
-      Video
+      Video,
+      Code
     }),
   ],
   exports: [LucideAngularModule],

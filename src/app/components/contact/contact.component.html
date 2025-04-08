@@ -1,111 +1,29 @@
-<section id="contact" class="w-full py-20 bg-secondary">
+<section class="py-16 md:py-24">
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold mb-4 relative">
-      <span class="text-accent">Contacto</span>
-      <span class="block h-1 w-20 bg-accent mt-4"></span>
-    </h2>
-    <p class="text-gray-300 mb-12 max-w-2xl font-normal">
-      ¿Tienes un proyecto en mente? <span class="font-bold">Conversemos</span> sobre cómo puedo ayudarte a darle vida.
-    </p>
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Contacto</h2>
+      <p class="text-lg text-muted-foreground mb-8">
+        ¿Tienes un proyecto en mente? Estoy aquí para ayudarte a darle vida. Contáctame y conversemos sobre cómo podemos trabajar juntos.
+      </p>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-      <div>
-        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">
-          <div>
-            <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Nombre</label>
-            <input
-              type="text"
-              id="name"
-              formControlName="name"
-              class="w-full px-4 py-3 bg-primary border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-              [class.border-red-500]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched"
-            >
-            <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="text-red-500 text-sm mt-1">
-              El nombre es requerido
-            </div>
-          </div>
-
-          <div>
-            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
-            <input
-              type="email"
-              id="email"
-              formControlName="email"
-              class="w-full px-4 py-3 bg-primary border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-              [class.border-red-500]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
-            >
-            <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="text-red-500 text-sm mt-1">
-              <span *ngIf="contactForm.get('email')?.errors?.['required']">El email es requerido</span>
-              <span *ngIf="contactForm.get('email')?.errors?.['email']">Ingresa un email válido</span>
-            </div>
-          </div>
-
-          <div>
-            <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Mensaje</label>
-            <textarea
-              id="message"
-              formControlName="message"
-              rows="4"
-              class="w-full px-4 py-3 bg-primary border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-              [class.border-red-500]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"
-            ></textarea>
-            <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="text-red-500 text-sm mt-1">
-              El mensaje es requerido
-            </div>
-          </div>
-
-          <div class="flex flex-col gap-2">
-            <button class="bg-accent hover:bg-accent/90 text-white font-medium py-3 px-6 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed" type="submit" [disabled]="!contactForm.valid || isSubmitting">
-              {{ isSubmitting ? 'Enviando...' : 'Enviar mensaje' }}
-            </button>
-            
-            @if (showSuccess) {
-            <div class="bg-green-100 text-green-800 px-4 py-2 rounded-lg text-sm">
-              ¡Mensaje enviado! Se abrirá tu cliente de correo para completar el envío.
-            </div>
-            }
-          </div>
-        </form>
-      </div>
-
-      <div class="space-y-8">
-        <div>
-          <h3 class="text-xl font-bold mb-4 text-accent">Información de contacto</h3>
-          <p class="text-gray-300">Estoy disponible para proyectos freelance y colaboraciones.</p>
+      <div class="space-y-4">
+        <div class="flex items-center gap-3">
+          <lucide-icon name="mail" class="text-accent" [size]="20"></lucide-icon>
+          <a href="mailto:lautarovulcano&#64;gmail.com" class="text-lg hover:text-accent transition-colors">
+            lautarovulcano&#64;gmail.com
+          </a>
         </div>
 
-        <div class="space-y-4">
-          <div class="flex items-center space-x-4">
-            <lucide-icon name="mail" [size]="20" class="text-accent"></lucide-icon>
-            <a href="mailto:lautarovulcano@gmail.com" class="text-gray-300 hover:text-accent transition-colors">
-              lautarovulcano&#64;gmail.com
-            </a>
-          </div>
-          <div class="flex items-center space-x-4">
-            <lucide-icon name="phone" [size]="20" class="text-accent"></lucide-icon>
-            <a href="tel:+5492494624825" class="text-gray-300 hover:text-accent transition-colors">
-              +54 9 2494 62-4825
-            </a>
-          </div>
-          <div class="flex items-center space-x-4">
-            <lucide-icon name="map-pin" [size]="20" class="text-accent"></lucide-icon>
-            <span class="text-gray-300">Tandil, Argentina</span>
-          </div>
+        <div class="flex items-center gap-3">
+          <lucide-icon name="phone" class="text-accent" [size]="20"></lucide-icon>
+          <a href="tel:+5492494624825" class="text-lg hover:text-accent transition-colors">
+            +54 9 2494 62-4825
+          </a>
         </div>
 
-        <div>
-          <h3 class="text-xl font-bold mb-4 text-accent">Redes sociales</h3>
-          <div class="flex space-x-4">
-            <a href="https://instagram.com/lautarovulcano" target="_blank" class="text-gray-300 hover:text-accent transition-colors">
-              <lucide-icon name="instagram" [size]="24"></lucide-icon>
-            </a>
-            <a href="https://linkedin.com/in/lautarovulcano" target="_blank" class="text-gray-300 hover:text-accent transition-colors">
-              <lucide-icon name="linkedin" [size]="24"></lucide-icon>
-            </a>
-            <a href="https://github.com/lautarovulcano" target="_blank" class="text-gray-300 hover:text-accent transition-colors">
-              <lucide-icon name="github" [size]="24"></lucide-icon>
-            </a>
-          </div>
+        <div class="flex items-center gap-3">
+          <lucide-icon name="map-pin" class="text-accent" [size]="20"></lucide-icon>
+          <span class="text-lg">Tandil, Argentina</span>
         </div>
       </div>
     </div>
