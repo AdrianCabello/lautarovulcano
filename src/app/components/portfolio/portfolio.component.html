@@ -32,12 +32,20 @@
                 {{ tag }}
               </span>
             </div>
-            <a [href]="project.url" target="_blank" rel="noopener noreferrer"
-              class="inline-flex items-center px-6 py-3 text-accent hover:text-accent/80 transition-all duration-300 group text-lg font-semibold">
-              Ver proyecto
-              <lucide-icon name="arrow-right" [size]="20"
-                class="ml-3 transition-transform duration-300 group-hover:translate-x-2"></lucide-icon>
-            </a>
+            <div class="flex items-center gap-4">
+              <a [href]="project.url" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center px-6 py-3 text-accent hover:text-accent/80 transition-all duration-300 group text-lg font-semibold">
+                Ver proyecto
+                <lucide-icon name="arrow-right" [size]="20"
+                  class="ml-3 transition-transform duration-300 group-hover:translate-x-2"></lucide-icon>
+              </a>
+              <a href="#contact" 
+                class="inline-flex items-center px-6 py-3 text-accent hover:text-accent/80 transition-all duration-300 group text-lg font-semibold">
+                Contactar
+                <lucide-icon name="mail" [size]="20"
+                  class="ml-3"></lucide-icon>
+              </a>
+            </div>
           </div>
         </div>
       </div>
