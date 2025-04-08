@@ -30,14 +30,14 @@ export class PortfolioComponent {
       title: 'Positive',
       description: 'Diseño de identidad visual y gestion de redes sociales para fecha especial de música electrónica. Se creó la gráfica completa y se gestionó la comunicación para generar alcance y atraer al público. También se realizaron animaciones para video y contenido dinámico.',
       image: 'assets/projects/positive.png',
-      tags: ['Adobe Illustrator', 'Adobe InDesign'],
+      tags: ['Adobe Photoshop'],
       url: 'https://lautarovulcano.myportfolio.com/evento-positive-new-year-social-media'
     },
     {
       title: 'Gold Phone',
       description: 'Gestión de redes sociales y desarrollo visual para Gold Phone, tienda especializada en la venta de iPhones y accesorios. El enfoque estuvo en crear piezas claras y directas orientadas a la conversión.',
       image: 'assets/projects/gold-phone.png',
-      tags: ['Adobe Illustrator', 'Adobe Photoshop', 'Figma'],
+      tags: ['Adobe Illustrator', 'Adobe Photoshop', 'Adobe After Effects', 'Adobe Premiere Pro'],
       url: 'https://lautarovulcano.myportfolio.com/gold-phone-gestion-de-redes'
     },
     {
@@ -68,8 +68,9 @@ export class PortfolioComponent {
       'Adobe Illustrator': 'pen-tool',
       'Adobe Photoshop': 'image',
       'Adobe InDesign': 'book-open',
-      'Figma': 'layout-dashboard',
-      'After Effects': 'film'
+      'Adobe After Effects': 'film',
+      'Adobe Premiere Pro': 'video',
+      'Figma': 'layout-dashboard'
     };
 
     return iconMap[tag] || 'code';

@@ -6,9 +6,9 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section id="services" class="py-20">
+    <section id="services" class="py-24">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 relative">
+        <h2 class="text-3xl md:text-4xl font-bold mb-16 relative">
           <span class="text-emerald-400">Mis</span> servicios
           <span class="block h-1 w-20 bg-emerald-400 mt-4"></span>
         </h2>
