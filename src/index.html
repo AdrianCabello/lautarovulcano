@@ -37,5 +37,11 @@
 </head>
 <body>
   <app-root></app-root>
+  <script>
+    // Redirect to hash-based routing if needed
+    if (window.location.pathname !== '/lautarovulcano/' && !window.location.hash) {
+      window.location.href = '/lautarovulcano/#/';
+    }
+  </script>
 </body>
 </html>
