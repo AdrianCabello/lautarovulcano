@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/lautarovulcano/browser",
+            "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -27,13 +27,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              "src/CNAME",
-              {
-                "glob": "**/*",
-                "input": "src",
-                "output": "/"
-              }
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"
@@ -42,7 +36,6 @@
           },
           "configurations": {
             "production": {
-              "baseHref": "/",
               "budgets": [
                 {
                   "type": "initial",
@@ -58,7 +51,6 @@
               "outputHashing": "all"
             },
             "development": {
-              "baseHref": "/",
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,
