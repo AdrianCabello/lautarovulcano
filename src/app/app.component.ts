@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HeroComponent } from './components/hero/hero.component';
@@ -7,6 +7,7 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LucideModule } from './shared/lucide.module';
+import { SeoService } from './services/seo.service';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +24,17 @@ import { LucideModule } from './shared/lucide.module';
     LucideModule
   ],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'lautarovulcano';
+
+  constructor(private seoService: SeoService) {}
+
+  ngOnInit() {
+    this.seoService.updateMetaTags({
+      title: 'Lautaro Vulcano - Portfolio de Diseño Gráfico',
+      description: 'Portfolio profesional de Lautaro Vulcano, diseñador gráfico especializado en identidad visual, comunicación en redes y diseño web. Descubre mis proyectos y servicios.',
+      image: 'https://adriancabello.github.io/lautarovulcano/assets/perfil.png',
+      url: 'https://adriancabello.github.io/lautarovulcano/'
+    });
+  }
 }
