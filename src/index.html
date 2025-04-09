@@ -21,32 +21,13 @@
 <body>
   <app-root></app-root>
   <script>
-    // Single Page Apps for GitHub Pages
-    (function(l) {
-      if (l.search[1] === '/') {
-        var decoded = l.search.slice(1).split('&').map(function(s) { 
-          return s.replace(/~and~/g, '&')
-        }).join('?');
-        window.history.replaceState(null, null,
-          l.pathname.slice(0, -1) + decoded + l.hash
-        );
+    // Simple redirect for GitHub Pages
+    (function() {
+      const path = window.location.pathname;
+      if (path !== '/' && !path.includes('index.html')) {
+        window.location.href = '/';
       }
-    }(window.location));
-
-    // Redirect to the correct path if needed
-    if (window.location.pathname !== '/' && !window.location.hash) {
-      window.location.href = '/';
-    }
-
-    // Handle 404s for GitHub Pages
-    window.addEventListener('hashchange', function() {
-      if (window.location.hash) {
-        const path = window.location.hash.substring(1);
-        if (path && !document.querySelector(`[href="#${path}"]`)) {
-          window.location.href = '/';
-        }
-      }
-    });
+    })();
   </script>
 </body>
 </html>
