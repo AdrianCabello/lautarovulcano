@@ -37,7 +37,7 @@
           },
           "configurations": {
             "production": {
-              "baseHref": "/lautarovulcano/",
+              "baseHref": "/",
               "budgets": [
                 {
                   "type": "initial",
