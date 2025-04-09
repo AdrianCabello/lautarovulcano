@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --configuration production --base-href /lautarovulcano/",
+    "build": "ng build --configuration production --base-href /",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev:ssr": "ng run lautarovulcano:serve-ssr",
