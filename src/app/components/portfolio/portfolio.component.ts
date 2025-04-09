@@ -23,7 +23,7 @@ export class PortfolioComponent {
       title: 'Change',
       description: 'Rediseño de identidad para Change, una academia de trading enfocada en la transformación financiera. Se desarrolló la marca, la identidad visual, las redes sociales y la web institucional.',
       image: 'assets/projects/change.png',
-      tags: ['Illustrator', 'Photoshop', 'After Effects'],
+      tags: ['Photoshop', 'After Effects'],
       url: 'https://lautarovulcano.myportfolio.com/change-academia-de-trading-social-media'
     },
     {
@@ -37,7 +37,7 @@ export class PortfolioComponent {
       title: 'Gold Phone',
       description: 'Gestión de redes sociales y desarrollo visual para Gold Phone, tienda especializada en la venta de iPhones y accesorios. El enfoque estuvo en crear piezas claras y directas orientadas a la conversión.',
       image: 'assets/projects/gold-phone.png',
-      tags: ['Illustrator', 'Photoshop', 'After Effects', 'Premiere Pro'],
+      tags: ['Illustrator', 'Photoshop', 'After Effects'],
       url: 'https://lautarovulcano.myportfolio.com/gold-phone-gestion-de-redes'
     },
     {

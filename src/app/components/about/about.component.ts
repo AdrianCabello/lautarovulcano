@@ -11,23 +11,28 @@ import { LucideModule } from '../../shared/lucide.module';
 export class AboutComponent {
   skills = [
     {
-      name: 'Adobe Illustrator',
+      name: 'Photoshop',
+      description: 'Edición y composición de imágenes',
+      icon: 'image'
+    },
+    {
+      name: 'Illustrator',
       description: 'Vectorización y diseño de logotipos',
       icon: 'pen-tool'
     },
     {
-      name: 'Adobe Photoshop',
-      description: 'Edición y retoque de imágenes',
-      icon: 'image'
+      name: 'After Effects',
+      description: 'Animaciones y motion graphics',
+      icon: 'film'
     },
     {
-      name: 'Adobe InDesign',
-      description: 'Diseño editorial y maquetación',
-      icon: 'book-open'
+      name: 'Premiere Pro',
+      description: 'Edición de video y montaje',
+      icon: 'video'
     },
     {
       name: 'Figma',
-      description: 'Diseño de interfaces y prototipado',
+      description: 'Diseño de interfaces y prototipos',
       icon: 'layout'
     }
   ];
