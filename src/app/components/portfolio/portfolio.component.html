@@ -9,21 +9,18 @@
     </p>
 
     <div class="mb-16">
-      <p class="text-lg text-gray-300 mb-12 max-w-3xl font-medium">
-        Algunos de los trabajos donde desarrollé identidad visual, comunicación en redes y diseño gráfico aplicado.
-      </p>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div *ngFor="let project of projects"
           class="bg-secondary rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-accent/50">
           <div class="relative h-64 overflow-hidden">
             <img [src]="project.image" [alt]="project.title + ' Logo'" class="w-full h-full object-cover">
           </div>
-          <div class="p-8">
-            <h4 class="text-xl font-bold mb-4">{{ project.title }}</h4>
-            <p class="text-lg text-gray-300 mb-6 leading-relaxed font-medium">{{ project.description }}</p>
-            <div class="flex flex-wrap gap-2 mb-6">
+          <div class="p-4 sm:p-6">
+            <h4 class="text-xl font-bold mb-2">{{ project.title }}</h4>
+            <p class="text-lg text-gray-300 mb-4 leading-relaxed font-medium">{{ project.description }}</p>
+            <div class="flex flex-wrap gap-2 mb-4">
               <span *ngFor="let tag of project.tags" 
-                class="inline-flex items-center px-4 py-2 bg-accent/10 text-accent text-sm font-semibold rounded-full hover:bg-accent/20 transition-colors duration-300">
+                class="inline-flex items-center px-3 py-1.5 bg-accent/10 text-accent text-sm font-semibold rounded-full hover:bg-accent/20 transition-colors duration-300">
                 <lucide-icon 
                   [name]="getTagIcon(tag)" 
                   [size]="16" 
@@ -32,18 +29,14 @@
                 {{ tag }}
               </span>
             </div>
-            <div class="flex items-center gap-4">
+            <div class="flex flex-row items-center gap-2 sm:gap-4">
               <a [href]="project.url" target="_blank" rel="noopener noreferrer"
-                class="inline-flex items-center px-6 py-3 text-accent hover:text-accent/80 transition-all duration-300 group text-lg font-semibold">
+                class="flex-1 sm:flex-none inline-flex items-center justify-center px-3 sm:px-4 py-2 text-accent hover:text-accent/80 transition-all duration-300 group text-base sm:text-lg font-semibold">
                 Ver proyecto
-                <lucide-icon name="arrow-right" [size]="20"
-                  class="ml-3 transition-transform duration-300 group-hover:translate-x-2"></lucide-icon>
               </a>
               <a href="#contact" 
-                class="inline-flex items-center px-6 py-3 text-accent hover:text-accent/80 transition-all duration-300 group text-lg font-semibold">
+                class="flex-1 sm:flex-none inline-flex items-center justify-center px-3 sm:px-4 py-2 text-accent hover:text-accent/80 transition-all duration-300 group text-base sm:text-lg font-semibold">
                 Contactar
-                <lucide-icon name="mail" [size]="20"
-                  class="ml-3"></lucide-icon>
               </a>
             </div>
           </div>
