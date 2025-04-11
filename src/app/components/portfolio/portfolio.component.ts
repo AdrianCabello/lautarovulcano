@@ -23,14 +23,14 @@ export class PortfolioComponent {
       title: 'Change',
       description: 'Rediseño de identidad para Change, una academia de trading enfocada en la transformación financiera. Se desarrolló la marca, la identidad visual, las redes sociales y la web institucional.',
       image: 'assets/projects/change.png',
-      tags: ['Photoshop', 'After Effects'],
+      tags: ['Photoshop', 'After Effects', 'Illustrator'],
       url: 'https://lautarovulcano.myportfolio.com/change-academia-de-trading-social-media'
     },
     {
       title: 'Positive',
       description: 'Diseño de identidad visual y gestion de redes sociales para fecha especial de música electrónica. Se creó la gráfica completa y se gestionó la comunicación para generar alcance y atraer al público. También se realizaron animaciones para video y contenido dinámico.',
       image: 'assets/projects/positive.png',
-      tags: ['Photoshop', 'After Effects'],
+      tags: ['Photoshop', 'After Effects', 'Premiere Pro'],
       url: 'https://lautarovulcano.myportfolio.com/evento-positive-new-year-social-media'
     },
     {

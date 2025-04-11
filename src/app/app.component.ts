@@ -26,6 +26,7 @@ import { SeoService } from './services/seo.service';
 })
 export class AppComponent implements OnInit {
   title = 'lautarovulcano';
+  isMobileMenuOpen = false;
 
   constructor(private seoService: SeoService) {}
 
@@ -36,5 +37,9 @@ export class AppComponent implements OnInit {
       image: 'https://adriancabello.github.io/lautarovulcano/assets/perfil.png',
       url: 'https://adriancabello.github.io/lautarovulcano/'
     });
+  }
+
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
 }
