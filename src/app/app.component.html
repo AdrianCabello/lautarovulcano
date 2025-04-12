@@ -1,34 +1,55 @@
-<div class="min-h-screen flex flex-col">
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#071a14]/80 backdrop-blur-sm">
-    <div class="container mx-auto px-4">
-      <div class="flex items-center justify-between h-16">
-        <a href="#" class="text-xl font-bold text-emerald-400">LV</a>
-        <div class="hidden md:flex space-x-8">
-          <a href="#about" class="text-gray-300 hover:text-emerald-400 transition-colors">Sobre mí</a>
-          <a href="#portfolio" class="text-gray-300 hover:text-emerald-400 transition-colors">Portfolio</a>
-          <a href="#contact" class="text-gray-300 hover:text-emerald-400 transition-colors">Contacto</a>
-        </div>
-        <button (click)="toggleMobileMenu()" class="md:hidden text-gray-300 hover:text-emerald-400 transition-colors">
-          <lucide-icon [name]="isMobileMenuOpen ? 'x' : 'menu'" [size]="24"></lucide-icon>
-        </button>
-      </div>
-      <!-- Mobile menu -->
-      <div class="md:hidden" [class.hidden]="!isMobileMenuOpen">
-        <div class="px-2 pt-2 pb-3 space-y-1">
-          <a href="#about" (click)="toggleMobileMenu()" class="block px-3 py-2 text-gray-300 hover:text-emerald-400 transition-colors">Sobre mí</a>
-          <a href="#portfolio" (click)="toggleMobileMenu()" class="block px-3 py-2 text-gray-300 hover:text-emerald-400 transition-colors">Portfolio</a>
-          <a href="#contact" (click)="toggleMobileMenu()" class="block px-3 py-2 text-gray-300 hover:text-emerald-400 transition-colors">Contacto</a>
-        </div>
-      </div>
+<div class="relative min-h-screen bg-[#0a2a1e]">
+  <!-- Elementos decorativos flotantes globales -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none">
+    <!-- Patrón de fondo sutil -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, #4ade80 1px, transparent 0); background-size: 40px 40px;"></div>
     </div>
-  </nav>
 
-  <main class="flex-grow">
-    <app-hero></app-hero>
-    <app-about></app-about>
-    <app-portfolio></app-portfolio>
-    <app-contact></app-contact>
-  </main>
+    <!-- Luces decorativas -->
+    <div class="absolute top-20 left-10 w-20 h-20 bg-accent/10 rounded-full blur-xl"></div>
+    <div class="absolute bottom-20 right-10 w-32 h-32 bg-accent/10 rounded-full blur-xl"></div>
+    <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-accent/5 rounded-full blur-lg"></div>
+    <div class="absolute top-1/3 right-1/4 w-24 h-24 bg-accent/5 rounded-full blur-lg"></div>
+    <div class="absolute bottom-1/4 left-1/3 w-28 h-28 bg-accent/5 rounded-full blur-lg"></div>
+    <div class="absolute top-1/4 right-1/3 w-20 h-20 bg-accent/5 rounded-full blur-lg"></div>
+  </div>
 
-  <app-footer></app-footer>
+  <!-- Contenido principal -->
+  <div class="relative z-10">
+    <div class="min-h-screen flex flex-col">
+      <nav class="fixed top-0 left-0 right-0 z-50 bg-[#071a14]/80 backdrop-blur-sm">
+        <div class="container mx-auto px-4">
+          <div class="flex items-center justify-between h-16">
+            <a href="#" class="text-xl font-bold text-emerald-400">LV</a>
+            <div class="hidden md:flex space-x-8">
+              <a href="#about" class="text-gray-300 hover:text-emerald-400 transition-colors">Sobre mí</a>
+              <a href="#portfolio" class="text-gray-300 hover:text-emerald-400 transition-colors">Portfolio</a>
+              <a href="#contact" class="text-gray-300 hover:text-emerald-400 transition-colors">Contacto</a>
+            </div>
+            <button (click)="toggleMobileMenu()" class="md:hidden text-gray-300 hover:text-emerald-400 transition-colors">
+              <lucide-icon [name]="isMobileMenuOpen ? 'x' : 'menu'" [size]="24"></lucide-icon>
+            </button>
+          </div>
+          <!-- Mobile menu -->
+          <div class="md:hidden" [class.hidden]="!isMobileMenuOpen">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+              <a href="#about" (click)="toggleMobileMenu()" class="block px-3 py-2 text-gray-300 hover:text-emerald-400 transition-colors">Sobre mí</a>
+              <a href="#portfolio" (click)="toggleMobileMenu()" class="block px-3 py-2 text-gray-300 hover:text-emerald-400 transition-colors">Portfolio</a>
+              <a href="#contact" (click)="toggleMobileMenu()" class="block px-3 py-2 text-gray-300 hover:text-emerald-400 transition-colors">Contacto</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <main class="flex-grow">
+        <app-hero></app-hero>
+        <app-about></app-about>
+        <app-portfolio></app-portfolio>
+        <app-contact></app-contact>
+      </main>
+
+      <app-footer></app-footer>
+    </div>
+  </div>
 </div>
