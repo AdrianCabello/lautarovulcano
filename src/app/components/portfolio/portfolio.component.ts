@@ -17,10 +17,16 @@ export class PortfolioComponent implements OnInit {
 
   readonly projects = this.projectsService.projects;
   readonly isLoading = this.projectsService.isLoading;
+  readonly isLoadingMore = this.projectsService.isLoadingMore;
   readonly errorMessage = this.projectsService.errorMessage;
+  readonly hasMoreProjects = this.projectsService.hasMoreProjects;
 
   ngOnInit(): void {
     this.projectsService.loadClientProjects();
+  }
+
+  loadMore(): void {
+    this.projectsService.loadMoreProjects();
   }
 
   goToProject(id: string): void {
