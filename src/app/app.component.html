@@ -21,11 +21,11 @@
       <nav class="fixed top-0 left-0 right-0 z-50 bg-[#071a14]/80 backdrop-blur-sm">
         <div class="container mx-auto px-4">
           <div class="flex items-center justify-between h-16">
-            <a href="#" class="text-xl font-bold text-emerald-400">LV</a>
+            <a routerLink="/" class="text-xl font-bold text-emerald-400">LV</a>
             <div class="hidden md:flex space-x-8">
-              <a href="#about" class="text-gray-300 hover:text-emerald-400 transition-colors">Sobre mí</a>
-              <a href="#portfolio" class="text-gray-300 hover:text-emerald-400 transition-colors">Portfolio</a>
-              <a href="#contact" class="text-gray-300 hover:text-emerald-400 transition-colors">Contacto</a>
+              <a routerLink="/" fragment="about" class="text-gray-300 hover:text-emerald-400 transition-colors">Sobre mí</a>
+              <a routerLink="/" fragment="portfolio" class="text-gray-300 hover:text-emerald-400 transition-colors">Portfolio</a>
+              <a routerLink="/" fragment="contact" class="text-gray-300 hover:text-emerald-400 transition-colors">Contacto</a>
             </div>
             <button (click)="toggleMobileMenu()" class="md:hidden text-gray-300 hover:text-emerald-400 transition-colors">
               <lucide-icon [name]="isMobileMenuOpen ? 'x' : 'menu'" [size]="24"></lucide-icon>
@@ -34,22 +34,15 @@
           <!-- Mobile menu -->
           <div class="md:hidden" [class.hidden]="!isMobileMenuOpen">
             <div class="px-2 pt-2 pb-3 space-y-1">
-              <a href="#about" (click)="toggleMobileMenu()" class="block px-3 py-2 text-gray-300 hover:text-emerald-400 transition-colors">Sobre mí</a>
-              <a href="#portfolio" (click)="toggleMobileMenu()" class="block px-3 py-2 text-gray-300 hover:text-emerald-400 transition-colors">Portfolio</a>
-              <a href="#contact" (click)="toggleMobileMenu()" class="block px-3 py-2 text-gray-300 hover:text-emerald-400 transition-colors">Contacto</a>
+              <a routerLink="/" fragment="about" (click)="toggleMobileMenu()" class="block px-3 py-2 text-gray-300 hover:text-emerald-400 transition-colors">Sobre mí</a>
+              <a routerLink="/" fragment="portfolio" (click)="toggleMobileMenu()" class="block px-3 py-2 text-gray-300 hover:text-emerald-400 transition-colors">Portfolio</a>
+              <a routerLink="/" fragment="contact" (click)="toggleMobileMenu()" class="block px-3 py-2 text-gray-300 hover:text-emerald-400 transition-colors">Contacto</a>
             </div>
           </div>
         </div>
       </nav>
 
-      <main class="flex-grow">
-        <app-hero></app-hero>
-        <app-about></app-about>
-        <app-portfolio></app-portfolio>
-        <app-contact></app-contact>
-      </main>
-
-      <app-footer></app-footer>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

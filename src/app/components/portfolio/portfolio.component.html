@@ -13,7 +13,12 @@
       <p *ngIf="errorMessage() && !isLoading()" class="text-red-400 text-lg">{{ errorMessage() }}</p>
       <div *ngIf="!isLoading() && !errorMessage()" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div *ngFor="let project of projects()"
-          class="bg-secondary rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-accent/50 flex flex-col h-full">
+          (click)="goToProject(project.id)"
+          role="button"
+          tabindex="0"
+          (keydown.enter)="goToProject(project.id)"
+          (keydown.space)="goToProject(project.id); $event.preventDefault()"
+          class="bg-secondary rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-accent/50 flex flex-col h-full cursor-pointer">
           <div class="relative h-64 overflow-hidden">
             <img [src]="project.image" [alt]="project.title + ' Logo'" class="w-full h-full object-cover">
           </div>
@@ -33,9 +38,11 @@
             </div>
             <div class="flex flex-row items-center gap-2 sm:gap-4 mt-auto">
               <a *ngIf="project.url && project.url !== '#'" [href]="project.url" target="_blank" rel="noopener noreferrer"
+                (click)="$event.stopPropagation()"
                 class="w-full inline-flex items-center justify-center px-4 sm:px-6 py-3 bg-accent/10 hover:bg-accent/20 text-accent transition-all duration-300 group text-base sm:text-lg font-semibold rounded-md">
                 Ver proyecto
               </a>
+              <span *ngIf="!project.url || project.url === '#'" class="text-gray-400 text-sm">Ver detalle</span>
             </div>
           </div>
         </div>

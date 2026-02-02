@@ -1,5 +1,5 @@
 import { Injectable, signal, computed } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { environment } from '../../environments/environment';
@@ -19,6 +19,8 @@ export interface RakiumProject {
   technologies?: string | string[] | null;
   category?: string | null;
   gallery?: { id: string; url: string; order: number }[];
+  videoUrl?: string | null;
+  videos?: { id: string; url: string; title?: string }[] | null;
 }
 
 export interface RakiumProjectsResponse {
@@ -33,6 +35,7 @@ export interface RakiumProjectsResponse {
 
 /** Proyecto para la vista del portfolio (Trabajos seleccionados). */
 export interface PortfolioProject {
+  id: string;
   title: string;
   description: string;
   image: string;
@@ -52,15 +55,19 @@ export class ProjectsService {
   readonly isLoading = this.loading.asReadonly();
   readonly errorMessage = this.error.asReadonly();
 
+  /** Obtiene el proyecto completo por id (desde la lista ya cargada). */
+  getProjectById(id: string): RakiumProject | undefined {
+    return this.rawProjects().find((p) => p.id === id);
+  }
+
   constructor(private http: HttpClient) {}
 
   loadClientProjects(): void {
     this.loading.set(true);
     this.error.set(null);
     const baseUrl = environment.apiUrl.replace(/\/$/, '');
-    const params = new HttpParams().set('page', '1').set('limit', '50');
     this.http
-      .get<any>(`${baseUrl}/projects/client/${LAUTARO_CLIENT_ID}`, { params })
+      .get<any>(`${baseUrl}/api/projects/client/${LAUTARO_CLIENT_ID}`)
       .pipe(
         map((response) => {
           let projects: RakiumProject[] = [];
@@ -107,6 +114,7 @@ export class ProjectsService {
     }
     const url = (p.demoUrl ?? p.url ?? '').trim() || '#';
     return {
+      id: p.id,
       title: p.name,
       description,
       image: image || 'assets/projects/change.png',

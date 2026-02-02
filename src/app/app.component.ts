@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { HeroComponent } from './components/hero/hero.component';
-import { AboutComponent } from './components/about/about.component';
-import { PortfolioComponent } from './components/portfolio/portfolio.component';
-import { ContactComponent } from './components/contact/contact.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { RouterModule, RouterLink } from '@angular/router';
 import { LucideModule } from './shared/lucide.module';
 import { SeoService } from './services/seo.service';
 
@@ -13,16 +8,7 @@ import { SeoService } from './services/seo.service';
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
-  imports: [
-    CommonModule,
-    RouterModule,
-    HeroComponent,
-    AboutComponent,
-    PortfolioComponent,
-    ContactComponent,
-    FooterComponent,
-    LucideModule
-  ],
+  imports: [CommonModule, RouterModule, RouterLink, LucideModule],
 })
 export class AppComponent implements OnInit {
   title = 'lautarovulcano';
