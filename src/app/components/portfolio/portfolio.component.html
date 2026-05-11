@@ -1,32 +1,52 @@
-<section id="portfolio" class="w-full py-24 bg-primary">
+<section id="portfolio" class="w-full py-20 md:py-28 bg-transparent" data-testid="portfolio-section">
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-extrabold mb-4 relative">
-      <span class="text-accent">Trabajos</span> seleccionados
-      <span class="block h-1 w-20 bg-accent mt-4"></span>
-    </h2>
-    <p class="text-xl text-gray-300 mb-16 max-w-2xl font-medium">
-      Una muestra de mis <span class="font-bold">mejores proyectos</span> de diseño gráfico y branding.
-    </p>
+    <div class="max-w-3xl mb-12 md:mb-16">
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-5 relative">
+        Trabajos seleccionados
+        <span class="block h-1 w-20 bg-accent mt-4"></span>
+      </h2>
+      <p class="text-lg md:text-xl text-gray-300 font-medium leading-relaxed">
+        Una muestra de proyectos donde trabajé identidad visual, contenido, redes, eventos y comunicación digital.
+      </p>
+      <div class="flex flex-wrap gap-2 mt-6 text-sm text-gray-300">
+        <span class="rounded-full border border-accent/40 px-3 py-1">Identidad visual</span>
+        <span class="rounded-full border border-accent/40 px-3 py-1">Redes y contenido</span>
+        <span class="rounded-full border border-accent/40 px-3 py-1">Eventos</span>
+        <span class="rounded-full border border-accent/40 px-3 py-1">Webs y presentaciones</span>
+        <span class="rounded-full border border-accent/40 px-3 py-1">Video / motion</span>
+      </div>
+    </div>
 
     <div class="mb-16">
-      <p *ngIf="isLoading()" class="text-gray-300 text-lg">Cargando trabajos...</p>
-      <p *ngIf="errorMessage() && !isLoading()" class="text-red-400 text-lg">{{ errorMessage() }}</p>
-      <div *ngIf="!isLoading() && !errorMessage()" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div *ngFor="let project of projects()"
+      @if (isLoading()) {
+        <p class="text-gray-300 text-lg" data-testid="portfolio-loading">Cargando trabajos...</p>
+      }
+
+      @if (errorMessage() && !isLoading()) {
+        <p class="text-red-400 text-lg" data-testid="portfolio-error">{{ errorMessage() }}</p>
+      }
+
+      @if (!isLoading() && !errorMessage()) {
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          @for (project of projects(); track project.id) {
+            <article
           (click)="goToProject(project.id)"
           role="button"
           tabindex="0"
           (keydown.enter)="goToProject(project.id)"
           (keydown.space)="goToProject(project.id); $event.preventDefault()"
-          class="bg-secondary rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-accent/50 flex flex-col h-full cursor-pointer">
+              class="bg-[#092018]/75 rounded-lg overflow-hidden border border-white/5 transition-all duration-300 hover:shadow-lg hover:shadow-accent/40 flex flex-col h-full cursor-pointer backdrop-blur-sm"
+              data-testid="portfolio-project-card">
           <div class="relative h-64 overflow-hidden">
             <img [src]="project.image" [alt]="project.title + ' Logo'" class="w-full h-full object-cover">
           </div>
           <div class="p-4 sm:p-6 flex flex-col flex-grow">
             <h4 class="text-xl font-bold mb-2">{{ project.title }}</h4>
             <p class="text-lg text-gray-300 mb-4 leading-relaxed font-medium flex-grow">{{ project.description }}</p>
+            <p class="text-xs uppercase tracking-wide text-gray-500 mb-2">Qué trabajé</p>
             <div class="flex flex-wrap gap-2 mb-4">
-              <span *ngFor="let tag of project.tags" 
+              @for (tag of project.tags; track tag) {
+                <span
                 class="inline-flex items-center px-2.5 py-1 bg-accent/5 text-accent text-xs font-medium rounded-full hover:bg-accent/10 transition-colors duration-300">
                 <lucide-icon 
                   [name]="getTagIcon(tag)" 
@@ -35,28 +55,38 @@
                 ></lucide-icon>
                 {{ tag }}
               </span>
+              }
             </div>
             <div class="flex flex-row items-center gap-2 sm:gap-4 mt-auto">
-              <a *ngIf="project.url && project.url !== '#'" [href]="project.url" target="_blank" rel="noopener noreferrer"
+              @if (project.url && project.url !== '#') {
+                <a [href]="project.url" target="_blank" rel="noopener noreferrer"
                 (click)="$event.stopPropagation()"
-                class="w-full inline-flex items-center justify-center px-4 sm:px-6 py-3 bg-accent/10 hover:bg-accent/20 text-accent transition-all duration-300 group text-base sm:text-lg font-semibold rounded-md">
+                  class="w-full inline-flex items-center justify-center px-4 sm:px-6 py-3 bg-accent/10 hover:bg-accent/20 text-accent transition-all duration-300 group text-base sm:text-lg font-semibold rounded-md"
+                  data-testid="portfolio-external-link">
                 Ver proyecto
               </a>
-              <span *ngIf="!project.url || project.url === '#'" class="text-gray-400 text-sm">Ver detalle</span>
+              } @else {
+                <span class="text-gray-400 text-sm">Ver detalle</span>
+              }
             </div>
           </div>
+            </article>
+          }
         </div>
-      </div>
+      }
     </div>
 
-    <div class="text-center mt-16" *ngIf="hasMoreProjects() && !isLoading() && !errorMessage()">
+    @if (hasMoreProjects() && !isLoading() && !errorMessage()) {
+      <div class="text-center mt-16">
       <button
         type="button"
         (click)="loadMore()"
         [disabled]="isLoadingMore()"
-        class="inline-flex items-center justify-center px-8 py-4 bg-accent text-primary font-semibold rounded-lg transition-all duration-300 hover:bg-accent/90 hover:scale-105 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100 text-lg">
+          class="inline-flex items-center justify-center px-8 py-4 bg-accent text-primary font-semibold rounded-lg transition-all duration-300 hover:bg-accent/90 hover:scale-105 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100 text-lg"
+          data-testid="portfolio-load-more-button">
         {{ isLoadingMore() ? 'Cargando...' : 'Ver más proyectos' }}
       </button>
     </div>
+    }
   </div>
 </section>

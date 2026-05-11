@@ -34,15 +34,26 @@ export class PortfolioComponent implements OnInit {
   }
 
   getTagIcon(tag: string): string {
+    const normalizedTag = tag.toLowerCase();
     const iconMap: { [key: string]: string } = {
       'Illustrator': 'pen-tool',
       'Photoshop': 'image',
       'InDesign': 'book-open',
       'After Effects': 'film',
       'Premiere Pro': 'video',
-      'Figma': 'layout-dashboard'
+      'Figma': 'layout-dashboard',
+      'identidad visual': 'pen-tool',
+      'branding': 'pen-tool',
+      'redes sociales': 'instagram',
+      'contenido': 'instagram',
+      'eventos': 'ticket',
+      'música': 'ticket',
+      'musica': 'ticket',
+      'web': 'layout',
+      'presentaciones': 'layout',
+      'estrategia': 'bar-chart'
     };
 
-    return iconMap[tag] || 'code';
+    return iconMap[tag] || iconMap[normalizedTag] || 'code';
   }
 } 

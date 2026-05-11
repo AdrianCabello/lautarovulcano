@@ -8,6 +8,7 @@ import { SeoService } from './services/seo.service';
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
   imports: [CommonModule, RouterModule, RouterLink, LucideModule],
 })
 export class AppComponent implements OnInit {
@@ -18,8 +19,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.seoService.updateMetaTags({
-      title: 'Lautaro Vulcano - Portfolio de Diseño Gráfico',
-      description: 'Portfolio profesional de Lautaro Vulcano, diseñador gráfico especializado en identidad visual, comunicación en redes y diseño web. Descubre mis proyectos y servicios.',
+      title: 'Lautaro Vulcano - Diseño gráfico y comunicación visual',
+      description: 'Diseño gráfico para marcas que necesitan comunicar mejor. Identidad visual, contenido digital y piezas comerciales pensadas para vender con más claridad.',
       image: 'https://lautarovulcano.com/assets/perfil.png',
       url: 'https://lautarovulcano.com/'
     });
