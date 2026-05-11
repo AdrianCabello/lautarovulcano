@@ -1,0 +1,11 @@
+.angular
+.DS_Store
+.git
+.github
+.vscode
+dist
+docs
+node_modules
+npm-debug.log
+Dockerfile
+README.md

@@ -10,7 +10,6 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes, withInMemoryScrolling({ anchorScrolling: 'enabled' })),
     provideAnimations(),
     provideHttpClient(),
-    provideClientHydration(),
     provideClientHydration(withEventReplay())
   ]
 };

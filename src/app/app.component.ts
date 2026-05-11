@@ -20,8 +20,8 @@ export class AppComponent implements OnInit {
     this.seoService.updateMetaTags({
       title: 'Lautaro Vulcano - Portfolio de Diseño Gráfico',
       description: 'Portfolio profesional de Lautaro Vulcano, diseñador gráfico especializado en identidad visual, comunicación en redes y diseño web. Descubre mis proyectos y servicios.',
-      image: 'https://adriancabello.github.io/lautarovulcano/assets/perfil.png',
-      url: 'https://adriancabello.github.io/lautarovulcano/'
+      image: 'https://lautarovulcano.com/assets/perfil.png',
+      url: 'https://lautarovulcano.com/'
     });
   }
 

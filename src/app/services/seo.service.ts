@@ -19,8 +19,8 @@ export class SeoService {
     const defaultConfig = {
       title: 'Lautaro Vulcano - Portfolio',
       description: 'Diseñador gráfico especializado en comunicación visual, identidad de marca y diseño web.',
-      image: 'assets/perfil.png',
-      url: 'https://adriancabello.github.io/lautarovulcano/'
+      image: 'https://lautarovulcano.com/assets/perfil.png',
+      url: 'https://lautarovulcano.com/'
     };
 
     const finalConfig = { ...defaultConfig, ...config };
@@ -42,4 +42,4 @@ export class SeoService {
     this.meta.updateTag({ name: 'twitter:description', content: finalConfig.description });
     this.meta.updateTag({ name: 'twitter:image', content: finalConfig.image });
   }
-} 
+}
