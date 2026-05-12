@@ -1,8 +1,8 @@
 <div class="min-h-screen flex flex-col pt-16">
   <div class="container mx-auto px-4 py-8 flex-grow">
-    <a routerLink="/" fragment="portfolio" class="inline-flex items-center gap-2 text-gray-300 hover:text-emerald-400 transition-colors mb-8">
+    <a routerLink="/" fragment="portfolio" class="inline-flex items-center gap-2 text-gray-300 hover:text-emerald-400 transition-colors mb-8" data-testid="project-back-to-portfolio-link">
       <lucide-icon name="arrow-left" [size]="20"></lucide-icon>
-      Volver al portfolio
+      Volver a proyectos
     </a>
 
     <ng-container *ngIf="project(); else notFound">
@@ -85,7 +85,7 @@
         <p class="text-xl text-gray-400 mb-6" *ngIf="!isLoading()">Proyecto no encontrado.</p>
         <a routerLink="/" fragment="portfolio" class="inline-flex items-center gap-2 text-accent hover:underline">
           <lucide-icon name="arrow-left" [size]="20"></lucide-icon>
-          Volver al portfolio
+          Volver a proyectos
         </a>
       </div>
     </ng-template>

@@ -1,86 +1,101 @@
-<section class="w-full py-20 md:py-28 bg-transparent" data-testid="problem-section">
-  <div class="container mx-auto px-4 md:px-8">
+<section class="relative w-full py-24 md:py-32 bg-transparent" data-testid="problem-section">
+  <div class="container">
     <div class="max-w-4xl">
-      <p class="text-accent font-semibold mb-3">Comunicación visual con criterio</p>
-      <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+      <p class="section-label mb-5">Comunicación visual con criterio</p>
+      <h2 class="section-title mb-8">
         Una buena marca pierde fuerza cuando no se comunica con claridad.
       </h2>
-      <div class="space-y-5 text-lg md:text-xl text-gray-300 leading-relaxed font-medium">
+      <div class="max-w-3xl space-y-5 section-copy">
         <p>
-          Muchas marcas tienen buen producto, buen servicio o una idea interesante, pero se muestran de forma desordenada: piezas sueltas, mensajes poco claros y contenido que no termina de representar el valor real del proyecto.
-        </p>
-        <p>
-          Mi trabajo es ordenar esa comunicación y bajarla a piezas visuales concretas: identidad, redes, presentaciones, videos, eventos o web.
+          Muchas marcas tienen buen producto, buen servicio o una idea interesante, pero se muestran de forma desordenada: <strong>piezas sueltas</strong>, mensajes poco claros y contenido que no termina de representar su valor real.
         </p>
       </div>
-      <p class="mt-8 border-l-4 border-accent pl-5 text-xl md:text-2xl font-bold leading-relaxed">
+      <p class="mt-10 max-w-3xl border-l border-accent/50 pl-6 text-xl md:text-3xl font-display font-bold leading-tight text-white">
         No diseño solo para que algo se vea bien. Diseño para que se entienda, conecte y ayude a vender mejor.
       </p>
     </div>
   </div>
 </section>
 
-<section id="services" class="w-full py-20 md:py-28 border-y border-white/5 bg-[#092018]/75 backdrop-blur-sm" data-testid="services-section">
-  <div class="container mx-auto px-4 md:px-8">
+<section id="services" class="editorial-band w-full py-24 md:py-32" data-testid="services-section">
+  <div class="container relative z-10">
     <div class="max-w-3xl mb-12 md:mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold mb-5 relative">
+      <p class="section-label mb-5">Servicios</p>
+      <h2 class="section-title mb-6">
         Qué hago
-        <span class="block h-1 w-20 bg-accent mt-4"></span>
       </h2>
-      <p class="text-lg md:text-xl text-gray-300 font-medium leading-relaxed">
-        Trabajo la comunicación visual de marcas y proyectos: desde la identidad hasta las piezas que necesitan para mostrarse, explicar lo que ofrecen y vender con más claridad.
+      <p class="section-copy">
+        Trabajo la comunicación visual de marcas y proyectos desde el <strong>diseño</strong>, el contenido y las piezas que necesitan para mostrarse mejor, comunicar con claridad y <strong>vender mejor</strong>.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
-      <article class="bg-primary/80 p-6 md:p-8 rounded-lg border border-accent/40 flex flex-col h-full">
-        <div class="w-12 h-12 border border-accent rounded-lg flex items-center justify-center mb-6">
-          <lucide-icon name="pen-tool" [size]="24" class="text-accent"></lucide-icon>
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+      <article class="group relative overflow-hidden rounded-[2rem] border border-white/[0.08] bg-[linear-gradient(135deg,rgba(255,255,255,0.06),rgba(0,255,157,0.035)_52%,rgba(255,255,255,0.012))] p-7 shadow-2xl shadow-black/10 md:p-9 lg:col-span-2">
+        <div class="noise-layer"></div>
+        <div class="relative grid gap-8 md:grid-cols-[0.8fr_1.35fr] md:items-start">
+          <div>
+            <p class="mb-6 font-display text-8xl font-bold leading-none text-accent/25 transition-colors group-hover:text-accent/35">01</p>
+            <h3 class="text-4xl md:text-5xl font-bold leading-none">Gestión de redes sociales y contenido</h3>
+          </div>
+          <div>
+            <p class="text-gray-200 leading-8 mb-5">
+              Acompaño marcas que necesitan sostener una presencia activa en redes con <strong>contenido pensado</strong>, diseñado y producido con criterio.
+            </p>
+            <p class="text-gray-400 leading-8 mb-6">
+              Trabajo desde la planificación hasta la ejecución: definimos qué comunicar, organizamos las piezas, diseñamos el sistema visual, producimos material, editamos videos y damos seguimiento mensual.
+            </p>
+            <p class="border-t border-white/10 pt-5 text-sm text-gray-400 leading-7">
+              <span class="text-gray-200">Puede incluir:</span> estrategia de contenido, calendario mensual, reels, carruseles, historias, copys, diseño gráfico, dirección visual, grabación, edición de video y acompañamiento.
+            </p>
+            <p class="mt-5 text-sm text-gray-400 leading-7">
+              Cuando el proyecto necesita más alcance, puedo activar <a href="https://rakium.dev" target="_blank" rel="noopener noreferrer" class="text-accent underline decoration-accent/30 underline-offset-4 transition-colors hover:text-accent/75" data-testid="service-rakium-link"><strong>Rakium</strong></a> para sumar perfiles de apoyo en grabación, edición, marketing o producción de contenido.
+            </p>
+          </div>
         </div>
-        <h3 class="text-2xl font-bold mb-3">Identidad visual</h3>
-        <p class="text-gray-300 leading-relaxed font-medium mb-5">
-          Para marcas que necesitan ordenar cómo se ven y construir una presencia visual coherente, reconocible y fácil de aplicar.
+      </article>
+
+      <article class="group border-t border-white/10 py-8 md:py-9 lg:pr-8">
+        <p class="mb-6 font-display text-7xl font-bold leading-none text-accent/18 transition-colors group-hover:text-accent/30">02</p>
+        <h3 class="mb-4 text-3xl md:text-4xl font-bold leading-none">Identidad visual</h3>
+        <p class="text-gray-300 leading-7 mb-6">
+          Diseño sistemas visuales para marcas que necesitan ordenar cómo se ven y construir una imagen <strong>coherente</strong>, reconocible y fácil de aplicar.
         </p>
-        <p class="text-sm text-gray-400 leading-relaxed mb-6">
-          Logo, paleta de colores, tipografías, sistema visual, recursos gráficos y aplicaciones para redes o piezas comerciales.
+        <p class="border-t border-white/10 pt-5 text-sm text-gray-400 leading-7">
+          <span class="text-gray-200">Puede incluir:</span> logo, paleta, tipografías, recursos gráficos, estilo visual y aplicaciones para redes.
         </p>
-        <a href="#portfolio" class="mt-auto inline-flex items-center text-accent font-semibold group" data-testid="service-identity-link">
+        <a href="#portfolio" class="lv-link mt-8 group/link" data-testid="service-identity-link">
           Ver proyectos de identidad
-          <lucide-icon name="arrow-right" [size]="18" class="ml-2 group-hover:translate-x-1 transition-transform"></lucide-icon>
+          <lucide-icon name="arrow-right" [size]="18" class="ml-2 group-hover/link:translate-x-1 transition-transform"></lucide-icon>
         </a>
       </article>
 
-      <article class="bg-primary/80 p-6 md:p-8 rounded-lg border border-accent/40 flex flex-col h-full">
-        <div class="w-12 h-12 border border-accent rounded-lg flex items-center justify-center mb-6">
-          <lucide-icon name="instagram" [size]="24" class="text-accent"></lucide-icon>
-        </div>
-        <h3 class="text-2xl font-bold mb-3">Contenido y comunicación digital</h3>
-        <p class="text-gray-300 leading-relaxed font-medium mb-5">
-          Para proyectos que necesitan comunicar de forma constante sin publicar piezas sueltas o sin dirección.
+      <article class="group border-t border-white/10 py-8 md:py-9 lg:pl-8">
+        <p class="mb-6 font-display text-7xl font-bold leading-none text-accent/18 transition-colors group-hover:text-accent/30">03</p>
+        <h3 class="mb-4 text-3xl md:text-4xl font-bold leading-none">Comunicación visual para eventos</h3>
+        <p class="text-gray-300 leading-7 mb-6">
+          Trabajo piezas visuales para eventos, productoras, artistas y plataformas que necesitan presentar una fecha, comunicar una experiencia y acompañar la <strong>venta de entradas</strong>.
         </p>
-        <p class="text-sm text-gray-400 leading-relaxed mb-6">
-          Carruseles, historias, reels, placas, copys, ideas de contenido, dirección visual, edición de video y motion graphics cuando la pieza lo necesita.
+        <p class="border-t border-white/10 pt-5 text-sm text-gray-400 leading-7">
+          <span class="text-gray-200">Puede incluir:</span> flyers, historias, line up, cuenta regresiva, presentación de artistas y piezas para ticketera.
         </p>
-        <a href="#portfolio" class="mt-auto inline-flex items-center text-accent font-semibold group" data-testid="service-social-link">
-          Ver contenido para redes
-          <lucide-icon name="arrow-right" [size]="18" class="ml-2 group-hover:translate-x-1 transition-transform"></lucide-icon>
+        <a href="#portfolio" class="lv-link mt-8 group/link" data-testid="service-events-link">
+          Ver piezas para eventos
+          <lucide-icon name="arrow-right" [size]="18" class="ml-2 group-hover/link:translate-x-1 transition-transform"></lucide-icon>
         </a>
       </article>
 
-      <article class="bg-primary/80 p-6 md:p-8 rounded-lg border border-accent/40 flex flex-col h-full">
-        <div class="w-12 h-12 border border-accent rounded-lg flex items-center justify-center mb-6">
-          <lucide-icon name="layout" [size]="24" class="text-accent"></lucide-icon>
-        </div>
-        <h3 class="text-2xl font-bold mb-3">Piezas de venta y presentación</h3>
-        <p class="text-gray-300 leading-relaxed font-medium mb-5">
-          Para marcas que necesitan vender, explicar o presentar mejor lo que ofrecen.
+      <article class="group border-t border-white/10 py-8 md:py-9 lg:pr-8">
+        <p class="mb-6 font-display text-7xl font-bold leading-none text-accent/18 transition-colors group-hover:text-accent/30">04</p>
+        <h3 class="mb-4 text-3xl md:text-4xl font-bold leading-none">Piezas gráficas</h3>
+        <p class="text-gray-300 leading-7 mb-6">
+          Diseño piezas visuales para comunicar ideas, promociones, servicios o productos de forma clara y cuidada, con <strong>jerarquía</strong>, composición y criterio.
         </p>
-        <p class="text-sm text-gray-400 leading-relaxed mb-6">
-          Propuestas comerciales, PDFs, presentaciones, landing pages, portfolios, presskits, flyers, piezas para eventos y materiales de venta.
+        <p class="border-t border-white/10 pt-5 text-sm text-gray-400 leading-7">
+          <span class="text-gray-200">Puede incluir:</span> presentaciones, PDFs, banners, piezas comerciales, placas, carruseles, historias y materiales puntuales.
         </p>
-        <a href="#portfolio" class="mt-auto inline-flex items-center text-accent font-semibold group" data-testid="service-sales-link">
-          Ver piezas comerciales
-          <lucide-icon name="arrow-right" [size]="18" class="ml-2 group-hover:translate-x-1 transition-transform"></lucide-icon>
+        <a href="#portfolio" class="lv-link mt-8 group/link" data-testid="service-sales-link">
+          Ver piezas gráficas
+          <lucide-icon name="arrow-right" [size]="18" class="ml-2 group-hover/link:translate-x-1 transition-transform"></lucide-icon>
         </a>
       </article>
     </div>

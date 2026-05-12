@@ -10,7 +10,8 @@ module.exports = {
         accent: '#00ff9d',
       },
       fontFamily: {
-        sans: ['Lato', 'sans-serif'],
+        sans: ['Plus Jakarta Sans', 'sans-serif'],
+        display: ['Coolvetica', 'Plus Jakarta Sans', 'sans-serif'],
       },
       fontWeight: {
         normal: 400,

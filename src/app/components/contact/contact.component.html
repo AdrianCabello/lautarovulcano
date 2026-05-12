@@ -1,92 +1,110 @@
-<section id="contact" class="py-20 md:py-28 border-y border-white/5 bg-[#092018]/75 backdrop-blur-sm" data-testid="contact-section">
-  <div class="container mx-auto px-4 md:px-8">
-    <div class="grid lg:grid-cols-[1fr_1.1fr] gap-12 md:gap-16">
+<section id="contact" class="editorial-band py-24 md:py-32" data-testid="contact-section">
+  <div class="container relative z-10">
+    <div class="grid lg:grid-cols-[1.15fr_0.95fr] gap-12 md:gap-16">
       <div>
-        <p class="text-accent font-semibold mb-3">Contacto</p>
-        <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+        <p class="section-label mb-5">Contacto</p>
+        <h2 class="section-title mb-7">
           ¿Tenés un proyecto y querés comunicarlo mejor?
         </h2>
-        <p class="text-lg md:text-xl text-gray-300 mb-8 font-medium leading-relaxed">
-          Contame qué estás armando, qué necesitás mejorar o qué pieza querés resolver. Podemos trabajar desde una identidad visual hasta contenido para redes, una presentación, una web, piezas comerciales o una estrategia visual más clara.
+        <p class="section-copy mb-7">
+          Contame qué estás armando, qué necesitás mejorar o qué pieza querés resolver. Podemos empezar por una charla simple para ordenar la idea.
         </p>
-        <p class="text-gray-400 mb-8">
-          Podemos empezar por una charla simple para ordenar la idea. Si el proyecto necesita más alcance, puedo activar Rakium para sumar perfiles específicos.
+        <p class="mb-9 text-sm leading-7 text-gray-400">
+          Si el proyecto necesita más alcance, puedo activar <a href="https://rakium.dev" target="_blank" rel="noopener noreferrer" class="text-accent underline decoration-accent/30 underline-offset-4 transition-colors hover:text-accent/75" data-testid="rakium-contact-link">Rakium</a> para sumar perfiles específicos.
         </p>
 
-        <div class="flex flex-col sm:flex-row gap-4 mb-10">
+        <div class="flex flex-col sm:flex-row gap-3 mb-10">
           <a href="https://wa.me/5492494624825" target="_blank" rel="noopener noreferrer"
-            class="inline-flex items-center justify-center px-6 py-3 bg-accent text-primary font-semibold rounded-lg transition-all duration-300 hover:bg-accent/90 group text-lg"
+            class="lv-button-primary group"
             data-testid="contact-whatsapp-link">
-            <lucide-icon name="phone" [size]="20" class="mr-2"></lucide-icon>
+            <lucide-icon name="phone" [size]="18" class="mr-2"></lucide-icon>
             Escribirme por WhatsApp
           </a>
           <a href="mailto:lautarvulcano&#64;gmail.com"
-            class="inline-flex items-center justify-center px-6 py-3 border border-accent text-accent font-semibold rounded-lg transition-all duration-300 hover:bg-accent hover:text-primary group text-lg"
+            class="lv-button-secondary group"
             data-testid="contact-email-link">
-            <lucide-icon name="mail" [size]="20" class="mr-2"></lucide-icon>
+            <lucide-icon name="mail" [size]="18" class="mr-2"></lucide-icon>
             Enviar mail
           </a>
         </div>
 
-        <div class="space-y-5">
+        <div class="space-y-4 border-t border-white/10 pt-7">
           <div class="flex items-center gap-4">
-            <div class="w-12 h-12 border border-accent rounded-lg flex items-center justify-center">
-              <lucide-icon name="mail" class="text-accent" [size]="20"></lucide-icon>
+            <div class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.025]">
+              <lucide-icon name="mail" class="text-accent" [size]="18"></lucide-icon>
             </div>
             <a href="mailto:lautarvulcano&#64;gmail.com"
-              class="text-lg text-gray-300 hover:text-accent transition-colors">
+              class="text-sm md:text-base text-gray-300 hover:text-accent transition-colors">
               lautarvulcano&#64;gmail.com
             </a>
           </div>
 
           <div class="flex items-center gap-4">
-            <div class="w-12 h-12 border border-accent rounded-lg flex items-center justify-center">
-              <lucide-icon name="phone" class="text-accent" [size]="20"></lucide-icon>
+            <div class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.025]">
+              <lucide-icon name="phone" class="text-accent" [size]="18"></lucide-icon>
             </div>
-            <a href="tel:+5492494624825" class="text-lg text-gray-300 hover:text-accent transition-colors">
+            <a href="tel:+5492494624825" class="text-sm md:text-base text-gray-300 hover:text-accent transition-colors">
               +54 9 2494 62-4825
             </a>
           </div>
 
           <div class="flex items-center gap-4">
-            <div class="w-12 h-12 border border-accent rounded-lg flex items-center justify-center">
-              <lucide-icon name="instagram" class="text-accent" [size]="20"></lucide-icon>
+            <div class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.025]">
+              <lucide-icon name="instagram" class="text-accent" [size]="18"></lucide-icon>
             </div>
             <a href="https://instagram.com/lautaro_vulcano" target="_blank" rel="noopener noreferrer"
-              class="text-lg text-gray-300 hover:text-accent transition-colors">
+              class="text-sm md:text-base text-gray-300 hover:text-accent transition-colors">
               Instagram
             </a>
           </div>
         </div>
       </div>
 
-      <div class="bg-primary/80 p-6 md:p-8 rounded-lg border border-accent/40" data-testid="faq-section">
-        <h3 class="text-2xl md:text-3xl font-bold mb-8">Preguntas frecuentes</h3>
-        <div class="space-y-6">
-          <div class="border-b border-gray-700 pb-5">
-            <h4 class="text-lg font-semibold text-accent mb-2">¿Cómo empieza un proyecto?</h4>
-            <p class="text-gray-300 leading-relaxed">Primero conversamos sobre tu marca, qué necesitás resolver y qué objetivo tiene el trabajo. Con esa información preparo una propuesta clara con alcance, tiempos y presupuesto.</p>
-          </div>
-          <div class="border-b border-gray-700 pb-5">
-            <h4 class="text-lg font-semibold text-accent mb-2">¿Puedo contratar una pieza puntual?</h4>
-            <p class="text-gray-300 leading-relaxed">Sí. Puedo trabajar una pieza específica, como un flyer, una presentación, una landing, un carrusel o una edición de video. También puedo acompañar proyectos mensuales o procesos más completos.</p>
-          </div>
-          <div class="border-b border-gray-700 pb-5">
-            <h4 class="text-lg font-semibold text-accent mb-2">¿También ayudás con estrategia o solo diseño?</h4>
-            <p class="text-gray-300 leading-relaxed">Mi base es el diseño gráfico, pero no trabajo solo desde lo visual. También puedo ayudarte a ordenar qué comunicar, qué piezas necesitás y cómo presentar mejor tu marca.</p>
-          </div>
-          <div class="border-b border-gray-700 pb-5">
-            <h4 class="text-lg font-semibold text-accent mb-2">¿Hacés contenido mensual para redes?</h4>
-            <p class="text-gray-300 leading-relaxed">Sí. Puedo trabajar contenido mensual para redes, incluyendo ideas, diseño de piezas, carruseles, historias, reels, copys, edición y dirección visual.</p>
-          </div>
-          <div class="border-b border-gray-700 pb-5">
-            <h4 class="text-lg font-semibold text-accent mb-2">¿Trabajás solo o con equipo?</h4>
-            <p class="text-gray-300 leading-relaxed">Trabajo como diseñador independiente, pero cuento con Rakium, mi equipo de trabajo. Según la necesidad del proyecto, puedo sumar perfiles específicos para contenido, edición, marketing, desarrollo web o producción.</p>
-          </div>
-          <div>
-            <h4 class="text-lg font-semibold text-accent mb-2">¿Cómo se define el presupuesto?</h4>
-            <p class="text-gray-300 leading-relaxed">El presupuesto depende del alcance, la cantidad de piezas, la complejidad y los tiempos de entrega. Primero entiendo qué necesitás y después preparo una propuesta acorde.</p>
-          </div>
+      <div class="border-y border-white/10 py-7" data-testid="faq-section">
+        <h3 class="text-3xl md:text-4xl font-bold mb-6">Preguntas frecuentes</h3>
+        <div class="divide-y divide-white/10">
+          <details class="group py-5 first:pt-0">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-5 text-base font-semibold text-white">
+              ¿Cómo empieza un proyecto?
+              <lucide-icon name="plus" [size]="18" class="text-accent transition-transform group-open:rotate-45"></lucide-icon>
+            </summary>
+            <p class="mt-3 text-sm leading-7 text-gray-400">Primero conversamos sobre tu marca, qué necesitás resolver y cuál es el objetivo del trabajo. Con esa información defino una propuesta clara con alcance, tiempos y presupuesto.</p>
+          </details>
+          <details class="group py-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-5 text-base font-semibold text-white">
+              ¿Puedo contratar una pieza puntual?
+              <lucide-icon name="plus" [size]="18" class="text-accent transition-transform group-open:rotate-45"></lucide-icon>
+            </summary>
+            <p class="mt-3 text-sm leading-7 text-gray-400">Sí. Puedo trabajar una pieza específica, como un flyer, una presentación, una landing, un carrusel o una edición de video. También puedo acompañar proyectos mensuales o procesos más completos.</p>
+          </details>
+          <details class="group py-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-5 text-base font-semibold text-white">
+              ¿También ayudás con estrategia o solo diseño?
+              <lucide-icon name="plus" [size]="18" class="text-accent transition-transform group-open:rotate-45"></lucide-icon>
+            </summary>
+            <p class="mt-3 text-sm leading-7 text-gray-400">Mi base es el diseño gráfico, pero no trabajo solo desde lo visual. También puedo ayudarte a ordenar qué comunicar, qué piezas necesitás y cómo presentar mejor tu marca.</p>
+          </details>
+          <details class="group py-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-5 text-base font-semibold text-white">
+              ¿Hacés gestión mensual de redes?
+              <lucide-icon name="plus" [size]="18" class="text-accent transition-transform group-open:rotate-45"></lucide-icon>
+            </summary>
+            <p class="mt-3 text-sm leading-7 text-gray-400">Sí. Puedo acompañar la comunicación mensual de una marca con estrategia de contenido, diseño, copys, reels, historias, grabación, edición y dirección visual.</p>
+          </details>
+          <details class="group py-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-5 text-base font-semibold text-white">
+              ¿Trabajás solo o con equipo?
+              <lucide-icon name="plus" [size]="18" class="text-accent transition-transform group-open:rotate-45"></lucide-icon>
+            </summary>
+            <p class="mt-3 text-sm leading-7 text-gray-400">Trabajo de forma independiente, pero cuento con <a href="https://rakium.dev" target="_blank" rel="noopener noreferrer" class="text-accent underline decoration-accent/30 underline-offset-4 transition-colors hover:text-accent/75" data-testid="rakium-faq-link">Rakium</a>, mi equipo de trabajo. Según la necesidad del proyecto, puedo sumar perfiles de apoyo en contenido, edición, marketing, desarrollo web o producción.</p>
+          </details>
+          <details class="group pt-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-5 text-base font-semibold text-white">
+              ¿Cómo se define el presupuesto?
+              <lucide-icon name="plus" [size]="18" class="text-accent transition-transform group-open:rotate-45"></lucide-icon>
+            </summary>
+            <p class="mt-3 text-sm leading-7 text-gray-400">El presupuesto depende del alcance, la cantidad de piezas, la complejidad del proyecto y los tiempos de entrega. Primero entiendo qué necesitás y después preparo una propuesta acorde.</p>
+          </details>
         </div>
       </div>
     </div>

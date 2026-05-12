@@ -1,20 +1,32 @@
-<footer class="w-full py-8 border-t border-white/5 bg-primary/90 backdrop-blur-sm">
-  <div class="container mx-auto px-4">
-    <div class="flex flex-col md:flex-row justify-between items-center">
-      <div class="mb-4 md:mb-0 mx-auto text-center">
-        <h3 class="text-xl font-bold text-emerald-400">Lautaro Vulcano</h3>
-        <p class="text-gray-400 text-sm">Diseño gráfico · Comunicación visual · Contenido digital</p>
+<footer class="w-full border-t border-white/[0.07] bg-[#030907]/90 py-12 md:py-16 backdrop-blur-sm">
+  <div class="container">
+    <div class="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-end">
+      <div>
+        <p class="section-label mb-4">Lautaro Vulcano</p>
+        <h3 class="max-w-2xl font-display text-4xl font-bold leading-none text-white md:text-5xl">
+          Diseño identidad y contenido para comunicar y vender mejor.
+        </h3>
+        <p class="mt-5 text-sm leading-7 text-gray-400">Diseño gráfico · Comunicación visual · Contenido digital</p>
       </div>
-      <div class="flex space-x-4">
-        <a href="https://instagram.com/lautaro_vulcano" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-emerald-400 transition-colors" aria-label="Instagram de Lautaro Vulcano" data-testid="footer-instagram-link">
-          <lucide-icon name="instagram" [size]="20"></lucide-icon>
+      <div class="md:text-right">
+        <a href="#contact" class="lv-link group mb-6" data-testid="footer-contact-link">
+          ¿Tenés un proyecto? Hablemos
+          <lucide-icon name="arrow-right" [size]="18" class="ml-2 transition-transform group-hover:translate-x-1"></lucide-icon>
         </a>
-        <a href="https://linkedin.com/in/lautarovulcano" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-emerald-400 transition-colors" aria-label="LinkedIn de Lautaro Vulcano" data-testid="footer-linkedin-link">
-          <lucide-icon name="linkedin" [size]="20"></lucide-icon>
-        </a>
+        <div class="flex gap-4 md:justify-end">
+          <a href="https://instagram.com/lautaro_vulcano" target="_blank" rel="noopener noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-gray-400 transition-colors hover:border-accent/30 hover:text-accent" aria-label="Instagram de Lautaro Vulcano" data-testid="footer-instagram-link">
+            <lucide-icon name="instagram" [size]="18"></lucide-icon>
+          </a>
+          <a href="https://linkedin.com/in/lautarovulcano" target="_blank" rel="noopener noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-gray-400 transition-colors hover:border-accent/30 hover:text-accent" aria-label="LinkedIn de Lautaro Vulcano" data-testid="footer-linkedin-link">
+            <lucide-icon name="linkedin" [size]="18"></lucide-icon>
+          </a>
+          <a href="mailto:lautarvulcano&#64;gmail.com" class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-gray-400 transition-colors hover:border-accent/30 hover:text-accent" aria-label="Email de Lautaro Vulcano" data-testid="footer-email-link">
+            <lucide-icon name="mail" [size]="18"></lucide-icon>
+          </a>
+        </div>
       </div>
     </div>
-    <div class="mt-8 text-center text-gray-400 text-sm">
+    <div class="mt-10 border-t border-white/[0.07] pt-6 text-sm text-gray-500">
       <p>&copy; {{ currentYear }} Lautaro Vulcano. Todos los derechos reservados.</p>
     </div>
   </div>

@@ -134,13 +134,14 @@ export class ProjectsService {
   }
 
   private mapToPortfolio(p: RakiumProject): PortfolioProject {
+    const curated = this.getCuratedProjectCopy(p.name);
     const image =
       p.coverImage?.url ??
       p.imageAfter ??
       p.imageBefore ??
       (p.gallery?.length ? p.gallery[0].url : '');
-    const description =
-      (p.description ?? p.longDescription ?? '').trim() || 'Sin descripción';
+    const apiDescription = (p.description ?? p.longDescription ?? '').trim();
+    const description = curated?.description ?? (apiDescription || 'Sin descripción');
     let tags: string[] = [];
     if (p.technologies != null) {
       tags = Array.isArray(p.technologies)
@@ -149,7 +150,9 @@ export class ProjectsService {
           ? [p.technologies]
           : [];
     }
-    if (p.category && !tags.includes(p.category)) {
+    if (curated?.tags.length) {
+      tags = curated.tags;
+    } else if (p.category && !tags.includes(p.category)) {
       tags = [p.category, ...tags];
     }
     const url = (p.demoUrl ?? p.url ?? '').trim() || '#';
@@ -161,5 +164,41 @@ export class ProjectsService {
       tags,
       url,
     };
+  }
+
+  private getCuratedProjectCopy(name: string): { description: string; tags: string[] } | null {
+    const normalized = name
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '');
+
+    const curatedProjects: Record<string, { description: string; tags: string[] }> = {
+      eventloop: {
+        description: 'Identidad visual, web y comunicación digital para una plataforma de ticketing pensada para organizar eventos, vender entradas y acompañar a productores.',
+        tags: ['identidad visual', 'web', 'contenido', 'eventos'],
+      },
+      'mis panas pizza': {
+        description: 'Identidad visual y contenido para una pizzería con una personalidad cercana, urbana y fácil de aplicar en redes.',
+        tags: ['identidad visual', 'redes sociales', 'piezas gráficas'],
+      },
+      'marita polifroni': {
+        description: 'Sistema visual y contenido para una profesional de la salud, con una comunicación clara, cercana y cuidada para abordar temas sensibles.',
+        tags: ['identidad visual', 'contenido para redes', 'piezas informativas'],
+      },
+      positive: {
+        description: 'Piezas visuales para eventos de música electrónica, con foco en energía, presencia visual y comunicación de fechas.',
+        tags: ['flyers', 'historias', 'eventos', 'comunicación visual'],
+      },
+      change: {
+        description: 'Identidad y comunicación visual para una academia de trading, pensada para redes sociales y contenido educativo.',
+        tags: ['identidad visual', 'redes sociales', 'contenido educativo'],
+      },
+      'gold phone': {
+        description: 'Contenido visual para Instagram orientado a generar confianza, mostrar productos y facilitar consultas por mensaje directo.',
+        tags: ['contenido para redes', 'historias', 'piezas comerciales'],
+      },
+    };
+
+    return Object.entries(curatedProjects).find(([key]) => normalized.includes(key))?.[1] ?? null;
   }
 }

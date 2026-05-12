@@ -2,8 +2,10 @@
   isolation: isolate;
   overflow-x: clip;
   background:
-    linear-gradient(135deg, rgba(0, 255, 157, 0.1) 0%, rgba(0, 255, 157, 0) 30%),
-    linear-gradient(180deg, #061711 0%, #071a14 38%, #04100d 100%);
+    radial-gradient(circle at 14% 8%, rgba(42, 141, 92, 0.22), transparent 28rem),
+    radial-gradient(circle at 82% 18%, rgba(0, 255, 157, 0.08), transparent 24rem),
+    radial-gradient(circle at 50% 76%, rgba(37, 101, 74, 0.16), transparent 34rem),
+    linear-gradient(180deg, #03100c 0%, #071a14 42%, #030907 100%);
 }
 
 .app-background {
@@ -22,18 +24,19 @@
 }
 
 .app-background::before {
-  opacity: 0.28;
+  opacity: 0.1;
   background-image:
-    linear-gradient(rgba(0, 255, 157, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 157, 0.08) 1px, transparent 1px);
-  background-size: 72px 72px;
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 96px 96px;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), transparent 78%);
 }
 
 .app-background::after {
-  opacity: 0.34;
+  opacity: 0.18;
   background:
-    linear-gradient(112deg, transparent 0 18%, rgba(255, 255, 255, 0.04) 18% 18.4%, transparent 18.4% 100%),
-    linear-gradient(112deg, transparent 0 57%, rgba(0, 255, 157, 0.08) 57% 57.25%, transparent 57.25% 100%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 42%);
+    radial-gradient(circle at 78% 7%, rgba(255, 255, 255, 0.08), transparent 17rem),
+    linear-gradient(112deg, transparent 0 25%, rgba(255, 255, 255, 0.03) 25% 25.12%, transparent 25.12% 100%),
+    linear-gradient(112deg, transparent 0 68%, rgba(0, 255, 157, 0.045) 68% 68.1%, transparent 68.1% 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 48%);
 }

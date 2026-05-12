@@ -1,19 +1,23 @@
-<section id="portfolio" class="w-full py-20 md:py-28 bg-transparent" data-testid="portfolio-section">
-  <div class="container mx-auto px-4">
-    <div class="max-w-3xl mb-12 md:mb-16">
-      <h2 class="text-3xl md:text-4xl font-extrabold mb-5 relative">
-        Trabajos seleccionados
-        <span class="block h-1 w-20 bg-accent mt-4"></span>
-      </h2>
-      <p class="text-lg md:text-xl text-gray-300 font-medium leading-relaxed">
-        Una muestra de proyectos donde trabajé identidad visual, contenido, redes, eventos y comunicación digital.
+<section id="portfolio" class="w-full py-24 md:py-32 bg-transparent" data-testid="portfolio-section">
+  <div class="container">
+    <div class="mb-14 grid gap-8 md:mb-20 md:grid-cols-[1fr_0.85fr] md:items-end">
+      <div>
+        <p class="section-label mb-5">Portfolio</p>
+        <h2 class="section-title">
+          Trabajos seleccionados
+        </h2>
+      </div>
+      <div>
+        <p class="section-copy">
+          Una selección de proyectos donde trabajé <strong>identidad visual</strong>, contenido, eventos y comunicación digital.
       </p>
-      <div class="flex flex-wrap gap-2 mt-6 text-sm text-gray-300">
-        <span class="rounded-full border border-accent/40 px-3 py-1">Identidad visual</span>
-        <span class="rounded-full border border-accent/40 px-3 py-1">Redes y contenido</span>
-        <span class="rounded-full border border-accent/40 px-3 py-1">Eventos</span>
-        <span class="rounded-full border border-accent/40 px-3 py-1">Webs y presentaciones</span>
-        <span class="rounded-full border border-accent/40 px-3 py-1">Video / motion</span>
+        <div class="flex flex-wrap gap-2 mt-7">
+          <span class="lv-tag">Identidad visual</span>
+          <span class="lv-tag">Redes y contenido</span>
+          <span class="lv-tag">Eventos</span>
+          <span class="lv-tag">Webs y presentaciones</span>
+          <span class="lv-tag">Video / motion</span>
+        </div>
       </div>
     </div>
 
@@ -27,7 +31,7 @@
       }
 
       @if (!isLoading() && !errorMessage()) {
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
           @for (project of projects(); track project.id) {
             <article
           (click)="goToProject(project.id)"
@@ -35,24 +39,29 @@
           tabindex="0"
           (keydown.enter)="goToProject(project.id)"
           (keydown.space)="goToProject(project.id); $event.preventDefault()"
-              class="bg-[#092018]/75 rounded-lg overflow-hidden border border-white/5 transition-all duration-300 hover:shadow-lg hover:shadow-accent/40 flex flex-col h-full cursor-pointer backdrop-blur-sm"
+              class="group flex h-full cursor-pointer flex-col"
               data-testid="portfolio-project-card">
-          <div class="relative h-64 overflow-hidden">
-            <img [src]="project.image" [alt]="project.title + ' Logo'" class="w-full h-full object-cover">
+          <div class="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] border border-white/[0.07] bg-white/[0.025] shadow-xl shadow-black/10 transition-all duration-500 group-hover:-translate-y-1 group-hover:border-white/15">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-white/[0.03] opacity-70"></div>
+            <img [src]="project.image" [alt]="project.title + ' Logo'" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]">
           </div>
-          <div class="p-4 sm:p-6 flex flex-col flex-grow">
-            <h4 class="text-xl font-bold mb-2">{{ project.title }}</h4>
-            <p class="text-lg text-gray-300 mb-4 leading-relaxed font-medium flex-grow">{{ project.description }}</p>
-            <p class="text-xs uppercase tracking-wide text-gray-500 mb-2">Qué trabajé</p>
-            <div class="flex flex-wrap gap-2 mb-4">
+          <div class="pt-6 flex flex-col flex-grow">
+            <div class="mb-4 flex items-start justify-between gap-5">
+              <div>
+                <h4 class="text-3xl md:text-[2rem] font-bold leading-none">{{ project.title }}</h4>
+                @if (project.tags.length) {
+                  <p class="mt-3 text-xs font-semibold uppercase tracking-[0.18em] text-accent/75">{{ project.tags[0] }}</p>
+                }
+              </div>
+              <span class="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 text-accent transition-colors group-hover:border-accent/30 group-hover:bg-accent/10">
+                <lucide-icon name="arrow-up-right" [size]="18"></lucide-icon>
+              </span>
+            </div>
+            <p class="text-sm text-gray-400 mb-5 leading-7 flex-grow">{{ project.description }}</p>
+            <div class="flex flex-wrap gap-2 mb-5">
               @for (tag of project.tags; track tag) {
                 <span
-                class="inline-flex items-center px-2.5 py-1 bg-accent/5 text-accent text-xs font-medium rounded-full hover:bg-accent/10 transition-colors duration-300">
-                <lucide-icon 
-                  [name]="getTagIcon(tag)" 
-                  [size]="14" 
-                  class="mr-1.5"
-                ></lucide-icon>
+                class="inline-flex items-center rounded-full border border-white/10 bg-white/[0.025] px-2.5 py-1 text-xs font-medium text-gray-300">
                 {{ tag }}
               </span>
               }
@@ -61,12 +70,13 @@
               @if (project.url && project.url !== '#') {
                 <a [href]="project.url" target="_blank" rel="noopener noreferrer"
                 (click)="$event.stopPropagation()"
-                  class="w-full inline-flex items-center justify-center px-4 sm:px-6 py-3 bg-accent/10 hover:bg-accent/20 text-accent transition-all duration-300 group text-base sm:text-lg font-semibold rounded-md"
+                  class="lv-link group/link text-sm"
                   data-testid="portfolio-external-link">
                 Ver proyecto
+                <lucide-icon name="arrow-right" [size]="16" class="ml-2 transition-transform group-hover/link:translate-x-1"></lucide-icon>
               </a>
               } @else {
-                <span class="text-gray-400 text-sm">Ver detalle</span>
+                <span class="lv-link text-sm">Ver detalle</span>
               }
             </div>
           </div>
@@ -82,7 +92,7 @@
         type="button"
         (click)="loadMore()"
         [disabled]="isLoadingMore()"
-          class="inline-flex items-center justify-center px-8 py-4 bg-accent text-primary font-semibold rounded-lg transition-all duration-300 hover:bg-accent/90 hover:scale-105 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100 text-lg"
+          class="inline-flex items-center justify-center rounded-full bg-accent px-7 py-3 text-sm font-bold text-primary transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent/90 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
           data-testid="portfolio-load-more-button">
         {{ isLoadingMore() ? 'Cargando...' : 'Ver más proyectos' }}
       </button>
