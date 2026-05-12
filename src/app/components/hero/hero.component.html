@@ -5,46 +5,56 @@
     <div class="noise-layer"></div>
   </div>
   <div class="container relative z-10">
-    <div class="grid items-center gap-12 md:grid-cols-[minmax(0,1.05fr)_minmax(300px,0.85fr)] lg:gap-14">
-      <div class="order-2 md:order-1 text-center md:text-left">
-        <p class="section-label mb-5">
+    <div class="grid items-center gap-8 md:grid-cols-[minmax(0,1.05fr)_minmax(300px,0.85fr)] md:gap-10 lg:gap-14">
+      <p class="section-label order-1 text-center md:hidden">
+        <span class="block sm:inline">Diseño gráfico</span>
+        <span class="hidden sm:inline"> · </span>
+        <span class="block sm:inline">Comunicación visual</span>
+        <span class="hidden sm:inline"> · </span>
+        <span class="block sm:inline">Estrategia</span>
+      </p>
+
+      <div class="order-3 text-center md:order-1 md:text-left">
+        <p class="section-label mb-4 hidden md:block">
           <span class="block sm:inline">Diseño gráfico</span>
           <span class="hidden sm:inline"> · </span>
           <span class="block sm:inline">Comunicación visual</span>
           <span class="hidden sm:inline"> · </span>
           <span class="block sm:inline">Estrategia</span>
         </p>
-        <h1 class="mx-auto max-w-full font-display text-[1.75rem] font-bold leading-[1] text-white sm:text-5xl md:mx-0 md:max-w-3xl md:text-[3.25rem] md:leading-[0.98] lg:text-[3.85rem]">
+        <h1 class="mx-auto max-w-full font-display text-[1.75rem] font-bold leading-[0.94] text-white sm:text-5xl md:mx-0 md:max-w-3xl md:text-[3.25rem] md:leading-[0.9] lg:text-[3.85rem]">
           <span class="block md:whitespace-nowrap"><span class="lv-gradient-text">Diseño identidad</span></span>
           <span class="block md:whitespace-nowrap">y estrategia para</span>
           <span class="block md:whitespace-nowrap"><span class="lv-gradient-text">comunicar</span> y</span>
           <span class="block md:whitespace-nowrap">vender mejor.</span>
         </h1>
-        <p class="mx-auto mt-7 max-w-[16.5rem] text-[0.95rem] leading-8 text-gray-300 md:mx-0 md:max-w-2xl md:text-lg">
+        <p class="mx-auto mt-5 max-w-[16.5rem] text-[0.95rem] leading-7 text-gray-300 md:mx-0 md:mt-6 md:max-w-[38rem] md:text-lg md:leading-8">
           Soy Lautaro Vulcano, diseñador gráfico. Ayudo a marcas y proyectos a ordenar su <strong>comunicación visual</strong> con identidad, estrategia para redes y <strong>piezas comerciales</strong> pensadas para explicar mejor lo que ofrecen.
         </p>
-        <div class="mt-9 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-          <a href="#portfolio" 
+        <div class="mt-7 flex flex-col gap-3 sm:flex-row justify-center md:mt-8 md:justify-start">
+          <a href="#portfolio"
              data-testid="hero-projects-link"
              class="lv-button-primary group">
             Ver trabajos
           </a>
-          <a href="#contact" 
+          <a href="#contact"
              data-testid="hero-contact-link"
              class="lv-button-secondary group">
             Hablemos de tu proyecto
           </a>
         </div>
       </div>
-      <div class="order-1 md:order-2 flex justify-center md:justify-end">
-        <div class="relative w-full max-w-[230px] sm:max-w-[320px] lg:max-w-[390px]">
-          <div class="absolute -inset-5 rounded-full bg-[radial-gradient(circle_at_50%_0%,rgba(0,255,157,0.12),transparent_55%),linear-gradient(155deg,rgba(255,255,255,0.08),rgba(255,255,255,0.01))] blur-sm"></div>
-          <div class="absolute -bottom-8 -left-7 h-32 w-32 rounded-full bg-accent/10 blur-3xl"></div>
-          <div class="relative aspect-square overflow-hidden rounded-full border border-white/10 bg-white/[0.035] p-2 shadow-2xl shadow-black/30">
-            <img src="assets/perfil.png" alt="Lautaro Vulcano" class="h-full w-full rounded-full object-cover saturate-[0.94]">
+
+      <div class="order-2 flex justify-center md:justify-end">
+        <div class="relative w-[74%] max-w-[245px] sm:max-w-[285px] md:w-full md:max-w-[330px] lg:max-w-[360px]">
+          <div class="absolute -inset-3 rounded-[2.5rem] bg-[linear-gradient(145deg,rgba(0,255,157,0.045),rgba(255,255,255,0.025)_46%,rgba(0,0,0,0)_74%)] md:rounded-[3rem]"></div>
+          <div class="absolute -right-5 top-8 h-[62%] w-[72%] rounded-full bg-accent/[0.028] blur-2xl"></div>
+          <div class="absolute -left-3 bottom-8 h-24 w-24 rounded-full bg-white/[0.018] blur-xl"></div>
+          <div class="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/[0.08] bg-white/[0.025] p-1.5 shadow-2xl shadow-black/20 md:rounded-[2.5rem]">
+            <img src="assets/perfil.png" alt="Lautaro Vulcano" class="h-full w-full rounded-[1.55rem] object-cover object-center saturate-[0.94] md:rounded-[2.05rem]">
           </div>
         </div>
       </div>
     </div>
   </div>
-</section> 
+</section>
