@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ButtonComponent } from '../ui/button/button.component';
 import { LucideModule } from '../../shared/lucide.module';
 
 @Component({
@@ -9,4 +8,19 @@ import { LucideModule } from '../../shared/lucide.module';
   imports: [CommonModule, LucideModule],
   templateUrl: './hero.component.html'
 })
-export class HeroComponent { } 
+export class HeroComponent implements OnInit {
+  isScrollCueHidden = false;
+
+  ngOnInit(): void {
+    this.updateScrollCue();
+  }
+
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
+    this.updateScrollCue();
+  }
+
+  private updateScrollCue(): void {
+    this.isScrollCueHidden = window.scrollY > 24;
+  }
+}

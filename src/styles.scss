@@ -119,6 +119,43 @@
       linear-gradient(120deg, transparent 0 72%, rgba(0, 255, 157, 0.08) 72% 72.12%, transparent 72.12% 100%),
       radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.12), transparent 18rem);
   }
+
+  .hero-scroll-cue,
+  .scroll-arrow-cue {
+    width: 2.25rem;
+    height: 2.25rem;
+    animation: scroll-cue-drift 1.9s ease-in-out infinite;
+  }
+
+  .next-section-cue {
+    animation: next-section-fade 2.6s ease-in-out infinite;
+  }
+}
+
+@keyframes scroll-cue-drift {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+    opacity: 0.55;
+  }
+
+  50% {
+    transform: translate(-50%, 0.45rem);
+    opacity: 0.95;
+  }
+}
+
+@keyframes next-section-fade {
+  0%,
+  100% {
+    opacity: 0.38;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 0.78;
+    transform: translateY(0.25rem);
+  }
 }
 
 .app-shell .text-white:not(.lv-gradient-text) {

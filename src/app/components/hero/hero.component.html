@@ -1,6 +1,6 @@
 <section class="relative flex min-h-[92dvh] w-full items-center overflow-hidden pb-16 pt-24 md:min-h-[94dvh] md:py-28" data-testid="hero-section">
   <div class="absolute inset-0" aria-hidden="true">
-    <div class="absolute inset-x-0 top-0 h-[72%] bg-[radial-gradient(circle_at_20%_20%,rgba(0,255,157,0.12),transparent_30rem),radial-gradient(circle_at_84%_26%,rgba(255,255,255,0.08),transparent_22rem),linear-gradient(145deg,rgba(8,42,31,0.82),rgba(3,16,12,0)_62%)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,255,157,0.12),transparent_30rem),radial-gradient(circle_at_84%_26%,rgba(255,255,255,0.08),transparent_22rem),linear-gradient(145deg,rgba(8,42,31,0.82),rgba(3,16,12,0)_70%)]"></div>
     <div class="absolute left-1/2 top-20 h-px w-[72vw] -translate-x-1/2 bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
     <div class="noise-layer"></div>
   </div>
@@ -47,14 +47,21 @@
 
       <div class="order-2 flex justify-center md:justify-end">
         <div class="relative w-[74%] max-w-[245px] sm:max-w-[285px] md:w-full md:max-w-[330px] lg:max-w-[360px]">
-          <div class="absolute -inset-3 rounded-[2.5rem] bg-[linear-gradient(145deg,rgba(0,255,157,0.045),rgba(255,255,255,0.025)_46%,rgba(0,0,0,0)_74%)] md:rounded-[3rem]"></div>
-          <div class="absolute -right-5 top-8 h-[62%] w-[72%] rounded-full bg-accent/[0.028] blur-2xl"></div>
-          <div class="absolute -left-3 bottom-8 h-24 w-24 rounded-full bg-white/[0.018] blur-xl"></div>
-          <div class="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/[0.08] bg-white/[0.025] p-1.5 shadow-2xl shadow-black/20 md:rounded-[2.5rem]">
-            <img src="assets/perfil.png" alt="Lautaro Vulcano" class="h-full w-full rounded-[1.55rem] object-cover object-center saturate-[0.94] md:rounded-[2.05rem]">
+          <div class="absolute -inset-2 rounded-[2.35rem] bg-[linear-gradient(145deg,rgba(255,255,255,0.035),rgba(0,255,157,0.022)_58%,transparent)] md:rounded-[2.85rem]"></div>
+          <div class="absolute -right-4 top-12 h-[52%] w-[58%] rounded-full bg-accent/[0.018] blur-2xl"></div>
+          <div class="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/[0.055] bg-white/[0.018] p-1 shadow-2xl shadow-black/16 md:rounded-[2.45rem]">
+            <img src="assets/perfil.png" alt="Lautaro Vulcano" class="h-full w-full rounded-[1.65rem] object-cover object-center saturate-[0.94] md:rounded-[2.1rem]">
           </div>
         </div>
       </div>
     </div>
   </div>
+  <a href="#services"
+     class="hero-scroll-cue absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 items-center justify-center rounded-full border border-white/10 bg-white/[0.018] text-gray-300/70 transition-all duration-500 hover:border-accent/25 hover:text-accent md:flex"
+     [class.opacity-0]="isScrollCueHidden"
+     [class.pointer-events-none]="isScrollCueHidden"
+     aria-label="Seguir leyendo"
+     data-testid="hero-scroll-cue">
+    <lucide-icon name="chevron-down" [size]="18"></lucide-icon>
+  </a>
 </section>
