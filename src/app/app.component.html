@@ -3,16 +3,16 @@
 
   <div class="relative z-10">
     <div class="min-h-screen flex flex-col">
-      <nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/[0.07] bg-[#03100c]/80 backdrop-blur-xl">
+      <nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/[0.035] bg-[#03100c]/35 backdrop-blur-md">
         <div class="container mx-auto px-4">
           <div class="flex items-center justify-between h-14 md:h-16">
             <a routerLink="/" class="font-display text-xl font-bold leading-none text-white transition-colors hover:text-accent" data-testid="app-logo">LV</a>
-            <div class="hidden md:flex items-center space-x-7 text-xs font-semibold uppercase tracking-[0.12em]">
-              <a routerLink="/" fragment="services" class="text-gray-400 transition-colors hover:text-white" data-testid="app-services-link">Qué hago</a>
-              <a routerLink="/" fragment="portfolio" class="text-gray-400 transition-colors hover:text-white" data-testid="app-portfolio-link">Trabajos</a>
-              <a routerLink="/" fragment="about" class="text-gray-400 transition-colors hover:text-white" data-testid="app-about-link">Sobre mí</a>
-              <a routerLink="/" fragment="contact" class="text-gray-400 transition-colors hover:text-white" data-testid="app-contact-link">Contacto</a>
-              <a routerLink="/" fragment="contact" class="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/[0.025] px-4 py-2 text-accent transition-colors hover:border-accent/35 hover:bg-accent/10" data-testid="app-cta-link">Hablemos</a>
+            <div class="hidden md:flex items-center space-x-7 text-[0.68rem] font-semibold uppercase tracking-[0.18em]">
+              <a routerLink="/" fragment="services" class="text-gray-400/80 transition-colors hover:text-white" data-testid="app-services-link">Qué hago</a>
+              <a routerLink="/" fragment="portfolio" class="text-gray-400/80 transition-colors hover:text-white" data-testid="app-portfolio-link">Trabajos</a>
+              <a routerLink="/" fragment="about" class="text-gray-400/80 transition-colors hover:text-white" data-testid="app-about-link">Sobre mí</a>
+              <a routerLink="/" fragment="contact" class="text-gray-400/80 transition-colors hover:text-white" data-testid="app-contact-link">Contacto</a>
+              <a routerLink="/" fragment="contact" class="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/[0.015] px-4 py-2 text-accent/90 transition-colors hover:border-accent/30 hover:bg-accent/10 hover:text-accent" data-testid="app-cta-link">Hablemos</a>
             </div>
             <button (click)="toggleMobileMenu()" class="md:hidden text-gray-300 transition-colors hover:text-white" aria-label="Abrir menú" data-testid="app-mobile-menu-button">
               <lucide-icon [name]="isMobileMenuOpen ? 'x' : 'menu'" [size]="24"></lucide-icon>
