@@ -102,7 +102,7 @@ export class ProjectsService {
       .set('page', String(page))
       .set('limit', String(PAGE_SIZE));
     this.http
-      .get<any>(`${baseUrl}/api/projects/client/${LAUTARO_CLIENT_ID}`, { params })
+      .get<any>(`${baseUrl}/api/projects/client/${LAUTARO_CLIENT_ID}/public`, { params })
       .pipe(
         map((response) => {
           let projects: RakiumProject[] = [];
