@@ -1,0 +1,66 @@
+<section id="trabajos-realizados" class="w-full bg-transparent pt-10 pb-24 md:pt-12 md:pb-32" data-testid="behance-archive-section">
+  <div class="container">
+    <div class="mb-12 max-w-4xl md:mb-16">
+      <p class="section-label mb-5">Trabajos realizados</p>
+      <h2 class="section-title mb-7">
+        Archivo visual
+      </h2>
+      <p class="section-copy max-w-3xl">
+        Una parte de mi camino recorrido como <strong>diseñador</strong>: marcas, logos, piezas para redes, eventos, presentaciones y trabajos comerciales que fui construyendo con distintos proyectos. Gracias a cada persona y marca que <strong>confió en mi trabajo</strong>; cada encargo también fue una forma de <strong>aprender, probar y seguir afinando mi mirada</strong>.
+      </p>
+    </div>
+
+    <div class="mb-10 rounded-[1.5rem] border border-white/[0.08] bg-white/[0.025] p-2 shadow-2xl shadow-black/10 backdrop-blur-sm md:mb-12" data-testid="behance-filter-bar">
+      <div class="flex gap-2 overflow-x-auto p-1">
+        @for (filter of filters; track filter) {
+          <button
+            type="button"
+            (click)="setFilter(filter)"
+            class="inline-flex shrink-0 items-center gap-2 rounded-full px-5 py-3 text-sm font-bold transition-all duration-300"
+            [ngClass]="activeFilter() === filter ? 'bg-accent text-primary shadow-lg shadow-accent/20' : 'text-gray-300 hover:bg-white/[0.045] hover:text-white'"
+            [attr.aria-pressed]="activeFilter() === filter"
+            data-testid="behance-filter-button">
+            <span>{{ filter === 'Musica' ? 'Música' : filter }}</span>
+            <span class="rounded-full border border-current/20 px-2 py-0.5 text-[0.68rem] leading-none opacity-75">{{ projectCount(filter) }}</span>
+          </button>
+        }
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+      @for (project of visibleProjects(); track project.url) {
+        <article class="group flex h-full flex-col" data-testid="behance-project-card">
+          <a [href]="project.url" target="_blank" rel="noopener noreferrer" class="block" [attr.aria-label]="'Ver ' + project.title + ' en Behance'">
+            <div class="relative aspect-[16/11] overflow-hidden rounded-[1rem] border border-white/[0.07] bg-white/[0.025] shadow-xl shadow-black/10 transition-all duration-500 group-hover:-translate-y-1 group-hover:border-white/15">
+              <img [src]="project.image" [alt]="project.title" loading="lazy" class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.035]">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-white/[0.03] opacity-70"></div>
+              <span class="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-primary/70 text-accent opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100">
+                <lucide-icon name="arrow-up-right" [size]="16"></lucide-icon>
+              </span>
+            </div>
+
+            <div class="pt-4">
+              <div class="flex items-start justify-between gap-4">
+                <div class="min-w-0">
+                <h3 class="text-[1.18rem] font-bold leading-tight text-white">{{ project.title }}</h3>
+                <p class="mt-2 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-accent/75">{{ project.category }}</p>
+              </div>
+              <span class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/10 text-accent transition-colors group-hover:border-accent/30 group-hover:bg-accent/10">
+                <lucide-icon name="arrow-up-right" [size]="16"></lucide-icon>
+              </span>
+            </div>
+            </div>
+          </a>
+        </article>
+      }
+    </div>
+
+    @if (filteredProjects().length > 12) {
+    <div class="mt-14 flex justify-center">
+      <button type="button" (click)="toggleShowAll()" class="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/[0.025] px-7 py-3 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/30 hover:bg-accent/10 hover:text-accent" data-testid="behance-toggle-button">
+        {{ showAll() ? 'Ver menos trabajos' : 'Ver todos los trabajos' }}
+      </button>
+    </div>
+    }
+  </div>
+</section>

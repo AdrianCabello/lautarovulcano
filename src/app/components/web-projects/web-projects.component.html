@@ -1,0 +1,61 @@
+<section id="portfolio" class="w-full scroll-mt-20 bg-transparent pt-24 pb-12 md:pt-32 md:pb-14" data-testid="web-projects-section">
+  <div class="container">
+    <div class="mb-12 max-w-4xl md:mb-14">
+      <p class="section-label mb-5">Portfolio</p>
+      <h2 class="section-title mb-7">
+        Webs y trabajos realizados
+      </h2>
+      <p class="section-copy max-w-3xl">
+        Una selección de proyectos donde trabajé <strong>diseño web</strong>, <strong>identidad visual</strong>, contenido, eventos y piezas comerciales. Primero, algunas webs que diseñé y desarrollé; abajo, el archivo visual de trabajos cargados en Behance.
+      </p>
+      <p class="mt-6 inline-flex rounded-full border border-accent/20 bg-accent/[0.06] px-4 py-2 text-sm font-semibold text-gray-200">
+        Esta web también fue diseñada y desarrollada por mí.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+      @for (project of projects; track project.title) {
+        <article class="group flex h-full flex-col">
+          <div class="relative aspect-[16/10] overflow-hidden rounded-[1rem] border border-white/[0.07] bg-white/[0.025] shadow-xl shadow-black/10 transition-all duration-500 group-hover:-translate-y-1 group-hover:border-white/15">
+            @if (project.image) {
+              <img [src]="project.image" [alt]="'Web de ' + project.title" class="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.035]">
+            } @else {
+              <div class="flex h-full w-full items-center justify-center bg-[linear-gradient(135deg,rgba(255,255,255,0.055),rgba(0,255,157,0.035)_48%,rgba(255,255,255,0.015))]">
+                <lucide-icon name="monitor" [size]="48" class="text-accent/80"></lucide-icon>
+              </div>
+            }
+          </div>
+
+          <div class="flex flex-grow flex-col pt-4">
+            <div class="mb-3 flex items-start justify-between gap-4">
+              <div>
+                <h3 class="text-[1.35rem] font-bold leading-none">{{ project.title }}</h3>
+                <p class="mt-2 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-accent/75">Diseño web</p>
+              </div>
+              @if (project.url) {
+                <a [href]="project.url" target="_blank" rel="noopener noreferrer" class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/10 text-accent transition-colors hover:border-accent/30 hover:bg-accent/10" [attr.aria-label]="'Abrir web de ' + project.title" data-testid="web-project-link">
+                  <lucide-icon name="arrow-up-right" [size]="16"></lucide-icon>
+                </a>
+              } @else {
+                <span class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/10 text-gray-500">
+                  <lucide-icon name="monitor" [size]="16"></lucide-icon>
+                </span>
+              }
+            </div>
+
+            <p class="mb-4 flex-grow text-[0.82rem] leading-6 text-gray-400">{{ project.description }}</p>
+
+            @if (project.url) {
+              <a [href]="project.url" target="_blank" rel="noopener noreferrer" class="lv-link group/link mt-auto text-sm" data-testid="web-project-text-link">
+                Ver web
+                <lucide-icon name="arrow-right" [size]="16" class="ml-2 transition-transform group-hover/link:translate-x-1"></lucide-icon>
+              </a>
+            } @else {
+              <span class="mt-auto text-sm font-semibold text-gray-500">Web realizada</span>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

@@ -125,6 +125,7 @@ export class ProjectsService {
         catchError((err) => {
           this.loading.set(false);
           this.loadingMore.set(false);
+          this.hasMore.set(false);
           this.error.set(err?.message ?? 'Error al cargar proyectos');
           if (this.currentPage() === 0) this.rawProjects.set([]);
           return of([]);

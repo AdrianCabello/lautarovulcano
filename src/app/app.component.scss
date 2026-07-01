@@ -30,6 +30,7 @@
     linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
   background-size: 96px 96px;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), transparent 78%);
+  animation: background-grid-drift 42s linear infinite;
 }
 
 .app-background::after {
@@ -39,4 +40,34 @@
     linear-gradient(112deg, transparent 0 25%, rgba(255, 255, 255, 0.03) 25% 25.12%, transparent 25.12% 100%),
     linear-gradient(112deg, transparent 0 68%, rgba(0, 255, 157, 0.045) 68% 68.1%, transparent 68.1% 100%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 48%);
+  animation: background-light-shift 18s ease-in-out infinite alternate;
+}
+
+@keyframes background-grid-drift {
+  from {
+    background-position: 0 0, 0 0;
+  }
+
+  to {
+    background-position: 96px 96px, 96px 96px;
+  }
+}
+
+@keyframes background-light-shift {
+  from {
+    opacity: 0.14;
+    transform: translate3d(-0.4rem, 0, 0);
+  }
+
+  to {
+    opacity: 0.22;
+    transform: translate3d(0.5rem, -0.35rem, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-background::before,
+  .app-background::after {
+    animation: none;
+  }
 }

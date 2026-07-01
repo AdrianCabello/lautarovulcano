@@ -19,8 +19,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.seoService.updateMetaTags({
-      title: 'Lautaro Vulcano - Diseño gráfico y comunicación visual',
-      description: 'Diseño gráfico para marcas que necesitan comunicar mejor. Identidad visual, contenido digital y piezas comerciales pensadas para vender con más claridad.',
+      title: 'Lautaro Vulcano — Diseño gráfico, identidad y comunicación visual',
+      description: 'Diseñador gráfico enfocado en comunicación visual, identidad, contenido digital, diseño web y piezas comerciales para marcas, negocios y proyectos comerciales.',
       image: 'https://lautarovulcano.com/assets/perfil.png',
       url: 'https://lautarovulcano.com/'
     });

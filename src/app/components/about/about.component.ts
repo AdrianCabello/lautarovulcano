@@ -2,6 +2,14 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LucideModule } from '../../shared/lucide.module';
 
+interface EventProducer {
+  name: string;
+  handle: string;
+  url: string;
+  avatar?: string;
+  initials: string;
+}
+
 @Component({
   selector: 'app-about',
   standalone: true,
@@ -9,6 +17,23 @@ import { LucideModule } from '../../shared/lucide.module';
   templateUrl: './about.component.html'
 })
 export class AboutComponent {
+  readonly eventProducers: EventProducer[] = [
+    {
+      name: 'Positive',
+      handle: '@positive.prod',
+      url: 'https://www.instagram.com/positive.prod/',
+      avatar: 'assets/instagram-avatars/positive-prod.jpg',
+      initials: 'P',
+    },
+    {
+      name: 'Markama',
+      handle: '@markamaprod',
+      url: 'https://www.instagram.com/markamaprod/',
+      avatar: 'assets/instagram-avatars/markama.jpg',
+      initials: 'M',
+    },
+  ];
+
   skills = [
     {
       name: 'Photoshop',
