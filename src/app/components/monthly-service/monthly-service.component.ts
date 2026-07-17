@@ -22,9 +22,6 @@ export class MonthlyServiceComponent implements AfterViewInit, OnDestroy {
   private dragStartX = 0;
   private dragStartScrollLeft = 0;
   private dragDistance = 0;
-  private isBrandHovered = false;
-  private isBrandFocused = false;
-  private lastBrandPointerType = 'mouse';
   private animationFrameId?: number;
   private previousFrameTime?: number;
   private removeDragListeners: Array<() => void> = [];
@@ -98,29 +95,8 @@ export class MonthlyServiceComponent implements AfterViewInit, OnDestroy {
     const move = (event: PointerEvent) => this.moveBrandDrag(event);
     const end = (event: PointerEvent) => this.endBrandDrag(event);
     const cancel = () => this.cancelBrandDrag();
-    const pause = (event: PointerEvent) => {
-      if (event.pointerType === 'mouse') {
-        this.isBrandHovered = true;
-      }
-    };
-    const resume = (event: PointerEvent) => {
-      if (event.pointerType === 'mouse') {
-        this.isBrandHovered = false;
-        this.isBrandFocused = false;
-      }
-    };
-    const focus = () => {
-      this.isBrandFocused = this.lastBrandPointerType !== 'touch';
-    };
-    const blur = (event: FocusEvent) => {
-      this.isBrandFocused = marquee.contains(event.relatedTarget as Node | null);
-    };
 
     marquee.addEventListener('pointerdown', start);
-    marquee.addEventListener('pointerenter', pause);
-    marquee.addEventListener('pointerleave', resume);
-    marquee.addEventListener('focusin', focus);
-    marquee.addEventListener('focusout', blur);
     window.addEventListener('pointermove', move);
     window.addEventListener('pointerup', end);
     window.addEventListener('pointercancel', end);
@@ -133,10 +109,6 @@ export class MonthlyServiceComponent implements AfterViewInit, OnDestroy {
 
     this.removeDragListeners = [
       () => marquee.removeEventListener('pointerdown', start),
-      () => marquee.removeEventListener('pointerenter', pause),
-      () => marquee.removeEventListener('pointerleave', resume),
-      () => marquee.removeEventListener('focusin', focus),
-      () => marquee.removeEventListener('focusout', blur),
       () => window.removeEventListener('pointermove', move),
       () => window.removeEventListener('pointerup', end),
       () => window.removeEventListener('pointercancel', end),
@@ -158,13 +130,6 @@ export class MonthlyServiceComponent implements AfterViewInit, OnDestroy {
     }
 
     event.preventDefault();
-    this.lastBrandPointerType = event.pointerType;
-
-    if (event.pointerType === 'touch') {
-      this.isBrandHovered = false;
-      this.isBrandFocused = false;
-    }
-
     this.isDraggingBrands = true;
     this.dragStartX = event.clientX;
     this.dragStartScrollLeft = target.scrollLeft;
@@ -189,11 +154,6 @@ export class MonthlyServiceComponent implements AfterViewInit, OnDestroy {
   endBrandDrag(event: PointerEvent): void {
     const target = this.brandMarquee?.nativeElement;
     this.isDraggingBrands = false;
-
-    if (event.pointerType === 'touch') {
-      this.isBrandHovered = false;
-      this.isBrandFocused = false;
-    }
 
     if (target?.hasPointerCapture(event.pointerId)) {
       target.releasePointerCapture(event.pointerId);
@@ -221,11 +181,8 @@ export class MonthlyServiceComponent implements AfterViewInit, OnDestroy {
     const elapsed = this.previousFrameTime === undefined ? 0 : Math.min(time - this.previousFrameTime, 50);
     this.previousFrameTime = time;
 
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const isPaused = this.isDraggingBrands || this.isBrandHovered || this.isBrandFocused || prefersReducedMotion;
-
-    if (!isPaused) {
-      marquee.scrollLeft += elapsed * 0.035;
+    if (!this.isDraggingBrands) {
+      marquee.scrollLeft += elapsed * 0.045;
       this.keepBrandsLooping();
     }
 

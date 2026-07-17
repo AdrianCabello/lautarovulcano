@@ -17,6 +17,7 @@ type WorkFilter = 'Todos' | 'Identidad' | 'Redes' | 'Eventos' | 'Logos' | 'Music
   standalone: true,
   imports: [CommonModule, LucideModule],
   templateUrl: './behance-archive.component.html',
+  styleUrls: ['./behance-archive.component.scss'],
 })
 export class BehanceArchiveComponent {
   readonly showAll = signal(false);
