@@ -4,13 +4,15 @@ import { RouterModule, RouterLink } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 import { LucideModule } from './shared/lucide.module';
 import { SeoService } from './services/seo.service';
+import { LanguageService } from './services/language.service';
+import { PageTranslationDirective } from './directives/page-translation.directive';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  imports: [CommonModule, RouterModule, RouterLink, LucideModule],
+  imports: [CommonModule, RouterModule, RouterLink, LucideModule, PageTranslationDirective],
 })
 export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   title = 'lautarovulcano';
@@ -39,18 +41,14 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   constructor(
     private seoService: SeoService,
+    public readonly language: LanguageService,
     @Inject(PLATFORM_ID) platformId: object
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
   }
 
   ngOnInit() {
-    this.seoService.updateMetaTags({
-      title: 'Lautaro Vulcano — Diseño gráfico, identidad y comunicación visual',
-      description: 'Diseñador gráfico enfocado en comunicación visual, identidad, contenido digital, diseño web y piezas comerciales para marcas, negocios y proyectos comerciales.',
-      image: 'https://lautarovulcano.com/assets/perfil.png',
-      url: 'https://lautarovulcano.com/'
-    });
+    this.updateSeo();
 
     if (this.isBrowser) {
       this.updateNavState();
@@ -77,6 +75,26 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  toggleLanguage(): void {
+    this.language.toggle();
+    this.updateSeo();
+  }
+
+  private updateSeo(): void {
+    const isEnglish = this.language.current() === 'en';
+
+    this.seoService.updateMetaTags({
+      title: isEnglish
+        ? 'Lautaro Vulcano | Graphic design, content, and web'
+        : 'Lautaro Vulcano | Diseño gráfico, contenido y web',
+      description: isEnglish
+        ? 'I design identities, content, and websites for brands that want to present themselves clearly and maintain a professional presence.'
+        : 'Diseño identidades, contenido y sitios web para marcas que buscan presentarse con claridad y sostener una presencia profesional.',
+      image: 'https://lautarovulcano.com/assets/perfil.png',
+      url: 'https://lautarovulcano.com/'
+    });
   }
 
   private updateNavState(): void {
@@ -133,8 +151,8 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
         this.motionObserver?.unobserve(entry.target);
       });
     }, {
-      rootMargin: '0px',
-      threshold: 0.12
+      rootMargin: '0px 0px 18% 0px',
+      threshold: 0.01
     });
 
     this.observeMotionElements(document);

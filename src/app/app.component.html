@@ -1,4 +1,4 @@
-<div class="app-shell relative min-h-screen">
+<div class="app-shell relative min-h-screen" appPageTranslation>
   <div class="app-background" aria-hidden="true"></div>
 
   <div class="relative z-10">
@@ -8,16 +8,38 @@
         <div class="container mx-auto px-4">
           <div class="site-nav__inner flex items-center justify-between h-14 md:h-16">
             <a routerLink="/" class="font-display text-xl font-bold leading-none text-white transition-colors hover:text-accent" data-testid="app-logo">LV</a>
-            <div class="hidden md:flex items-center space-x-7 text-[0.68rem] font-semibold uppercase tracking-[0.18em]">
+            <div class="hidden items-center space-x-5 text-[0.64rem] font-semibold uppercase tracking-[0.15em] md:flex lg:space-x-7 lg:text-[0.68rem] lg:tracking-[0.18em]">
               <a routerLink="/" fragment="services" class="nav-link text-gray-400/80 transition-colors hover:text-white" [class.nav-link--active]="activeSection === 'services'" data-testid="app-services-link">Qué hago</a>
               <a routerLink="/" fragment="portfolio" class="nav-link text-gray-400/80 transition-colors hover:text-white" [class.nav-link--active]="activeSection === 'portfolio'" data-testid="app-portfolio-link">Trabajos</a>
               <a routerLink="/" fragment="about" class="nav-link text-gray-400/80 transition-colors hover:text-white" [class.nav-link--active]="activeSection === 'about'" data-testid="app-about-link">Sobre mí</a>
               <a routerLink="/" fragment="contact" class="nav-link text-gray-400/80 transition-colors hover:text-white" [class.nav-link--active]="activeSection === 'contact'" data-testid="app-contact-link">Contacto</a>
               <a routerLink="/" fragment="contact" class="nav-cta inline-flex items-center justify-center rounded-full border border-white/10 bg-white/[0.015] px-4 py-2 text-accent/90 transition-colors hover:border-accent/30 hover:bg-accent/10 hover:text-accent" data-testid="app-cta-link">Hablemos</a>
+              <button
+                type="button"
+                (click)="toggleLanguage()"
+                class="inline-flex h-8 items-center justify-center gap-1.5 rounded-full border border-white/10 bg-white/[0.015] px-2.5 text-white/75 transition-colors hover:border-accent/30 hover:bg-accent/10 hover:text-accent"
+                [attr.aria-label]="language.current() === 'es' ? 'Cambiar sitio a inglés' : 'Switch site to Spanish'"
+                [attr.title]="language.current() === 'es' ? 'English' : 'Español'"
+                data-testid="app-language-toggle">
+                <lucide-icon name="languages" [size]="14"></lucide-icon>
+                <span>{{ language.current() === 'es' ? 'EN' : 'ES' }}</span>
+              </button>
             </div>
-            <button (click)="toggleMobileMenu()" class="md:hidden text-gray-300 transition-colors hover:text-white" aria-label="Abrir menú" data-testid="app-mobile-menu-button">
-              <lucide-icon [name]="isMobileMenuOpen ? 'x' : 'menu'" [size]="24"></lucide-icon>
-            </button>
+            <div class="flex items-center gap-3 md:hidden">
+              <button
+                type="button"
+                (click)="toggleLanguage()"
+                class="inline-flex h-8 items-center justify-center gap-1.5 rounded-full border border-white/10 px-2.5 text-[0.68rem] font-bold text-white/75 transition-colors hover:border-accent/30 hover:text-accent"
+                [attr.aria-label]="language.current() === 'es' ? 'Cambiar sitio a inglés' : 'Switch site to Spanish'"
+                [attr.title]="language.current() === 'es' ? 'English' : 'Español'"
+                data-testid="app-mobile-language-toggle">
+                <lucide-icon name="languages" [size]="14"></lucide-icon>
+                <span>{{ language.current() === 'es' ? 'EN' : 'ES' }}</span>
+              </button>
+              <button (click)="toggleMobileMenu()" class="text-gray-300 transition-colors hover:text-white" aria-label="Abrir menú" data-testid="app-mobile-menu-button">
+                <lucide-icon [name]="isMobileMenuOpen ? 'x' : 'menu'" [size]="24"></lucide-icon>
+              </button>
+            </div>
           </div>
           <!-- Mobile menu -->
           <div class="md:hidden" [class.hidden]="!isMobileMenuOpen">

@@ -126,7 +126,8 @@
 
 .archive-row__thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 420ms var(--motion-ease); }
 .archive-row__copy { display: flex; min-width: 0; flex-direction: column; gap: .35rem; }
-.archive-row__copy span { color: rgba(0,255,157,.62); font-size: .58rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; }
+.archive-row__eyebrow { display: flex; flex-wrap: wrap; gap: .3rem .6rem; color: rgba(0,255,157,.62); font-size: .58rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; }
+.archive-row__eyebrow time { color: rgba(244,239,230,.38); }
 .archive-row__copy strong { overflow: hidden; color: rgba(244,239,230,.78); font-size: .9rem; line-height: 1.25; text-overflow: ellipsis; white-space: nowrap; }
 .archive-row__arrow { color: rgba(244,239,230,.36); transition: color 220ms ease, transform 220ms var(--motion-ease); }
 .archive-row--active .archive-row__copy strong { color: #f4efe6; }

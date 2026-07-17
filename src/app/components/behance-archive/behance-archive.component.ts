@@ -24,6 +24,41 @@ export class BehanceArchiveComponent {
   readonly showAll = signal(false);
   readonly activeFilter = signal<WorkFilter>('Todos');
   readonly filters: WorkFilter[] = ['Todos', 'Identidad', 'Redes', 'Eventos', 'Logos', 'Musica', 'Otros'];
+  private readonly datesByProjectId: Record<string, string> = {
+    '229673981': '05 Jul 2025',
+    '227243323': '01 Jun 2025',
+    '223159479': '07 Abr 2025',
+    '219431403': '16 Feb 2025',
+    '218872431': '09 Feb 2025',
+    '218823099': '08 Feb 2025',
+    '218655779': '06 Feb 2025',
+    '218417665': '03 Feb 2025',
+    '218415241': '03 Feb 2025',
+    '205306629': '11 Ago 2024',
+    '202939467': '10 Jul 2024',
+    '194214267': '18 Mar 2024',
+    '186712233': '13 Dic 2023',
+    '186710765': '13 Dic 2023',
+    '183616755': '01 Nov 2023',
+    '183612919': '01 Nov 2023',
+    '183611647': '01 Nov 2023',
+    '178973521': '01 Sep 2023',
+    '176266453': '27 Jul 2023',
+    '175709487': '19 Jul 2023',
+    '170421739': '11 May 2023',
+    '169796819': '03 May 2023',
+    '168824055': '20 Abr 2023',
+    '165830961': '13 Mar 2023',
+    '165614895': '09 Mar 2023',
+    '162282955': '26 Ene 2023',
+    '162259443': '26 Ene 2023',
+    '159433521': '18 Dic 2022',
+    '158245101': '30 Nov 2022',
+    '158095679': '29 Nov 2022',
+    '155286021': '20 Oct 2022',
+    '155285755': '20 Oct 2022',
+    '154147119': '05 Oct 2022',
+  };
 
   readonly projects: BehanceProject[] = [
     { title: 'Flyer + Animacion Detroit Techno', category: 'Flyer / Motion', description: 'Flyer y pieza animada para comunicar una fecha de música techno con una estética nocturna e industrial.', filter: 'Eventos', image: 'assets/behance-profile-covers/01.jpg', url: 'https://www.behance.net/gallery/229673981/Flyer-Animacion-Detroit-Techno' },
@@ -92,6 +127,11 @@ export class BehanceArchiveComponent {
       ? this.projects[0]
       : this.projects.find((project) => project.filter === filter);
     this.activePreviewUrl.set(nextProject?.url ?? this.projects[0].url);
+  }
+
+  projectDate(project: BehanceProject): string {
+    const projectId = project.url.match(/gallery\/(\d+)/)?.[1];
+    return projectId ? this.datesByProjectId[projectId] ?? '' : '';
   }
 
   setFeaturedProject(project: BehanceProject): void {

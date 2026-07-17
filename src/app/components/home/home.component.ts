@@ -29,8 +29,8 @@ import { FooterComponent } from '../footer/footer.component';
       <app-about></app-about>
       <app-monthly-service></app-monthly-service>
       <app-web-projects></app-web-projects>
-      <app-behance-archive></app-behance-archive>
       <app-approach></app-approach>
+      <app-behance-archive></app-behance-archive>
       <app-contact></app-contact>
     </main>
     <app-footer></app-footer>

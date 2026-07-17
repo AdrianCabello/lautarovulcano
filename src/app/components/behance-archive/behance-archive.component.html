@@ -3,10 +3,16 @@
     <header class="archive-intro">
       <p class="section-label">Trabajos realizados</p>
       <h2 class="section-title">Archivo visual</h2>
-      <p class="section-copy">
-        Una selección de identidades, campañas, piezas digitales y proyectos comerciales.
-        Cada trabajo representa una etapa de exploración y construcción junto a marcas que confiaron en mi mirada.
-      </p>
+      <div class="section-copy">
+        <p class="m-0">
+          Este archivo reúne proyectos publicados entre <strong>2022 y 2025</strong>. Documenta distintas etapas,
+          clientes y exploraciones que fueron formando mi mirada. El presente puede verse en las marcas que acompaño mes a mes.
+        </p>
+        <a href="#monthly-service" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-accent no-underline transition-colors hover:text-white">
+          Ver contenido actual
+          <lucide-icon name="arrow-up-right" [size]="16"></lucide-icon>
+        </a>
+      </div>
     </header>
 
     <nav class="mt-12 border-y border-white/10 md:mt-20" aria-label="Filtrar trabajos realizados" data-testid="behance-filter-bar">
@@ -47,7 +53,7 @@
             </div>
             <div class="archive-preview__meta grid grid-cols-[minmax(10rem,.8fr)_minmax(15rem,1.2fr)] items-start gap-[clamp(2rem,5vw,4rem)] pt-5">
               <div class="archive-preview__heading">
-                <p>{{ featured.category }}</p>
+                <p>{{ featured.category }} <span aria-hidden="true">·</span> <time>{{ projectDate(featured) }}</time></p>
                 <h3>{{ featured.title }}</h3>
               </div>
               <p class="m-0 max-w-lg text-sm leading-relaxed text-white/55">{{ featured.description }}</p>
@@ -77,7 +83,10 @@
                 <img [src]="project.image" [alt]="" loading="lazy">
               </span>
               <span class="archive-row__copy">
-                <span>{{ project.category }}</span>
+                <span class="archive-row__eyebrow">
+                  <span>{{ project.category }}</span>
+                  <time>{{ projectDate(project) }}</time>
+                </span>
                 <strong>{{ project.title }}</strong>
                 <small class="line-clamp-2 overflow-hidden text-[0.7rem] leading-[1.45] text-white/45 max-[899px]:text-xs max-[899px]:leading-normal">
                   {{ project.description }}

@@ -17,8 +17,8 @@ export class SeoService {
     url?: string;
   }) {
     const defaultConfig = {
-      title: 'Lautaro Vulcano — Diseño gráfico, identidad y comunicación visual',
-      description: 'Diseñador gráfico enfocado en comunicación visual, identidad, contenido digital, diseño web y piezas comerciales para marcas, negocios y proyectos comerciales.',
+      title: 'Lautaro Vulcano | Diseño gráfico, contenido y web',
+      description: 'Diseño identidades, contenido y sitios web para marcas que buscan presentarse con claridad y sostener una presencia profesional.',
       image: 'https://lautarovulcano.com/assets/perfil.png',
       url: 'https://lautarovulcano.com/'
     };
