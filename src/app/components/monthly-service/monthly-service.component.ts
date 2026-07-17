@@ -182,7 +182,7 @@ export class MonthlyServiceComponent implements AfterViewInit, OnDestroy {
     this.previousFrameTime = time;
 
     if (!this.isDraggingBrands) {
-      marquee.scrollLeft += elapsed * 0.045;
+      marquee.scrollLeft -= elapsed * 0.065;
       this.keepBrandsLooping();
     }
 

@@ -5,57 +5,89 @@
       <h2 class="section-title">Archivo visual</h2>
       <p class="section-copy">
         Una selección de identidades, campañas, piezas digitales y proyectos comerciales.
-        Cada trabajo representa una etapa de aprendizaje, exploración y construcción junto a marcas que confiaron en mi mirada.
+        Cada trabajo representa una etapa de exploración y construcción junto a marcas que confiaron en mi mirada.
       </p>
     </header>
 
-    <nav class="archive-filters" aria-label="Filtrar trabajos realizados" data-testid="behance-filter-bar">
-      <div class="archive-filters__track">
+    <nav class="mt-12 border-y border-white/10 md:mt-20" aria-label="Filtrar trabajos realizados" data-testid="behance-filter-bar">
+      <div class="flex gap-6 overflow-x-auto [scrollbar-width:none] md:gap-12 [&::-webkit-scrollbar]:hidden">
         @for (filter of filters; track filter) {
           <button
             type="button"
             (click)="setFilter(filter)"
-            class="archive-filter"
-            [class.archive-filter--active]="activeFilter() === filter"
+            class="relative inline-flex min-h-[3.75rem] shrink-0 items-center gap-2 text-sm font-bold transition-colors after:absolute after:inset-x-0 after:-bottom-px after:h-0.5 after:origin-left after:scale-x-0 after:bg-accent after:transition-transform md:min-h-[4.25rem]"
+            [ngClass]="activeFilter() === filter ? 'text-white after:scale-x-100' : 'text-white/55 hover:text-white'"
             [attr.aria-pressed]="activeFilter() === filter"
             data-testid="behance-filter-button">
             <span>{{ filter === 'Musica' ? 'Música' : filter }}</span>
-            <span class="archive-filter__count">{{ projectCount(filter) }}</span>
+            <span
+              class="inline-flex h-[1.35rem] min-w-[1.35rem] items-center justify-center rounded-full border px-1.5 text-[0.62rem]"
+              [ngClass]="activeFilter() === filter ? 'border-accent/40 text-accent' : 'border-white/15 text-white/50'">
+              {{ projectCount(filter) }}
+            </span>
           </button>
         }
       </div>
     </nav>
 
-    <div class="archive-index" aria-live="polite">
-      @for (project of visibleProjects(); track project.url) {
-        <article class="archive-entry min-w-0" data-testid="behance-project-card">
+    <div class="archive-browser" aria-live="polite">
+      @if (featuredProject(); as featured) {
+        <aside class="archive-preview">
           <a
-            [href]="project.url"
+            [href]="featured.url"
             target="_blank"
             rel="noopener noreferrer"
-            class="archive-entry__link block text-inherit no-underline"
-            [attr.aria-label]="'Ver ' + project.title + ' en Behance'">
-            <div class="archive-entry__media">
-              <img
-                [src]="project.image"
-                [alt]="project.title"
-                loading="lazy"
-                class="archive-entry__image">
-              <span class="archive-entry__number" aria-hidden="true">
-                {{ $index + 1 < 10 ? '0' + ($index + 1) : $index + 1 }}
-              </span>
-              <span class="archive-entry__open" aria-hidden="true">
-                <lucide-icon name="arrow-up-right" [size]="17"></lucide-icon>
+            class="archive-preview__link"
+            [attr.aria-label]="'Ver ' + featured.title + ' en Behance'">
+            <div class="archive-preview__media">
+              <img [src]="featured.image" [alt]="featured.title" class="archive-preview__image">
+              <span class="archive-preview__action" aria-hidden="true">
+                <lucide-icon name="arrow-up-right" [size]="19"></lucide-icon>
               </span>
             </div>
-
-            <div class="archive-entry__meta">
-              <p class="m-0 text-[0.62rem] font-bold uppercase tracking-[0.12em] text-accent/70">{{ project.category }}</p>
-              <h3 class="m-0 break-words font-sans text-base font-bold leading-tight tracking-normal text-white">{{ project.title }}</h3>
+            <div class="archive-preview__meta grid grid-cols-[minmax(10rem,.8fr)_minmax(15rem,1.2fr)] items-start gap-[clamp(2rem,5vw,4rem)] pt-5">
+              <div class="archive-preview__heading">
+                <p>{{ featured.category }}</p>
+                <h3>{{ featured.title }}</h3>
+              </div>
+              <p class="m-0 max-w-lg text-sm leading-relaxed text-white/55">{{ featured.description }}</p>
             </div>
           </a>
-        </article>
+        </aside>
       }
+
+      <div class="archive-list">
+        @for (project of visibleProjects(); track project.url) {
+          <article
+            class="archive-row"
+            [class.archive-row--active]="featuredProject().url === project.url"
+            (mouseenter)="setFeaturedProject(project)"
+            (focusin)="setFeaturedProject(project)"
+            data-testid="behance-project-card">
+            <a
+              [href]="project.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="archive-row__link"
+              [attr.aria-label]="'Ver ' + project.title + ' en Behance'">
+              <span class="archive-row__number" aria-hidden="true">
+                {{ $index + 1 < 10 ? '0' + ($index + 1) : $index + 1 }}
+              </span>
+              <span class="archive-row__thumb">
+                <img [src]="project.image" [alt]="" loading="lazy">
+              </span>
+              <span class="archive-row__copy">
+                <span>{{ project.category }}</span>
+                <strong>{{ project.title }}</strong>
+                <small class="line-clamp-2 overflow-hidden text-[0.7rem] leading-[1.45] text-white/45 max-[899px]:text-xs max-[899px]:leading-normal">
+                  {{ project.description }}
+                </small>
+              </span>
+              <lucide-icon class="archive-row__arrow" name="arrow-up-right" [size]="17"></lucide-icon>
+            </a>
+          </article>
+        }
+      </div>
     </div>
 
     @if (filteredProjects().length > 12) {
