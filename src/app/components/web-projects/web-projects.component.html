@@ -1,6 +1,6 @@
-<section id="portfolio" class="w-full scroll-mt-20 bg-transparent pt-24 pb-12 md:pt-32 md:pb-14" data-testid="web-projects-section">
+<section id="portfolio" class="motion-section w-full scroll-mt-20 bg-transparent pt-24 pb-12 md:pt-32 md:pb-14" data-testid="web-projects-section">
   <div class="container">
-    <div class="mb-12 max-w-4xl md:mb-14">
+    <div class="motion-copy-block mb-12 max-w-4xl md:mb-14">
       <p class="section-label mb-5">Portfolio</p>
       <h2 class="section-title mb-7">
         Webs y trabajos realizados
@@ -13,12 +13,12 @@
       </p>
     </div>
 
-    <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+    <div class="motion-stagger grid grid-cols-1 gap-8 lg:grid-cols-3">
       @for (project of projects; track project.title) {
-        <article class="group flex h-full flex-col">
-          <div class="relative aspect-[16/10] overflow-hidden rounded-[1rem] border border-white/[0.07] bg-white/[0.025] shadow-xl shadow-black/10 transition-all duration-500 group-hover:-translate-y-1 group-hover:border-white/15">
+        <article class="project-card motion-card group flex h-full flex-col">
+          <div class="project-media relative aspect-[16/10] overflow-hidden rounded-[1rem] border border-white/[0.07] bg-white/[0.025] shadow-xl shadow-black/10 transition-all duration-500 group-hover:border-white/15">
             @if (project.image) {
-              <img [src]="project.image" [alt]="'Web de ' + project.title" class="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.035]">
+              <img [src]="project.image" [alt]="'Web de ' + project.title" class="project-image h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]">
             } @else {
               <div class="flex h-full w-full items-center justify-center bg-[linear-gradient(135deg,rgba(255,255,255,0.055),rgba(0,255,157,0.035)_48%,rgba(255,255,255,0.015))]">
                 <lucide-icon name="monitor" [size]="48" class="text-accent/80"></lucide-icon>
@@ -33,7 +33,7 @@
                 <p class="mt-2 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-accent/75">Diseño web</p>
               </div>
               @if (project.url) {
-                <a [href]="project.url" target="_blank" rel="noopener noreferrer" class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/10 text-accent transition-colors hover:border-accent/30 hover:bg-accent/10" [attr.aria-label]="'Abrir web de ' + project.title" data-testid="web-project-link">
+              <a [href]="project.url" target="_blank" rel="noopener noreferrer" class="project-arrow mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/10 text-accent transition-colors hover:border-accent/30 hover:bg-accent/10" [attr.aria-label]="'Abrir web de ' + project.title" data-testid="web-project-link">
                   <lucide-icon name="arrow-up-right" [size]="16"></lucide-icon>
                 </a>
               } @else {

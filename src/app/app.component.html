@@ -3,16 +3,17 @@
 
   <div class="relative z-10">
     <div class="min-h-screen flex flex-col">
-      <nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/[0.035] bg-[#03100c]/35 backdrop-blur-md">
+      <nav class="site-nav fixed top-0 left-0 right-0 z-50 border-b border-white/[0.035] bg-[#03100c]/35 backdrop-blur-md"
+        [class.site-nav--compact]="isNavCompact">
         <div class="container mx-auto px-4">
-          <div class="flex items-center justify-between h-14 md:h-16">
+          <div class="site-nav__inner flex items-center justify-between h-14 md:h-16">
             <a routerLink="/" class="font-display text-xl font-bold leading-none text-white transition-colors hover:text-accent" data-testid="app-logo">LV</a>
             <div class="hidden md:flex items-center space-x-7 text-[0.68rem] font-semibold uppercase tracking-[0.18em]">
-              <a routerLink="/" fragment="services" class="text-gray-400/80 transition-colors hover:text-white" data-testid="app-services-link">Qué hago</a>
-              <a routerLink="/" fragment="portfolio" class="text-gray-400/80 transition-colors hover:text-white" data-testid="app-portfolio-link">Trabajos</a>
-              <a routerLink="/" fragment="about" class="text-gray-400/80 transition-colors hover:text-white" data-testid="app-about-link">Sobre mí</a>
-              <a routerLink="/" fragment="contact" class="text-gray-400/80 transition-colors hover:text-white" data-testid="app-contact-link">Contacto</a>
-              <a routerLink="/" fragment="contact" class="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/[0.015] px-4 py-2 text-accent/90 transition-colors hover:border-accent/30 hover:bg-accent/10 hover:text-accent" data-testid="app-cta-link">Hablemos</a>
+              <a routerLink="/" fragment="services" class="nav-link text-gray-400/80 transition-colors hover:text-white" [class.nav-link--active]="activeSection === 'services'" data-testid="app-services-link">Qué hago</a>
+              <a routerLink="/" fragment="portfolio" class="nav-link text-gray-400/80 transition-colors hover:text-white" [class.nav-link--active]="activeSection === 'portfolio'" data-testid="app-portfolio-link">Trabajos</a>
+              <a routerLink="/" fragment="about" class="nav-link text-gray-400/80 transition-colors hover:text-white" [class.nav-link--active]="activeSection === 'about'" data-testid="app-about-link">Sobre mí</a>
+              <a routerLink="/" fragment="contact" class="nav-link text-gray-400/80 transition-colors hover:text-white" [class.nav-link--active]="activeSection === 'contact'" data-testid="app-contact-link">Contacto</a>
+              <a routerLink="/" fragment="contact" class="nav-cta inline-flex items-center justify-center rounded-full border border-white/10 bg-white/[0.015] px-4 py-2 text-accent/90 transition-colors hover:border-accent/30 hover:bg-accent/10 hover:text-accent" data-testid="app-cta-link">Hablemos</a>
             </div>
             <button (click)="toggleMobileMenu()" class="md:hidden text-gray-300 transition-colors hover:text-white" aria-label="Abrir menú" data-testid="app-mobile-menu-button">
               <lucide-icon [name]="isMobileMenuOpen ? 'x' : 'menu'" [size]="24"></lucide-icon>

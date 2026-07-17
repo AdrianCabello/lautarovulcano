@@ -1,6 +1,6 @@
-<section id="trabajos-realizados" class="w-full bg-transparent pt-10 pb-24 md:pt-12 md:pb-32" data-testid="behance-archive-section">
+<section id="trabajos-realizados" class="motion-section archive-section w-full bg-transparent pt-10 pb-24 md:pt-12 md:pb-32" data-testid="behance-archive-section">
   <div class="container">
-    <div class="mb-12 max-w-4xl md:mb-16">
+    <div class="motion-copy-block mb-12 max-w-4xl md:mb-16">
       <p class="section-label mb-5">Trabajos realizados</p>
       <h2 class="section-title mb-7">
         Archivo visual
@@ -10,7 +10,7 @@
       </p>
     </div>
 
-    <div class="mb-10 rounded-[1.5rem] border border-white/[0.08] bg-white/[0.025] p-2 shadow-2xl shadow-black/10 backdrop-blur-sm md:mb-12" data-testid="behance-filter-bar">
+    <div class="motion-card mb-10 rounded-[1.5rem] border border-white/[0.08] bg-white/[0.025] p-2 shadow-2xl shadow-black/10 backdrop-blur-sm md:mb-12" data-testid="behance-filter-bar">
       <div class="flex gap-2 overflow-x-auto p-1">
         @for (filter of filters; track filter) {
           <button
@@ -27,16 +27,17 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="motion-stagger archive-grid grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
       @for (project of visibleProjects(); track project.url) {
-        <article class="group flex h-full flex-col" data-testid="behance-project-card">
+        <article class="archive-card motion-card group flex h-full flex-col" data-testid="behance-project-card">
           <a [href]="project.url" target="_blank" rel="noopener noreferrer" class="block" [attr.aria-label]="'Ver ' + project.title + ' en Behance'">
-            <div class="relative aspect-[16/11] overflow-hidden rounded-[1rem] border border-white/[0.07] bg-white/[0.025] shadow-xl shadow-black/10 transition-all duration-500 group-hover:-translate-y-1 group-hover:border-white/15">
-              <img [src]="project.image" [alt]="project.title" loading="lazy" class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.035]">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-white/[0.03] opacity-70"></div>
-              <span class="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-primary/70 text-accent opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100">
+            <div class="project-media archive-media relative aspect-[16/11] overflow-hidden rounded-[1rem] border border-white/[0.07] bg-white/[0.025] shadow-xl shadow-black/10 transition-all duration-500 group-hover:border-white/15">
+              <img [src]="project.image" [alt]="project.title" loading="lazy" class="project-image h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]">
+              <div class="project-overlay absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-white/[0.03] opacity-70"></div>
+              <span class="project-arrow absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-primary/70 text-accent opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100">
                 <lucide-icon name="arrow-up-right" [size]="16"></lucide-icon>
               </span>
+              <span class="project-caption absolute bottom-4 left-4 right-4 text-sm font-semibold text-white">{{ project.title }}</span>
             </div>
 
             <div class="pt-4">
@@ -56,7 +57,7 @@
     </div>
 
     @if (filteredProjects().length > 12) {
-    <div class="mt-14 flex justify-center">
+    <div class="motion-reveal mt-14 flex justify-center">
       <button type="button" (click)="toggleShowAll()" class="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/[0.025] px-7 py-3 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/30 hover:bg-accent/10 hover:text-accent" data-testid="behance-toggle-button">
         {{ showAll() ? 'Ver menos trabajos' : 'Ver todos los trabajos' }}
       </button>

@@ -18,6 +18,12 @@ interface WebProject {
 export class WebProjectsComponent {
   readonly projects: WebProject[] = [
     {
+      title: 'Change Trade',
+      description: 'Diseño y desarrollo web para la academia de trading Change.',
+      image: 'assets/projects/change-trade-web.png',
+      url: 'https://changetrade.online/',
+    },
+    {
       title: 'Rakium',
       description: 'Diseño y desarrollo web para el sitio de Rakium.',
       image: 'assets/projects/rakium-web.png',
