@@ -49,7 +49,8 @@ import {
   Lamp,
   MoreVertical,
   LayoutDashboard,
-  MapPin
+  MapPin,
+  Languages
 } from 'lucide-angular';
 
 @NgModule({
@@ -108,7 +109,8 @@ import {
       MapPin,
       Share2,
       Video,
-      Code
+      Code,
+      Languages
     }),
   ],
   exports: [LucideAngularModule],
