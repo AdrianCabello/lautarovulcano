@@ -1,5 +1,6 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, Input, computed, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { LucideModule } from '../../shared/lucide.module';
 
 interface BehanceProject {
@@ -15,13 +16,28 @@ type WorkFilter = 'Todos' | 'Identidad' | 'Redes' | 'Eventos' | 'Logos' | 'Music
 @Component({
   selector: 'app-behance-archive',
   standalone: true,
-  imports: [CommonModule, LucideModule],
+  imports: [CommonModule, LucideModule, RouterLink],
   templateUrl: './behance-archive.component.html',
 })
 export class BehanceArchiveComponent {
+  @Input() eventsOnly = false;
+  readonly shareStatus = signal('');
+  readonly shareFallback = signal('');
+
+  async copyFlyersLink(): Promise<void> {
+    const url = new URL('/flyers', window.location.origin).href;
+    this.shareFallback.set('');
+    try {
+      await navigator.clipboard.writeText(url);
+      this.shareStatus.set('Enlace copiado');
+    } catch {
+      this.shareStatus.set('');
+      this.shareFallback.set(url);
+    }
+  }
   readonly showAll = signal(false);
   readonly activeFilter = signal<WorkFilter>('Todos');
-  readonly filters: WorkFilter[] = ['Todos', 'Identidad', 'Redes', 'Eventos', 'Logos', 'Musica', 'Otros'];
+  readonly filters: WorkFilter[] = ['Todos', 'Identidad', 'Redes', 'Logos', 'Musica', 'Otros'];
 
   readonly projects: BehanceProject[] = [
     { title: 'Flyer + Animacion Detroit Techno', category: 'Flyer / Motion', filter: 'Eventos', image: 'assets/behance-profile-covers/01.jpg', url: 'https://www.behance.net/gallery/229673981/Flyer-Animacion-Detroit-Techno' },
@@ -59,11 +75,54 @@ export class BehanceArchiveComponent {
     { title: 'Ahi va', category: 'App', filter: 'Otros', image: 'assets/behance-profile-covers/33.jpg', url: 'https://www.behance.net/gallery/154147119/Proyecto-de-app-Ahi-va-Vulcano-Lautaro' },
   ];
 
+  readonly eventProjects = [{
+    id: '218655779',
+    title: 'Positive · Beico',
+    poster: '/assets/work-gallery/218655779/2-full.png',
+  }, {
+    id: 'positive-sunset',
+    title: 'Sunset · Markama & Positive',
+    poster: '/assets/work-gallery/218655779/10-full.png',
+  }, {
+    id: 'positive-new-year-2026',
+    title: 'Positive · Año Nuevo 2026',
+    poster: '/assets/work-gallery/positive-new-year-2026/19HGsNWz4_C7NYwp0hxjkKamY2S2XZfHs.jpg',
+  }, {
+    id: 'positive-dont-blink',
+    title: "Positive · Don't Blink",
+    poster: '/assets/work-gallery/positive-dont-blink/dont-blink-story.jpg',
+  }, {
+    id: '218415241',
+    title: 'Positive New Year',
+    poster: '/assets/work-gallery/218415241/1-full.png',
+  }, {
+    id: 'bresh-1',
+    title: 'BRESH 1 · Necochea',
+    poster: '/assets/work-gallery/bresh-1/flyer-historia.jpg',
+  }, {
+    id: 'bresh-2',
+    title: 'BRESH 2 · Edición Carnaval',
+    poster: '/assets/work-gallery/bresh-2/flyer-historia.jpg',
+  }, {
+    id: 'navidad-markama',
+    title: 'Navidad · Markama',
+    poster: '/assets/work-gallery/navidad-markama/principal.jpg',
+  }, {
+    id: 'fiesta-de-la-cerveza',
+    title: 'Fiesta de la Cerveza',
+    poster: '/assets/work-gallery/fiesta-de-la-cerveza/flyer.jpg',
+  }, ...this.projects.filter(project => project.filter === 'Eventos' && !['218415241', '218655779'].includes(project.url.split('/')[4])).map(project => ({
+    id: project.url.split('/')[4],
+    title: project.title,
+    poster: `/assets/work-gallery/${project.url.split('/')[4]}/${project.title === 'QuadSkate Tandil' ? '1-view.png' : project.title === 'Flyer + Animacion Detroit Techno' ? '1-full.jpg' : '1-full.png'}`,
+  }))];
+  readonly archiveProjects = this.projects.filter(project => project.filter !== 'Eventos');
+
   readonly filteredProjects = computed(() => {
     const filter = this.activeFilter();
     return filter === 'Todos'
-      ? this.projects
-      : this.projects.filter((project) => project.filter === filter);
+      ? this.archiveProjects
+      : this.archiveProjects.filter((project) => project.filter === filter);
   });
 
   visibleProjects(): BehanceProject[] {
@@ -73,8 +132,8 @@ export class BehanceArchiveComponent {
 
   projectCount(filter: WorkFilter): number {
     return filter === 'Todos'
-      ? this.projects.length
-      : this.projects.filter((project) => project.filter === filter).length;
+      ? this.archiveProjects.length
+      : this.archiveProjects.filter((project) => project.filter === filter).length;
   }
 
   setFilter(filter: WorkFilter): void {

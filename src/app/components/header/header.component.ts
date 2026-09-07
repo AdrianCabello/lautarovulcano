@@ -13,7 +13,7 @@ import { ButtonComponent } from '../ui/button/button.component';
         <a href="#services" class="hover:text-emerald-400 transition-colors" data-testid="header-services-link">
           Qué hago
         </a>
-        <a href="#portfolio" class="hover:text-emerald-400 transition-colors" data-testid="header-portfolio-link">
+        <a href="/trabajos" class="hover:text-emerald-400 transition-colors" data-testid="header-portfolio-link">
           Trabajos
         </a>
         <a href="#about" class="hover:text-emerald-400 transition-colors" data-testid="header-about-link">
