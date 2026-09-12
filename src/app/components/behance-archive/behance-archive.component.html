@@ -41,7 +41,7 @@
       <h2 class="section-title">Archivo visual</h2>
       <div class="section-copy">
         <p class="m-0">
-          Este archivo reúne proyectos publicados entre <strong>2022 y 2025</strong>. Documenta distintas etapas,
+          Este archivo reúne proyectos de <strong>2022 a 2026</strong>. Documenta distintas etapas,
           clientes y exploraciones que fueron formando mi mirada. El presente puede verse en las marcas que acompaño mes a mes.
         </p>
         <a href="#monthly-service" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-accent no-underline transition-colors hover:text-white">
@@ -61,7 +61,7 @@
             [ngClass]="activeFilter() === filter ? 'text-white after:scale-x-100' : 'text-white/55 hover:text-white'"
             [attr.aria-pressed]="activeFilter() === filter"
             data-testid="behance-filter-button">
-            <span>{{ filter === 'Musica' ? 'Música' : filter }}</span>
+            <span>{{ filter === 'Identidad' ? 'Identidad y logos' : filter === 'Musica' ? 'Música' : filter }}</span>
             <span
               class="inline-flex h-[1.35rem] min-w-[1.35rem] items-center justify-center rounded-full border px-1.5 text-[0.62rem]"
               [ngClass]="activeFilter() === filter ? 'border-accent/40 text-accent' : 'border-white/15 text-white/50'">
@@ -76,7 +76,7 @@
       @if (featuredProject(); as featured) {
         <aside class="archive-preview">
           <a
-            [routerLink]="['/trabajos', featured.url.split('/')[4]]"
+            [routerLink]="['/trabajos', projectId(featured)]"
             class="archive-preview__link"
             [attr.aria-label]="'Ver ' + featured.title">
             <div class="archive-preview__media">
@@ -105,7 +105,7 @@
             (focusin)="setFeaturedProject(project)"
             data-testid="behance-project-card">
             <a
-              [routerLink]="['/trabajos', project.url.split('/')[4]]"
+              [routerLink]="['/trabajos', projectId(project)]"
               class="archive-row__link"
               [attr.aria-label]="'Ver ' + project.title">
               <span class="archive-row__number" aria-hidden="true">

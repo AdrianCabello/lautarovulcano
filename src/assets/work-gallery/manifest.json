@@ -1,4 +1,617 @@
 {
+  "eventloop-identidad": {
+    "title": "Eventloop",
+    "category": "Identidad visual · Manual de marca",
+    "url": "",
+    "curated": true,
+    "groups": [
+      [
+        {
+          "src": "/assets/work-gallery/eventloop-identidad/01.png",
+          "original": "/assets/work-gallery/eventloop-identidad/01.png",
+          "width": 1200,
+          "height": 750
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/eventloop-identidad/02.png",
+          "original": "/assets/work-gallery/eventloop-identidad/02.png",
+          "width": 1200,
+          "height": 900
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/eventloop-identidad/03.png",
+          "original": "/assets/work-gallery/eventloop-identidad/03.png",
+          "width": 1200,
+          "height": 900
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/eventloop-identidad/04.png",
+          "original": "/assets/work-gallery/eventloop-identidad/04.png",
+          "width": 1200,
+          "height": 900
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/eventloop-identidad/05.png",
+          "original": "/assets/work-gallery/eventloop-identidad/05.png",
+          "width": 1200,
+          "height": 900
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/eventloop-identidad/06.png",
+          "original": "/assets/work-gallery/eventloop-identidad/06.png",
+          "width": 1200,
+          "height": 900
+        }
+      ]
+    ],
+    "otherMedia": []
+  },
+  "katmandu": {
+    "title": "Katmandu",
+    "category": "Identidad visual · Manual de marca",
+    "url": "",
+    "curated": true,
+    "groups": [
+      [
+        {
+          "src": "/assets/work-gallery/katmandu/01.png",
+          "original": "/assets/work-gallery/katmandu/01.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/katmandu/02.png",
+          "original": "/assets/work-gallery/katmandu/02.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/katmandu/03.png",
+          "original": "/assets/work-gallery/katmandu/03.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/katmandu/04.png",
+          "original": "/assets/work-gallery/katmandu/04.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/katmandu/05.png",
+          "original": "/assets/work-gallery/katmandu/05.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/katmandu/06.png",
+          "original": "/assets/work-gallery/katmandu/06.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/katmandu/07.png",
+          "original": "/assets/work-gallery/katmandu/07.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/katmandu/08.png",
+          "original": "/assets/work-gallery/katmandu/08.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/katmandu/09.png",
+          "original": "/assets/work-gallery/katmandu/09.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/katmandu/10.png",
+          "original": "/assets/work-gallery/katmandu/10.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/katmandu/11.png",
+          "original": "/assets/work-gallery/katmandu/11.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/katmandu/12.png",
+          "original": "/assets/work-gallery/katmandu/12.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/katmandu/13.png",
+          "original": "/assets/work-gallery/katmandu/13.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/katmandu/14.png",
+          "original": "/assets/work-gallery/katmandu/14.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/katmandu/15.png",
+          "original": "/assets/work-gallery/katmandu/15.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/katmandu/16.png",
+          "original": "/assets/work-gallery/katmandu/16.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/katmandu/17.png",
+          "original": "/assets/work-gallery/katmandu/17.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/katmandu/18.png",
+          "original": "/assets/work-gallery/katmandu/18.png",
+          "width": 1201,
+          "height": 751
+        }
+      ]
+    ],
+    "otherMedia": []
+  },
+  "varek": {
+    "title": "VAREK",
+    "category": "Identidad visual · Manual de marca",
+    "url": "",
+    "curated": true,
+    "groups": [
+      [
+        {
+          "src": "/assets/work-gallery/varek/01.png",
+          "original": "/assets/work-gallery/varek/01.png",
+          "width": 1200,
+          "height": 750
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/varek/02.png",
+          "original": "/assets/work-gallery/varek/02.png",
+          "width": 1200,
+          "height": 750
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/varek/03.png",
+          "original": "/assets/work-gallery/varek/03.png",
+          "width": 1200,
+          "height": 750
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/varek/04.png",
+          "original": "/assets/work-gallery/varek/04.png",
+          "width": 1200,
+          "height": 750
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/varek/05.png",
+          "original": "/assets/work-gallery/varek/05.png",
+          "width": 1200,
+          "height": 750
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/varek/06.png",
+          "original": "/assets/work-gallery/varek/06.png",
+          "width": 1200,
+          "height": 750
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/varek/07.png",
+          "original": "/assets/work-gallery/varek/07.png",
+          "width": 1200,
+          "height": 750
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/varek/08.png",
+          "original": "/assets/work-gallery/varek/08.png",
+          "width": 1200,
+          "height": 750
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/varek/09.png",
+          "original": "/assets/work-gallery/varek/09.png",
+          "width": 1200,
+          "height": 750
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/varek/10.png",
+          "original": "/assets/work-gallery/varek/10.png",
+          "width": 1200,
+          "height": 750
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/varek/11.png",
+          "original": "/assets/work-gallery/varek/11.png",
+          "width": 1200,
+          "height": 750
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/varek/12.png",
+          "original": "/assets/work-gallery/varek/12.png",
+          "width": 1200,
+          "height": 750
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/varek/13.png",
+          "original": "/assets/work-gallery/varek/13.png",
+          "width": 1200,
+          "height": 750
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/varek/14.png",
+          "original": "/assets/work-gallery/varek/14.png",
+          "width": 1200,
+          "height": 750
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/varek/15.png",
+          "original": "/assets/work-gallery/varek/15.png",
+          "width": 1200,
+          "height": 750
+        }
+      ]
+    ],
+    "otherMedia": []
+  },
+  "hornero-serrano": {
+    "title": "Hornero Serrano",
+    "category": "Identidad visual · Manual de marca",
+    "url": "",
+    "curated": true,
+    "groups": [
+      [
+        {
+          "src": "/assets/work-gallery/hornero-serrano/01.png",
+          "original": "/assets/work-gallery/hornero-serrano/01.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/hornero-serrano/02.png",
+          "original": "/assets/work-gallery/hornero-serrano/02.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/hornero-serrano/03.png",
+          "original": "/assets/work-gallery/hornero-serrano/03.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/hornero-serrano/04.png",
+          "original": "/assets/work-gallery/hornero-serrano/04.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/hornero-serrano/05.png",
+          "original": "/assets/work-gallery/hornero-serrano/05.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/hornero-serrano/06.png",
+          "original": "/assets/work-gallery/hornero-serrano/06.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/hornero-serrano/07.png",
+          "original": "/assets/work-gallery/hornero-serrano/07.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/hornero-serrano/08.png",
+          "original": "/assets/work-gallery/hornero-serrano/08.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/hornero-serrano/09.png",
+          "original": "/assets/work-gallery/hornero-serrano/09.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/hornero-serrano/10.png",
+          "original": "/assets/work-gallery/hornero-serrano/10.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/hornero-serrano/11.png",
+          "original": "/assets/work-gallery/hornero-serrano/11.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/hornero-serrano/12.png",
+          "original": "/assets/work-gallery/hornero-serrano/12.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/hornero-serrano/13.png",
+          "original": "/assets/work-gallery/hornero-serrano/13.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/hornero-serrano/14.png",
+          "original": "/assets/work-gallery/hornero-serrano/14.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/hornero-serrano/15.png",
+          "original": "/assets/work-gallery/hornero-serrano/15.png",
+          "width": 1201,
+          "height": 751
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/hornero-serrano/16.png",
+          "original": "/assets/work-gallery/hornero-serrano/16.png",
+          "width": 1201,
+          "height": 751
+        }
+      ]
+    ],
+    "otherMedia": []
+  },
+  "inflables-tandil": {
+    "title": "Inflables Tandil",
+    "category": "Identidad visual · Manual de marca",
+    "url": "",
+    "curated": true,
+    "groups": [
+      [
+        {
+          "src": "/assets/work-gallery/inflables-tandil/01.png",
+          "original": "/assets/work-gallery/inflables-tandil/01.png",
+          "width": 843,
+          "height": 596
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/inflables-tandil/02.png",
+          "original": "/assets/work-gallery/inflables-tandil/02.png",
+          "width": 843,
+          "height": 596
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/inflables-tandil/03.png",
+          "original": "/assets/work-gallery/inflables-tandil/03.png",
+          "width": 843,
+          "height": 596
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/inflables-tandil/04.png",
+          "original": "/assets/work-gallery/inflables-tandil/04.png",
+          "width": 843,
+          "height": 596
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/inflables-tandil/05.png",
+          "original": "/assets/work-gallery/inflables-tandil/05.png",
+          "width": 843,
+          "height": 596
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/inflables-tandil/06.png",
+          "original": "/assets/work-gallery/inflables-tandil/06.png",
+          "width": 843,
+          "height": 596
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/inflables-tandil/07.png",
+          "original": "/assets/work-gallery/inflables-tandil/07.png",
+          "width": 843,
+          "height": 596
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/inflables-tandil/08.png",
+          "original": "/assets/work-gallery/inflables-tandil/08.png",
+          "width": 843,
+          "height": 596
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/inflables-tandil/09.png",
+          "original": "/assets/work-gallery/inflables-tandil/09.png",
+          "width": 843,
+          "height": 596
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/inflables-tandil/10.png",
+          "original": "/assets/work-gallery/inflables-tandil/10.png",
+          "width": 843,
+          "height": 596
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/inflables-tandil/11.png",
+          "original": "/assets/work-gallery/inflables-tandil/11.png",
+          "width": 843,
+          "height": 596
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/inflables-tandil/12.png",
+          "original": "/assets/work-gallery/inflables-tandil/12.png",
+          "width": 843,
+          "height": 596
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/inflables-tandil/13.png",
+          "original": "/assets/work-gallery/inflables-tandil/13.png",
+          "width": 843,
+          "height": 596
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/inflables-tandil/14.png",
+          "original": "/assets/work-gallery/inflables-tandil/14.png",
+          "width": 843,
+          "height": 596
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/inflables-tandil/15.png",
+          "original": "/assets/work-gallery/inflables-tandil/15.png",
+          "width": 843,
+          "height": 596
+        }
+      ],
+      [
+        {
+          "src": "/assets/work-gallery/inflables-tandil/16.png",
+          "original": "/assets/work-gallery/inflables-tandil/16.png",
+          "width": 843,
+          "height": 596
+        }
+      ]
+    ],
+    "otherMedia": []
+  },
   "bresh-1": {
     "title": "BRESH 1 · Necochea",
     "category": "Eventos · Markama · 10 de enero",
