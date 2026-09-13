@@ -1,0 +1,87 @@
+:host { display: block; }
+
+@media (max-width: 767px) {
+  [data-testid="hero-section"] {
+    isolation: isolate;
+    min-height: 100svh;
+    align-items: flex-end;
+    padding: 340px 0 max(32px, env(safe-area-inset-bottom));
+    background: #061410;
+  }
+  [data-testid="hero-section"] > .container {
+    position: static;
+    padding-inline: 24px;
+    transform: none !important;
+    animation: none !important;
+  }
+  .hero-layout { display: block; }
+  .hero-copy-block { position: relative; z-index: 2; }
+  .hero-kicker {
+    margin: 0 0 14px;
+    font-size: 9px;
+    letter-spacing: 0;
+    color: #c5d8d0;
+    animation: none;
+  }
+  .hero-title { margin: 0; line-height: 1.05; animation: none; }
+  .hero-title-line { opacity: 1; transform: none; animation: none; clip-path: none; }
+  .hero-title .lv-gradient-text { background: none; color: #f7f6f1; }
+  .hero-title-line:last-child { color: #00efa0; }
+  .hero-subtitle {
+    margin: 18px 0 0;
+    font-size: 14px;
+    line-height: 1.65;
+    color: #d5dfda;
+    animation: none;
+  }
+  .hero-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 14px;
+    margin: 24px 0 0;
+    animation: none;
+  }
+  .hero-actions .lv-button-primary {
+    min-height: 48px;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    text-align: center;
+    box-shadow: none;
+  }
+  .hero-projects-secondary { font-size: 12px; gap: 6px; }
+
+  // The portrait shares the hero bounds and fades behind the copy.
+  .hero-portrait-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    transform: none;
+    animation: none;
+  }
+  .hero-portrait-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 0%, transparent 40%, rgba(6,20,16,.82) 59%, #061410 78%);
+  }
+  .hero-portrait { height: 100%; max-width: none; animation: none; }
+  .hero-portrait > div {
+    height: 70%;
+    aspect-ratio: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .hero-portrait img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    object-fit: cover;
+    object-position: center 40%;
+    filter: none;
+  }
+}

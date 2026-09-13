@@ -5,17 +5,6 @@
 @tailwind utilities;
 
 @layer base {
-  @font-face {
-    font-family: "Coolvetica";
-    src:
-      url("/assets/fonts/coolvetica.ttf") format("truetype"),
-      local("Coolvetica"),
-      local("CoolveticaRg-Regular");
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-  }
-
   html {
     scroll-behavior: smooth;
   }
@@ -40,7 +29,7 @@
   h3,
   h4 {
     @apply font-display;
-    letter-spacing: 0.05em;
+    letter-spacing: 0;
   }
 
   .font-sans {
@@ -73,7 +62,18 @@
   }
 
   .section-title {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-[0.94] text-white;
+    @apply font-display text-[2.5rem] md:text-5xl lg:text-6xl font-bold leading-[1.08] text-white;
+    text-wrap: balance;
+  }
+
+  .subsection-title {
+    @apply font-display text-[2rem] md:text-4xl font-bold leading-[1.15] text-white;
+    text-wrap: balance;
+  }
+
+  .card-title {
+    @apply font-display text-[1.75rem] md:text-[2rem] font-bold leading-[1.15] text-white;
+    text-wrap: balance;
   }
 
   .section-copy {
@@ -1316,8 +1316,18 @@
   .motion-ready .project-card,
   .motion-ready .archive-card,
   .motion-ready .motion-cta,
-  .motion-ready .motion-reveal {
-    transform: translateY(0.75rem);
+  .motion-ready .motion-reveal,
+  .motion-ready .process-step,
+  .motion-ready .motion-copy-block > .section-label,
+  .motion-ready .motion-copy-block > h1,
+  .motion-ready .motion-copy-block > h2,
+  .motion-ready .motion-copy-block > h3 {
+    // Mobile content must remain readable even when a reveal observer misses it.
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    clip-path: none !important;
+    animation: none !important;
   }
 
   .motion-ready .process-grid.is-motion-visible::before {

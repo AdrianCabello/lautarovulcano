@@ -1,40 +1,40 @@
-<section class="motion-section relative flex w-full items-start overflow-hidden pb-0 pt-16 md:min-h-[94dvh] md:items-center md:py-28" data-testid="hero-section">
+<section class="motion-section relative flex w-full items-start overflow-hidden pb-0 pt-20 md:min-h-[94dvh] md:items-center md:py-28" data-testid="hero-section">
   <div class="absolute inset-0" aria-hidden="true">
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,255,157,0.12),transparent_30rem),radial-gradient(circle_at_84%_26%,rgba(255,255,255,0.08),transparent_22rem),linear-gradient(145deg,rgba(8,42,31,0.82),rgba(3,16,12,0)_70%)]"></div>
     <div class="absolute left-1/2 top-20 h-px w-[72vw] -translate-x-1/2 bg-gradient-to-r from-transparent via-white/15 to-transparent"></div>
     <div class="noise-layer"></div>
   </div>
   <div class="container relative z-10">
-    <div class="grid items-center gap-7 md:gap-10 lg:grid-cols-[minmax(0,1.25fr)_minmax(300px,0.75fr)] lg:gap-14">
+    <div class="hero-layout grid items-center gap-7 md:gap-10 lg:grid-cols-[minmax(0,1.25fr)_minmax(300px,0.75fr)] lg:gap-14">
       <div class="hero-copy-block order-1 text-left">
         <p class="hero-kicker mb-4 text-[0.62rem] font-bold uppercase tracking-[0.18em] text-accent/65">
           <span>Lautaro Vulcano · Estudio independiente</span>
         </p>
-        <h1 class="hero-title max-w-full font-display text-[1.9rem] font-bold leading-[1.01] text-white min-[420px]:text-[2.15rem] sm:text-5xl md:max-w-3xl md:text-[3.25rem] md:leading-[0.9] lg:text-[3.35rem] xl:text-[3.85rem]">
-          <span class="hero-title-line block md:whitespace-nowrap"><span class="lv-gradient-text">Diseño gráfico</span></span>
-          <span class="hero-title-line block md:whitespace-nowrap">para marcas que quieren</span>
-          <span class="hero-title-line block md:whitespace-nowrap">mostrarse mejor.</span>
+        <h1 class="hero-title max-w-full font-display text-4xl font-bold leading-[1.08] text-white min-[380px]:text-[2.5rem] sm:text-5xl md:max-w-3xl md:text-[3.25rem] lg:text-[3.35rem] xl:text-[3.85rem]">
+          <span class="hero-title-line block md:whitespace-nowrap"><span class="lv-gradient-text">Diseño y comunicación</span></span>
+          <span class="hero-title-line block md:whitespace-nowrap">para tu marca.</span>
         </h1>
         <p class="hero-subtitle mt-5 max-w-[34rem] text-[0.95rem] leading-7 text-gray-300 md:mt-6 md:max-w-[38rem] md:text-lg md:leading-8">
-          Construyo identidades, contenido y sitios web para que cada proyecto muestre con claridad lo que tiene para ofrecer.
+          Te ayudo a definir qué decir y cómo mostrarlo, con identidad visual, contenido y sitios web pensados para lo que tu negocio necesita.
         </p>
-        <div class="hero-actions mt-6 flex flex-col gap-2.5 min-[420px]:flex-row md:mt-8 md:justify-start md:gap-3">
+        <div class="hero-actions mt-6 flex flex-col items-start gap-1 md:mt-8 md:flex-row md:items-center md:gap-3">
           <a href="#monthly-service"
              data-testid="hero-projects-link"
-             class="lv-button-primary group min-w-0 min-[420px]:flex-1 md:flex-none">
-            Servicio mensual
+             class="lv-button-primary group min-w-0 max-w-full">
+            Conocé el servicio mensual
           </a>
           <a href="/trabajos"
              data-testid="hero-contact-link"
-             class="lv-button-secondary group min-w-0 min-[420px]:flex-1 md:flex-none">
+             class="hero-projects-secondary inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-gray-200 transition-colors hover:text-accent md:px-5">
             Ver proyectos
+            <lucide-icon name="arrow-right" [size]="16"></lucide-icon>
           </a>
         </div>
       </div>
 
       <div class="hero-portrait-wrap order-2 flex justify-center md:justify-end" [style.--hero-parallax.px]="heroParallax">
         <div class="hero-portrait relative w-full md:max-w-[330px] lg:max-w-[360px]">
-          <div class="relative aspect-[4/3] overflow-hidden rounded-[1rem] border border-white/[0.07] bg-white/[0.018] p-1 shadow-2xl shadow-black/16 md:aspect-[4/5] md:rounded-[2.45rem]">
+          <div class="relative aspect-[16/11] overflow-hidden rounded-[1rem] border border-white/[0.07] bg-white/[0.018] p-1 shadow-2xl shadow-black/16 md:aspect-[4/5] md:rounded-[2.45rem]">
             <img src="assets/perfil.png" alt="Lautaro Vulcano" class="h-full w-full rounded-[0.75rem] object-cover object-center saturate-[0.94] md:rounded-[2.1rem]">
           </div>
         </div>

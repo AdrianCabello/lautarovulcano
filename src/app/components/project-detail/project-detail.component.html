@@ -7,7 +7,7 @@
 
     <ng-container *ngIf="project(); else notFound">
       <article class="motion-copy-block max-w-4xl mx-auto">
-        <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">{{ project()!.name }}</h1>
+        <h1 class="section-title mb-4">{{ project()!.name }}</h1>
         <p class="text-xl text-gray-300 mb-6" *ngIf="project()!.category">
           <span class="text-accent font-medium">{{ project()!.category }}</span>
         </p>
@@ -31,7 +31,7 @@
 
         <!-- Imagen principal (antes/después o portada) -->
         <section class="motion-section mb-12" *ngIf="project()!.imageAfter || project()!.imageBefore">
-          <h2 class="text-xl font-semibold text-white mb-4">Imágenes del proyecto</h2>
+          <h2 class="subsection-title mb-4">Imágenes del proyecto</h2>
           <div class="motion-stagger grid grid-cols-1 md:grid-cols-2 gap-6">
             <figure class="motion-card rounded-lg overflow-hidden bg-secondary" *ngIf="project()!.imageBefore">
               <img [src]="project()!.imageBefore!" [alt]="project()!.name + ' - Antes'" class="w-full h-auto object-cover">
@@ -46,7 +46,7 @@
 
         <!-- Galería -->
         <section class="motion-section mb-12" *ngIf="gallerySorted().length">
-          <h2 class="text-xl font-semibold text-white mb-4">Galería</h2>
+          <h2 class="subsection-title mb-4">Galería</h2>
           <div class="motion-stagger grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <figure *ngFor="let img of gallerySorted()" class="motion-card rounded-lg overflow-hidden bg-secondary">
               <img [src]="img.url" [alt]="project()!.name + ' - ' + img.id" class="w-full h-56 object-cover">
@@ -56,7 +56,7 @@
 
         <!-- Vídeos -->
         <section class="motion-section mb-12" *ngIf="videoUrls().length">
-          <h2 class="text-xl font-semibold text-white mb-4">Vídeos</h2>
+          <h2 class="subsection-title mb-4">Vídeos</h2>
           <div class="space-y-6">
             <div *ngFor="let videoUrl of videoUrls()" class="motion-card rounded-lg overflow-hidden bg-secondary aspect-video max-w-3xl">
               <video *ngIf="isVideoUrl(videoUrl)" [src]="videoUrl" controls class="w-full h-full object-contain"></video>

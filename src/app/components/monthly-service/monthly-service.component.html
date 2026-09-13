@@ -1,84 +1,95 @@
-<section id="monthly-service" class="motion-section editorial-band w-full py-24 md:py-32" data-testid="monthly-service-section">
+<section id="monthly-service" class="motion-section editorial-band w-full scroll-mt-16 py-24 md:py-32" aria-labelledby="monthly-service-title" data-testid="monthly-service-section">
   <div class="container relative z-10">
-    <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-stretch">
-      <div class="motion-card relative overflow-hidden rounded-[2rem] border border-white/[0.08] bg-white/[0.018] p-6 shadow-2xl shadow-black/10 md:p-8 lg:flex lg:min-h-[27rem] lg:items-center">
-        <div class="noise-layer"></div>
-        <div class="motion-copy-block relative">
-          <div class="mb-7 flex items-center justify-between gap-4">
-            <p class="section-label">Servicio mensual</p>
-            <span class="hidden font-display text-5xl font-bold leading-none text-accent/20 sm:block">01</span>
-          </div>
-          <h2 class="mb-7 max-w-xl font-display text-[2.25rem] font-bold leading-[1.02] text-white md:text-[2.9rem] lg:text-[3rem]">
-            <span class="block text-white/80">Un mes de contenido.</span>
-            <span class="block text-accent">Un sistema que se sostiene.</span>
-          </h2>
-          <p class="mb-8 max-w-xl text-base leading-8 text-gray-300 md:text-lg">
-            Planifico, diseño y edito lo que la marca necesita durante el mes para mantener presencia, responder a sus prioridades y no depender de publicaciones aisladas.
-          </p>
-          <div class="flex flex-col gap-3 sm:flex-row">
-            <a href="#contact" class="lv-button-primary group" data-testid="monthly-service-contact-link">
-              Quiero trabajar mi marca
-            </a>
-            <a href="/trabajos" class="lv-button-secondary group" data-testid="monthly-service-projects-link">
-              Ver trabajos
-            </a>
+    <div class="monthly-explainer mx-auto max-w-5xl" data-testid="monthly-service-explanation">
+      <header class="monthly-intro">
+        <p class="section-label mb-3">Servicio mensual</p>
+        <h2 id="monthly-service-title" class="mb-2 font-display text-4xl font-bold leading-[1.12] text-white md:text-5xl">Contenido y comunicación para redes</h2>
+        <p class="monthly-lead">Te acompaño a organizar y producir lo que tu marca necesita comunicar.</p>
+        <a href="#contact" class="lv-button-primary mt-6 inline-flex max-w-full gap-2 text-center"><span>Quiero consultar por el servicio</span><lucide-icon name="arrow-right" [size]="18" class="shrink-0"></lucide-icon></a>
+      </header>
+      <div class="monthly-columns">
+        <div class="monthly-overview">
+          <details class="monthly-detail">
+            <summary><span>¿Qué es el acompañamiento mensual?</span><lucide-icon name="plus" [size]="18" class="monthly-toggle"></lucide-icon></summary>
+            <div class="monthly-detail-copy"><p>Es una forma de trabajar juntos <strong>de manera sostenida</strong> sobre la comunicación de tu negocio.</p>
+          <p>Partimos de lo que necesitás comunicar durante el mes: tus productos, servicios, promociones, novedades y las dudas que suelen tener tus clientes. Con esa información <strong>organizamos los temas y desarrollamos las piezas</strong>.</p>
+          <p>Tener continuidad me permite <strong>conocer mejor tu marca</strong> y darle seguimiento a lo que vamos haciendo.</p>
+
+          <p>Llevar un negocio también implica mostrar lo que hacés, explicar lo que ofrecés y <strong>mantener actualizadas tus redes</strong>. Entre las tareas de todos los días, es fácil que el contenido quede para cuando haya tiempo o aparezca una idea.</p>
+          <p>Mi trabajo es ayudarte a darle continuidad: conocer tu negocio, proponer qué comunicar y transformar esas ideas en <strong>contenido diseñado y editado para tu marca</strong>.</p></div>
+          </details>
+          <details class="monthly-detail">
+            <summary><span>¿Para qué te sirve?</span><lucide-icon name="plus" [size]="18" class="monthly-toggle"></lucide-icon></summary>
+            <div class="monthly-detail-copy"><p>Para que quien llegue a tus redes pueda <strong>entender qué ofrecés</strong>, cómo trabajás y por qué puede interesarle tu propuesta.</p>
+          <p>También para que tengas una <strong>organización y apoyo</strong> en la producción del contenido. Saber qué vamos a comunicar permite anticipar qué fotos, videos o información necesitamos y evitar resolver cada publicación a último momento.</p>
+          <p>Podemos trabajar contenido para presentar un servicio, mostrar un producto en uso, responder una consulta frecuente, compartir un proceso o acompañar una promoción. <strong>El formato se elige</strong> según lo que necesitamos contar.</p></div>
+          </details>
+          <details class="monthly-detail">
+            <summary><span>¿Qué necesitás aportar vos?</span><lucide-icon name="plus" [size]="18" class="monthly-toggle"></lucide-icon></summary>
+            <div class="monthly-detail-copy"><p><strong>Tu conocimiento del negocio es fundamental</strong>. Necesito que me compartas información sobre tus productos o servicios, las novedades y aquello que querés impulsar.</p>
+          <p>También coordinamos el envío del material necesario y la revisión de las propuestas. Te acompaño a definir <strong>qué mostrar y cómo hacerlo</strong> para que esa participación sea más sencilla y organizada.</p></div>
+          </details>
+        </div>
+        <div>
+          <h3 class="monthly-heading subsection-title">¿Cómo te acompaño?</h3>
+          <div class="monthly-steps">
+          <details class="monthly-detail" open data-testid="monthly-support-step">
+            <summary><span class="monthly-number" aria-hidden="true">01</span><span>Conozco tu negocio</span><lucide-icon name="plus" [size]="18" class="monthly-toggle"></lucide-icon></summary>
+            <div class="monthly-detail-copy"><p>Primero conversamos sobre lo que hacés, a quién querés llegar y qué necesitás mejorar. Reviso cómo se presenta hoy tu marca, qué material tenés y <strong>cuáles son tus prioridades</strong>.</p>
+          <p>Ese punto de partida nos ayuda a definir una propuesta que se adapte a tu negocio y a <strong>tus posibilidades de producción</strong>.</p></div>
+          </details>
+          <details class="monthly-detail" data-testid="monthly-support-step">
+            <summary><span class="monthly-number" aria-hidden="true">02</span><span>Propongo y organizo el contenido</span><lucide-icon name="plus" [size]="18" class="monthly-toggle"></lucide-icon></summary>
+            <div class="monthly-detail-copy"><p>Con esa base, <strong>propongo temas y enfoques</strong> para trabajar. Ordenamos qué conviene comunicar durante el mes y qué formato puede funcionar para cada idea.</p>
+          <p>También contemplamos promociones, lanzamientos y fechas importantes para <strong>preparar el material con tiempo</strong>.</p></div>
+          </details>
+          <details class="monthly-detail" data-testid="monthly-support-step">
+            <summary><span class="monthly-number" aria-hidden="true">03</span><span>Te oriento con el material que necesitamos</span><lucide-icon name="plus" [size]="18" class="monthly-toggle"></lucide-icon></summary>
+            <div class="monthly-detail-copy"><p>Si el contenido requiere fotos o videos de tu negocio, te indico <strong>qué conviene mostrar y cómo podés registrarlo</strong>.</p>
+          <p>Cuando hace falta hablar a cámara, puedo ayudarte con <strong>una idea o un guion</strong> que ordene lo que querés decir. La producción se organiza según los recursos disponibles y lo acordado para el proyecto.</p></div>
+          </details>
+          <details class="monthly-detail" data-testid="monthly-support-step">
+            <summary><span class="monthly-number" aria-hidden="true">04</span><span>Diseño y edito las piezas</span><lucide-icon name="plus" [size]="18" class="monthly-toggle"></lucide-icon></summary>
+            <div class="monthly-detail-copy"><p>Transformo las ideas y el material en <strong>publicaciones, carruseles, historias o reels</strong>.</p>
+          <p>Trabajo la <strong>jerarquía de la información</strong>, la estética, el ritmo de los videos y la adaptación a cada formato, cuidando que el contenido se reconozca como parte de tu marca.</p></div>
+          </details>
+          <details class="monthly-detail" data-testid="monthly-support-step">
+            <summary><span class="monthly-number" aria-hidden="true">05</span><span>Revisamos y coordinamos</span><lucide-icon name="plus" [size]="18" class="monthly-toggle"></lucide-icon></summary>
+            <div class="monthly-detail-copy"><p>Compartimos el contenido para <strong>revisar que la información sea correcta</strong> y realizar los ajustes necesarios.</p>
+          <p>La entrega y la publicación se organizan <strong>según la dinámica acordada</strong>. También vamos contemplando nuevas prioridades y oportunidades que aparezcan en el negocio.</p></div>
+          </details>
           </div>
         </div>
       </div>
-
-      <div class="lg:flex">
-        <div class="motion-card lv-textured-surface flex w-full flex-col justify-center rounded-[2rem] p-7 md:p-8 lg:min-h-[29rem]">
-          <div class="motion-copy-block relative">
-            <div class="mb-6">
-              <p class="section-label mb-4">Del plan a la publicación</p>
-              <div class="flex items-start justify-between gap-5">
-                <h3 class="max-w-[24rem] font-sans text-3xl font-bold leading-tight text-white md:text-4xl">
-                  Una rutina de contenido pensada para acompañar el negocio.
-                </h3>
-              </div>
-            </div>
-
-            <p class="mb-7 max-w-2xl border-l border-accent/35 pl-5 text-base leading-8 text-gray-300">
-              Partimos de objetivos, fechas y oportunidades concretas. Con esa base defino temas, formatos y prioridades; después produzco cada pieza para que llegue lista a su canal.
-            </p>
-
-            <div class="motion-stagger mb-7 grid gap-3 sm:grid-cols-3">
-              <div class="motion-card rounded-[1rem] border border-white/10 bg-white/[0.025] p-4">
-                <p class="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-accent/75">Orden</p>
-                <p class="mt-2 text-sm leading-6 text-gray-300"><strong>Calendario</strong>, temas y prioridades.</p>
-              </div>
-              <div class="motion-card rounded-[1rem] border border-white/10 bg-white/[0.025] p-4">
-                <p class="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-accent/75">Producción</p>
-                <p class="mt-2 text-sm leading-6 text-gray-300">Diseño y edición por <strong>formato</strong>.</p>
-              </div>
-              <div class="motion-card rounded-[1rem] border border-white/10 bg-white/[0.025] p-4">
-                <p class="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-accent/75">Objetivo</p>
-                <p class="mt-2 text-sm leading-6 text-gray-300">Cada pieza cumple una <strong>función</strong>.</p>
-              </div>
-            </div>
-
-            <div class="motion-list grid gap-2">
-              @for (item of items; track item) {
-                <div class="motion-list-item flex items-start gap-3 rounded-[0.9rem] border border-white/[0.07] bg-primary/20 px-4 py-3">
-                  <lucide-icon name="check" [size]="16" class="mt-1 shrink-0 text-accent"></lucide-icon>
-                  <span class="text-sm leading-6 text-gray-300">{{ item }}</span>
-                </div>
-              }
-            </div>
-          </div>
-        </div>
+      <div class="border-t border-white/10 py-9 md:py-12">
+        <h3 class="subsection-title mb-7">¿Qué podemos trabajar durante el mes?</h3>
+        <ul class="monthly-deliverables">
+          <li class="flex items-start gap-3 text-base leading-7 text-gray-300"><lucide-icon name="check" [size]="18" class="mt-1 shrink-0 text-accent"></lucide-icon><span>Planificación de temas y calendario de contenido.</span></li>
+          <li class="flex items-start gap-3 text-base leading-7 text-gray-300"><lucide-icon name="check" [size]="18" class="mt-1 shrink-0 text-accent"></lucide-icon><span>Ideas y guiones para videos.</span></li>
+          <li class="flex items-start gap-3 text-base leading-7 text-gray-300"><lucide-icon name="check" [size]="18" class="mt-1 shrink-0 text-accent"></lucide-icon><span>Diseño de publicaciones, carruseles e historias.</span></li>
+          <li class="flex items-start gap-3 text-base leading-7 text-gray-300"><lucide-icon name="check" [size]="18" class="mt-1 shrink-0 text-accent"></lucide-icon><span>Edición de reels y otros videos.</span></li>
+          <li class="flex items-start gap-3 text-base leading-7 text-gray-300"><lucide-icon name="check" [size]="18" class="mt-1 shrink-0 text-accent"></lucide-icon><span>Textos para acompañar las publicaciones.</span></li>
+          <li class="flex items-start gap-3 text-base leading-7 text-gray-300"><lucide-icon name="check" [size]="18" class="mt-1 shrink-0 text-accent"></lucide-icon><span>Contenido para promociones, lanzamientos y fechas importantes.</span></li>
+          <li class="flex items-start gap-3 text-base leading-7 text-gray-300"><lucide-icon name="check" [size]="18" class="mt-1 shrink-0 text-accent"></lucide-icon><span>Dirección visual para sostener la identidad de la marca.</span></li>
+        </ul>
+        <p class="mt-8 max-w-3xl border-l border-accent/40 pl-5 text-base leading-8 text-gray-300">La combinación de tareas, la cantidad de piezas y la dinámica de trabajo <strong>se definen según lo que necesitás</strong>. La grabación y la publicación se coordinan dentro de esa propuesta.</p>
+      </div>
+      <div class="border-y border-accent/20 py-8" data-testid="monthly-service-join-cta">
+        <h3 class="subsection-title mb-4">Conversemos sobre tu negocio</h3>
+        <p class="mb-7 max-w-3xl text-base leading-8 text-gray-300">Contame qué hacés, cómo venís trabajando tus redes y qué te gustaría mejorar. A partir de eso puedo proponerte una forma de acompañarte.</p>
+        <a href="#contact" class="lv-button-primary inline-flex max-w-full gap-2 text-center" data-testid="monthly-service-join-link"><span>Quiero consultar por el servicio</span><lucide-icon name="arrow-right" [size]="18" class="shrink-0"></lucide-icon></a>
       </div>
     </div>
 
     <div class="motion-card mt-10 rounded-[2rem] border border-white/[0.08] bg-white/[0.018] p-7 md:p-8" data-testid="monthly-examples-section">
       <div class="motion-copy-block mb-7 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
-          <p class="section-label mb-4">Trabajo reciente</p>
-          <h3 class="font-sans text-3xl font-bold leading-tight text-white md:text-4xl">
-            Marcas que están en movimiento
+          <p class="section-label mb-4">Experiencia con marcas</p>
+          <h3 class="section-title">
+            Marcas con las que trabajé
           </h3>
           <p class="mt-4 max-w-3xl text-sm leading-7 text-gray-400">
-            Estos perfiles muestran el trabajo más actual: lanzamientos, productos, temporadas y decisiones que cambian mes a mes. Cada cuenta tiene su propia frecuencia y manera de hablar.
+            Una selección de marcas y proyectos para los que desarrollé trabajos de diseño y comunicación.
           </p>
         </div>
       </div>
@@ -112,15 +123,7 @@
         </div>
       </div>
 
-      <div class="motion-cta mt-8 flex flex-col gap-4 rounded-[1rem] border border-accent/15 bg-accent/[0.045] p-5 sm:flex-row sm:items-center sm:justify-between md:p-6" data-testid="monthly-service-join-cta">
-        <div>
-          <p class="text-lg font-bold leading-tight text-white">¿Tu marca necesita sostener el ritmo?</p>
-          <p class="mt-2 text-sm leading-6 text-gray-400">Armemos una dinámica mensual que se adapte a tus tiempos, prioridades y objetivos.</p>
-        </div>
-        <a href="#contact" class="lv-button-primary shrink-0" data-testid="monthly-service-join-link">
-          Planificar mi contenido
-        </a>
-      </div>
+
     </div>
   </div>
 </section>

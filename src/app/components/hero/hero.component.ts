@@ -7,7 +7,8 @@ import { LucideModule } from '../../shared/lucide.module';
   selector: 'app-hero',
   standalone: true,
   imports: [CommonModule, LucideModule],
-  templateUrl: './hero.component.html'
+  templateUrl: './hero.component.html',
+  styleUrl: './hero.component.scss'
 })
 export class HeroComponent implements OnInit {
   isScrollCueHidden = false;

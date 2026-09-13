@@ -13,6 +13,7 @@ interface MonthlyAccount {
   standalone: true,
   imports: [CommonModule, LucideModule],
   templateUrl: './monthly-service.component.html',
+  styleUrl: './monthly-service.component.scss',
 })
 export class MonthlyServiceComponent implements AfterViewInit, OnDestroy {
   @ViewChild('brandMarquee') private brandMarquee?: ElementRef<HTMLElement>;
@@ -30,17 +31,17 @@ export class MonthlyServiceComponent implements AfterViewInit, OnDestroy {
 
   constructor(@Inject(PLATFORM_ID) private readonly platformId: object) {}
 
-  readonly items = [
-    'Estrategia y calendario de publicaciones',
-    'Piezas diseñadas y editadas para cada formato',
-    'Reels, historias y carruseles con intención comercial',
-    'Edición de video y motion graphics',
-    'Promociones, lanzamientos y fechas importantes',
-    'Dirección visual para mantener coherencia',
-    'Ajustes según objetivos, urgencias y oportunidades',
-  ];
-
   readonly monthlyAccounts: MonthlyAccount[] = [
+    {
+      title: 'Unikas',
+      url: 'https://www.instagram.com/esteticaunikas/',
+      avatar: 'assets/instagram-avatars/unikas.jpg',
+    },
+    {
+      title: 'Maydeep',
+      url: 'https://www.instagram.com/maydeep.music/',
+      avatar: 'assets/instagram-avatars/maydeep.jpg',
+    },
     {
       title: 'Agencia Terminal',
       url: 'https://www.instagram.com/agencia_terminal/',

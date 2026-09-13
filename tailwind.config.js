@@ -11,7 +11,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Plus Jakarta Sans', 'sans-serif'],
-        display: ['Coolvetica', 'Plus Jakarta Sans', 'sans-serif'],
+        display: ['Saira Condensed', 'Plus Jakarta Sans', 'sans-serif'],
       },
       fontWeight: {
         normal: 400,
