@@ -1,5 +1,10 @@
 :host { display: block; }
 
+@keyframes mobile-hero-enter {
+  from { translate: 0 12px; opacity: .65; }
+  to { translate: 0 0; opacity: 1; }
+}
+
 @media (max-width: 767px) {
   [data-testid="hero-section"] {
     isolation: isolate;
@@ -84,4 +89,11 @@
     object-position: center 40%;
     filter: none;
   }
+}
+
+@media (max-width: 767px) and (prefers-reduced-motion: no-preference) {
+  .hero-kicker { animation: mobile-hero-enter 650ms ease-out both; }
+  .hero-title { animation: mobile-hero-enter 750ms ease-out 80ms both; }
+  .hero-subtitle { animation: mobile-hero-enter 750ms ease-out 160ms both; }
+  .hero-actions { animation: mobile-hero-enter 750ms ease-out 240ms both; }
 }
