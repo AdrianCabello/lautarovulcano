@@ -120,6 +120,10 @@ export class BehanceArchiveComponent {
   ];
 
   readonly eventProjects = [{
+    id: 'beetz',
+    title: 'Beetz · Otaqlab Bangkok',
+    poster: '/assets/work-gallery/beetz/vertical.jpg',
+  }, {
     id: '218655779',
     title: 'Positive · Beico',
     poster: '/assets/work-gallery/218655779/2-full.png',
