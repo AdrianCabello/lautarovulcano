@@ -3,11 +3,35 @@
     "title": "Beetz · Otaqlab Bangkok",
     "category": "Eventos · Flyers",
     "description": "Flyers para Beetz en Otaqlab, Bangkok. Una estética nocturna de luces azules y textura digital, adaptada a feed e historias.",
+    "descriptionEmphasis": ["Beetz", "Otaqlab, Bangkok", "luces azules y textura digital", "feed e historias"],
+    "imageLayout": "side-by-side",
     "url": "",
     "curated": true,
     "groups": [
       [{ "src": "/assets/work-gallery/beetz/feed.jpg", "original": "/assets/work-gallery/beetz/feed.jpg", "width": 1080, "height": 1350 }],
       [{ "src": "/assets/work-gallery/beetz/vertical.jpg", "original": "/assets/work-gallery/beetz/vertical.jpg", "width": 1080, "height": 1920 }]
+    ],
+    "otherMedia": []
+  },
+  "la-oriental": {
+    "title": "La Oriental",
+    "category": "Identidad visual · Diseño de logo",
+    "context": [
+      { "title": "La marca", "text": "Una marca de stickers con una identidad expresiva, cercana y fácil de reconocer.", "emphasis": ["marca de stickers", "fácil de reconocer"] },
+      { "title": "La idea", "text": "Un personaje ilustrado y un lettering irregular aportan personalidad y movimiento. La flor conecta las versiones con un acento de color.", "emphasis": ["personaje ilustrado", "lettering irregular", "acento de color"] },
+      { "title": "Las aplicaciones", "text": "El logo y el personaje funcionan juntos o por separado, en stickers, packaging e indumentaria.", "emphasis": ["juntos o por separado", "stickers, packaging e indumentaria"] }
+    ],
+    "url": "",
+    "curated": true,
+    "groups": [
+      [{ "src": "/assets/work-gallery/la-oriental/01.png", "original": "/assets/work-gallery/la-oriental/01.png", "width": 1920, "height": 1080 }],
+      [{ "src": "/assets/work-gallery/la-oriental/02.png", "original": "/assets/work-gallery/la-oriental/02.png", "width": 1920, "height": 1080 }],
+      [{ "src": "/assets/work-gallery/la-oriental/03.png", "original": "/assets/work-gallery/la-oriental/03.png", "width": 1920, "height": 1080 }],
+      [{ "src": "/assets/work-gallery/la-oriental/04.png", "original": "/assets/work-gallery/la-oriental/04.png", "width": 1920, "height": 1080 }],
+      [{ "src": "/assets/work-gallery/la-oriental/05.png", "original": "/assets/work-gallery/la-oriental/05.png", "width": 1920, "height": 1080 }],
+      [{ "src": "/assets/work-gallery/la-oriental/06.png", "original": "/assets/work-gallery/la-oriental/06.png", "width": 1920, "height": 1080 }],
+      [{ "src": "/assets/work-gallery/la-oriental/07.png", "original": "/assets/work-gallery/la-oriental/07.png", "width": 1920, "height": 1080 }],
+      [{ "src": "/assets/work-gallery/la-oriental/08.png", "original": "/assets/work-gallery/la-oriental/08.png", "width": 1920, "height": 1080 }]
     ],
     "otherMedia": []
   },

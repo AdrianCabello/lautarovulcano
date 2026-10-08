@@ -79,6 +79,7 @@ export class BehanceArchiveComponent {
   };
 
   readonly projects: BehanceProject[] = [
+    { id: 'la-oriental', title: 'La Oriental', category: 'Identidad visual', description: 'Diseño de logo para una marca de stickers: personaje ilustrado, lettering, versiones de color y aplicaciones en indumentaria y packaging.', filter: 'Identidad', image: 'assets/work-gallery/la-oriental/01.png', url: '/trabajos/la-oriental' },
     { id: 'eventloop-identidad', title: 'Eventloop', category: 'Identidad visual', description: 'Manual de marca: logotipo e isotipo, versiones, fondos, área de protección y criterios de uso.', filter: 'Identidad', image: 'assets/work-gallery/eventloop-identidad/portada.png', url: '/trabajos/eventloop-identidad' },
     { id: 'katmandu', title: 'Katmandu', category: 'Identidad visual', description: 'Identidad y manual de marca para diseño para gatos: logotipo, símbolo, colores, tipografía y aplicaciones en producto y packaging.', filter: 'Identidad', image: 'assets/work-gallery/katmandu/portada.png', url: '/trabajos/katmandu' },
     { id: 'varek', title: 'VAREK', category: 'Identidad visual', description: 'Identidad y manual de marca para filtros de ducha: isotipo, logotipo, tipografía, colores y aplicaciones en producto y packaging.', filter: 'Identidad', image: 'assets/work-gallery/varek/01.png', url: '/trabajos/varek' },

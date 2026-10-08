@@ -5,8 +5,21 @@
       <header class="gallery-heading">
         <p class="section-label">{{ project.category }}</p>
         <h1>{{ project.title }}</h1>
+        @if (project.description) {
+          <p class="mt-5 max-w-3xl text-base leading-relaxed text-gray-300 md:text-lg">@for (segment of contextSegments(project.description, project.descriptionEmphasis); track $index) {@if (segment.emphasized) {<strong class="font-semibold">{{ segment.text }}</strong>} @else {{{ segment.text }}}}</p>
+        }
+        @if (project.context?.length) {
+          <div class="mt-7 grid gap-6 md:grid-cols-3 md:gap-8">
+            @for (item of project.context; track item.title) {
+              <div>
+                <h2 class="mb-2 font-sans text-sm font-semibold text-accent">{{ item.title }}</h2>
+                <p class="text-sm leading-relaxed text-gray-300">@for (segment of contextSegments(item.text, item.emphasis); track $index) {@if (segment.emphasized) {<strong class="font-semibold">{{ segment.text }}</strong>} @else {{{ segment.text }}}}</p>
+              </div>
+            }
+          </div>
+        }
       </header>
-      <div class="project-images">
+      <div class="project-images" [class.side-by-side]="project.imageLayout === 'side-by-side'">
         @for (group of project.groups; track $index) {
           <div class="image-group" [class.collection]="group.length > 1" [class.story-group]="isStory(group[0])" [style.--columns]="group.length > 3 ? 3 : group.length">
             @for (image of group; track image.src) {

@@ -7,7 +7,7 @@ import { LucideModule } from '../../shared/lucide.module';
 import { FooterComponent } from '../footer/footer.component';
 
 interface WorkImage { src: string; original: string; width: number; height: number; }
-interface WorkGallery { title: string; category: string; url: string; groups: WorkImage[][]; otherMedia: string[]; videos?: { src: string; title: string }[]; }
+interface WorkGallery { title: string; category: string; description?: string; descriptionEmphasis?: string[]; imageLayout?: 'side-by-side'; context?: { title: string; text: string; emphasis?: string[] }[]; url: string; groups: WorkImage[][]; otherMedia: string[]; videos?: { src: string; title: string }[]; }
 
 @Component({
   selector: 'app-work-gallery',
@@ -65,6 +65,26 @@ export class WorkGalleryComponent {
 
   isStory(image: WorkImage): boolean {
     return Math.abs(image.width / image.height - 9 / 16) < 0.03;
+  }
+
+  contextSegments(text: string, emphasis: string[] = []): { text: string; emphasized: boolean }[] {
+    const segments: { text: string; emphasized: boolean }[] = [];
+    let remaining = text;
+    while (remaining) {
+      const match = emphasis
+        .filter(phrase => phrase.length > 0)
+        .map(phrase => ({ phrase, index: remaining.indexOf(phrase) }))
+        .filter(item => item.index >= 0)
+        .sort((a, b) => a.index - b.index)[0];
+      if (!match) {
+        segments.push({ text: remaining, emphasized: false });
+        break;
+      }
+      if (match.index > 0) segments.push({ text: remaining.slice(0, match.index), emphasized: false });
+      segments.push({ text: match.phrase, emphasized: true });
+      remaining = remaining.slice(match.index + match.phrase.length);
+    }
+    return segments;
   }
 
   open(image: WorkImage): void {
