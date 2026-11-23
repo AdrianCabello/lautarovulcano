@@ -11,6 +11,7 @@
             <div class="hidden items-center space-x-5 text-[0.64rem] font-semibold uppercase tracking-[0.15em] md:flex lg:space-x-7 lg:text-[0.68rem] lg:tracking-[0.18em]">
               <a routerLink="/" fragment="services" class="nav-link text-gray-400/80 transition-colors hover:text-white" [class.nav-link--active]="activeSection === 'services'" data-testid="app-services-link">Qué hago</a>
               <a routerLink="/trabajos" class="nav-link text-gray-400/80 transition-colors hover:text-white" [class.nav-link--active]="activeSection === 'portfolio'" data-testid="app-portfolio-link">Trabajos</a>
+              <a routerLink="/edicion-de-video" routerLinkActive="nav-link--active" class="nav-link text-gray-400/80 transition-colors hover:text-white">Edición de video</a>
               <a routerLink="/" fragment="about" class="nav-link text-gray-400/80 transition-colors hover:text-white" [class.nav-link--active]="activeSection === 'about'" data-testid="app-about-link">Sobre mí</a>
               <a routerLink="/" fragment="contact" class="nav-link text-gray-400/80 transition-colors hover:text-white" [class.nav-link--active]="activeSection === 'contact'" data-testid="app-contact-link">Contacto</a>
               <a routerLink="/" fragment="contact" class="nav-cta inline-flex items-center justify-center rounded-full border border-white/10 bg-white/[0.015] px-4 py-2 text-accent/90 transition-colors hover:border-accent/30 hover:bg-accent/10 hover:text-accent" data-testid="app-cta-link">Hablemos</a>
@@ -46,6 +47,7 @@
             <div class="space-y-1 border-t border-white/[0.06] px-2 pb-4 pt-3 text-sm font-semibold">
               <a routerLink="/" fragment="services" (click)="toggleMobileMenu()" class="block rounded-2xl px-3 py-2 text-gray-300 transition-colors hover:bg-white/[0.04] hover:text-white" data-testid="app-mobile-services-link">Qué hago</a>
               <a routerLink="/trabajos" (click)="toggleMobileMenu()" class="block rounded-2xl px-3 py-2 text-gray-300 transition-colors hover:bg-white/[0.04] hover:text-white" data-testid="app-mobile-portfolio-link">Trabajos</a>
+              <a routerLink="/edicion-de-video" (click)="toggleMobileMenu()" class="block rounded-2xl px-3 py-2 text-gray-300">Edición de video</a>
               <a routerLink="/" fragment="about" (click)="toggleMobileMenu()" class="block rounded-2xl px-3 py-2 text-gray-300 transition-colors hover:bg-white/[0.04] hover:text-white" data-testid="app-mobile-about-link">Sobre mí</a>
               <a routerLink="/" fragment="contact" (click)="toggleMobileMenu()" class="block rounded-2xl px-3 py-2 text-gray-300 transition-colors hover:bg-white/[0.04] hover:text-white" data-testid="app-mobile-contact-link">Contacto</a>
               <a routerLink="/" fragment="contact" (click)="toggleMobileMenu()" class="block rounded-2xl px-3 py-2 text-accent transition-colors hover:bg-accent/10 hover:text-accent/80" data-testid="app-mobile-cta-link">Hablemos</a>

@@ -29,13 +29,20 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Prepare static entry points
+        working-directory: dist/lautarovulcano/browser
+        run: |
+          cp index.csr.html index.html
+          cp index.csr.html 404.html
+          mkdir -p edicion-de-video
+          cp index.csr.html edicion-de-video/index.html
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './docs'
+          path: './dist/lautarovulcano/browser'
 
       - name: Deploy to GitHub Pages
         id: deployment
