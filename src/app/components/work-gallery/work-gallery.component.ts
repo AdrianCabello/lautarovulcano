@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { catchError, map, of, startWith, switchMap } from 'rxjs';
 import { LucideModule } from '../../shared/lucide.module';
+import { CtaComponent } from '../cta/cta.component';
 import { FooterComponent } from '../footer/footer.component';
 
 interface WorkImage { src: string; original: string; width: number; height: number; }
@@ -12,7 +13,7 @@ interface WorkGallery { title: string; category: string; description?: string; d
 @Component({
   selector: 'app-work-gallery',
   standalone: true,
-  imports: [CommonModule, RouterLink, LucideModule, FooterComponent],
+  imports: [CommonModule, RouterLink, LucideModule, CtaComponent, FooterComponent],
   templateUrl: './work-gallery.component.html',
   styleUrl: './work-gallery.component.scss',
 })

@@ -135,6 +135,10 @@ nav.glass .btn{padding:0 15px !important}
 .row{display:grid;grid-template-columns:110px minmax(0,1fr) minmax(0,1.5fr);gap:16px 40px;align-items:start;padding:30px 36px;border-radius:28px}
 .row p{margin:0;color:#A3ABA6}
 .chk{display:flex;gap:12px;align-items:flex-start;font-size:17px;color:#F4EFE6}
+.gal{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+.shot{position:relative;display:block;margin:0}
+.shot .tile{border-radius:24px;background:#0B0B0C}
+.zoom{position:absolute;right:16px;bottom:16px;display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:rgba(10,13,12,.5);border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.24);color:#F4EFE6;-webkit-backdrop-filter:blur(14px) saturate(170%);backdrop-filter:blur(14px) saturate(170%)}
 @media (max-width:760px){
 .cols{grid-template-columns:minmax(0,1fr) !important}
 .cols2{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:12px !important}
@@ -145,6 +149,9 @@ nav.glass .btn{padding:0 15px !important}
 .row{grid-template-columns:minmax(0,1fr) !important;padding:22px !important;gap:10px !important}
 .hero-sub{padding-top:48px !important;padding-bottom:40px !important}
 .g4>.rl{width:62% !important}
+.gal{gap:12px}
+.shot .tile{border-radius:16px}
+.zoom{right:10px;bottom:10px;width:38px;height:38px}
 .acc summary{font-size:18px}
 }
 

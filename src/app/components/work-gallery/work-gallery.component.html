@@ -1,59 +1,67 @@
-<main class="container gallery-page">
-  <a [routerLink]="backRoute" [fragment]="backFragment" class="back-link"><lucide-icon name="arrow-left" [size]="18" /> {{ backRoute === '/flyers' ? 'Todos los flyers' : 'Todos los trabajos' }}</a>
+<main class="lv">
   @if (state$ | async; as state) {
-    @if (state.project; as project) {
-      <header class="gallery-heading">
-        <p class="section-label">{{ project.category }}</p>
-        <h1>{{ project.title }}</h1>
+  <section class="wrap hero-sub" style="padding-top: 56px; padding-bottom: 56px">
+    <a [routerLink]="backRoute" [fragment]="backFragment" class="btn in d1" style="color: #F4EFE6"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"></path><path d="m11 6-6 6 6 6"></path></svg> <span>{{ backRoute === '/flyers' ? 'Todos los flyers' : 'Todos los trabajos' }}</span></a>
+      @if (state.project; as project) {
+        <h1 class="d in d2" style="margin-top: 32px; font-size: clamp(44px, 8.2vw, 118px); line-height: .92; overflow-wrap: anywhere">{{ project.title }}</h1>
+        <p class="in d3" style="margin: 18px 0 0; font-size: 18px; font-weight: 700; color: var(--accent)">{{ project.category }}</p>
         @if (project.description) {
-          <p class="mt-5 max-w-3xl text-base leading-relaxed text-gray-300 md:text-lg">@for (segment of contextSegments(project.description, project.descriptionEmphasis); track $index) {@if (segment.emphasized) {<strong class="font-semibold">{{ segment.text }}</strong>} @else {{{ segment.text }}}}</p>
+          <p class="in d4" style="margin: 28px 0 0; max-width: 680px; font-size: 19px; line-height: 1.6; color: #A3ABA6">@for (segment of contextSegments(project.description, project.descriptionEmphasis); track $index) {@if (segment.emphasized) {<strong>{{ segment.text }}</strong>} @else {<span>{{ segment.text }}</span>}}</p>
         }
         @if (project.context?.length) {
-          <div class="mt-7 grid gap-6 md:grid-cols-3 md:gap-8">
+          <div class="cols in d4" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 48px">
             @for (item of project.context; track item.title) {
-              <div>
-                <h2 class="mb-2 font-sans text-sm font-semibold text-accent">{{ item.title }}</h2>
-                <p class="text-sm leading-relaxed text-gray-300">@for (segment of contextSegments(item.text, item.emphasis); track $index) {@if (segment.emphasized) {<strong class="font-semibold">{{ segment.text }}</strong>} @else {{{ segment.text }}}}</p>
+              <div class="glass" style="padding: 24px 24px 28px; border-radius: 26px">
+                <h2 class="d" style="font-size: 30px; font-weight: 700; line-height: 1.05">{{ item.title }}</h2>
+                <p style="margin: 12px 0 0; font-size: 16px; line-height: 1.6; color: #A3ABA6">@for (segment of contextSegments(item.text, item.emphasis); track $index) {@if (segment.emphasized) {<strong>{{ segment.text }}</strong>} @else {<span>{{ segment.text }}</span>}}</p>
               </div>
             }
           </div>
         }
-      </header>
-      <div class="project-images" [class.side-by-side]="project.imageLayout === 'side-by-side'">
-        @for (group of project.groups; track $index) {
-          <div class="image-group" [class.collection]="group.length > 1" [class.story-group]="isStory(group[0])" [style.--columns]="group.length > 3 ? 3 : group.length">
-            @for (image of group; track image.src) {
-              <button type="button" class="image-button" (click)="open(image)" [attr.aria-label]="'Ampliar imagen de ' + project.title" title="Ampliar imagen">
-                <img [src]="image.src" [alt]="project.title + ' · pieza ' + ($index + 1)" [attr.width]="image.width" [attr.height]="image.height" loading="lazy" decoding="async">
-                <span class="expand-icon"><lucide-icon name="plus" [size]="20" /></span>
-              </button>
+      } @else if (state.loading) {
+        <p class="gallery-status" role="status">Cargando proyecto…</p>
+      } @else {
+        <p class="gallery-status" role="alert">No pudimos cargar este proyecto. Volvé al archivo para seguir explorando.</p>
+      }
+  </section>
+
+    @if (state.project; as project) {
+      <section class="wrap">
+        <div class="project-images" [class.side-by-side]="project.imageLayout === 'side-by-side'">
+          @for (group of project.groups; track $index) {
+            <div class="image-group" [class.collection]="group.length > 1" [class.story-group]="isStory(group[0])" [style.--columns]="group.length > 3 ? 3 : group.length">
+              @for (image of group; track image.src) {
+                <button type="button" class="shot rv" (click)="open(image)" [attr.aria-label]="'Ampliar imagen de ' + project.title" title="Ampliar imagen">
+                  <img class="tile" [src]="image.src" [alt]="project.title + ' · pieza ' + ($index + 1)" [attr.width]="image.width" [attr.height]="image.height" loading="lazy" decoding="async">
+                  <span class="zoom"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></span>
+                </button>
+              }
+            </div>
+          }
+        </div>
+        @if (project.videos?.length) {
+          <div class="project-videos" aria-label="Videos del proyecto">
+            @for (video of project.videos; track video.src) {
+              <figure style="margin: 0">
+                <video class="tile" [src]="video.src" controls playsinline preload="metadata" [attr.aria-label]="video.title"></video>
+                <figcaption style="margin-top: 12px; font-size: 15px; font-weight: 600; color: #F4EFE6">{{ video.title }}</figcaption>
+              </figure>
             }
           </div>
         }
-      </div>
-      @if (project.videos?.length) {
-        <section class="project-videos" aria-label="Videos del proyecto">
-          @for (video of project.videos; track video.src) {
-            <figure>
-              <video [src]="video.src" controls playsinline preload="metadata" [attr.aria-label]="video.title"></video>
-              <figcaption>{{ video.title }}</figcaption>
-            </figure>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; margin-top: 40px">
+          <a [routerLink]="backRoute" [fragment]="backFragment" class="btn" style="color: #F4EFE6"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"></path><path d="m11 6-6 6 6 6"></path></svg> <span>Seguir explorando</span></a>
+          @if (project.otherMedia.length) {
+            <a [href]="project.url" target="_blank" rel="noopener noreferrer" class="btn" style="color: #F4EFE6"><span>Contenido multimedia en Behance</span> <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg></a>
           }
-        </section>
-      }
-      <footer class="project-end">
-        <a [routerLink]="backRoute" [fragment]="backFragment" class="back-link"><lucide-icon name="arrow-left" [size]="18" /> Seguir explorando</a>
-        @if (project.otherMedia.length) {
-          <a [href]="project.url" target="_blank" rel="noopener noreferrer" class="back-link">Contenido multimedia en Behance <lucide-icon name="arrow-up-right" [size]="18" /></a>
-        }
-      </footer>
-    } @else if (state.loading) {
-      <p class="gallery-status" role="status">Cargando proyecto…</p>
-    } @else {
-      <p class="gallery-status" role="alert">No pudimos cargar este proyecto. Volvé al archivo para seguir explorando.</p>
+        </div>
+      </section>
     }
   }
+
+  <app-cta></app-cta>
 </main>
+
 <dialog #viewer class="image-viewer" aria-label="Imagen ampliada" (click)="$event.target === viewer && close()" (close)="selected.set(null)">
   <div class="viewer-toolbar">
     <button type="button" (click)="zoomed.set(!zoomed())" [attr.aria-pressed]="zoomed()" aria-label="Cambiar zoom" title="Cambiar zoom"><lucide-icon name="plus" [size]="22" /></button>
