@@ -34,8 +34,10 @@ jobs:
         run: |
           cp index.csr.html index.html
           cp index.csr.html 404.html
-          mkdir -p edicion-de-video
-          cp index.csr.html edicion-de-video/index.html
+          for route in edicion-de-video servicio-mensual trabajos flyers; do
+            mkdir -p "$route"
+            cp index.csr.html "$route/index.html"
+          done
       - name: Setup Pages
         uses: actions/configure-pages@v4
 

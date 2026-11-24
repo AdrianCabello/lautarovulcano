@@ -1,62 +1,56 @@
-<div class="app-shell relative min-h-screen" appPageTranslation>
-  <div class="app-background" aria-hidden="true"></div>
+<div class="pg" appPageTranslation style="--accent: #00FF9D; min-height: 100vh; background: #0A0D0C; color: #F4EFE6; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased">
 
-  <div class="relative z-10">
-    <div class="min-h-screen flex flex-col">
-      <nav class="site-nav fixed top-0 left-0 right-0 z-50 border-b border-white/[0.035] bg-[#03100c]/35 backdrop-blur-md"
-        [class.site-nav--compact]="isNavCompact">
-        <div class="container mx-auto px-4">
-          <div class="site-nav__inner flex items-center justify-between h-14 md:h-16">
-            <a routerLink="/" class="font-display text-xl font-bold leading-none text-white transition-colors hover:text-accent" data-testid="app-logo">LV</a>
-            <div class="hidden items-center space-x-5 text-[0.64rem] font-semibold uppercase tracking-[0.15em] md:flex lg:space-x-7 lg:text-[0.68rem] lg:tracking-[0.18em]">
-              <a routerLink="/" fragment="services" class="nav-link text-gray-400/80 transition-colors hover:text-white" [class.nav-link--active]="activeSection === 'services'" data-testid="app-services-link">Qué hago</a>
-              <a routerLink="/trabajos" class="nav-link text-gray-400/80 transition-colors hover:text-white" [class.nav-link--active]="activeSection === 'portfolio'" data-testid="app-portfolio-link">Trabajos</a>
-              <a routerLink="/edicion-de-video" routerLinkActive="nav-link--active" class="nav-link text-gray-400/80 transition-colors hover:text-white">Edición de video</a>
-              <a routerLink="/" fragment="about" class="nav-link text-gray-400/80 transition-colors hover:text-white" [class.nav-link--active]="activeSection === 'about'" data-testid="app-about-link">Sobre mí</a>
-              <a routerLink="/" fragment="contact" class="nav-link text-gray-400/80 transition-colors hover:text-white" [class.nav-link--active]="activeSection === 'contact'" data-testid="app-contact-link">Contacto</a>
-              <a routerLink="/" fragment="contact" class="nav-cta inline-flex items-center justify-center rounded-full border border-white/10 bg-white/[0.015] px-4 py-2 text-accent/90 transition-colors hover:border-accent/30 hover:bg-accent/10 hover:text-accent" data-testid="app-cta-link">Hablemos</a>
-              <button
-                type="button"
-                (click)="toggleLanguage()"
-                class="inline-flex h-8 items-center justify-center gap-1.5 rounded-full border border-white/10 bg-white/[0.015] px-2.5 text-white/75 transition-colors hover:border-accent/30 hover:bg-accent/10 hover:text-accent"
-                [attr.aria-label]="language.current() === 'es' ? 'Cambiar sitio a inglés' : 'Switch site to Spanish'"
-                [attr.title]="language.current() === 'es' ? 'English' : 'Español'"
-                data-testid="app-language-toggle">
-                <lucide-icon name="languages" [size]="14"></lucide-icon>
-                <span>{{ language.current() === 'es' ? 'EN' : 'ES' }}</span>
-              </button>
-            </div>
-            <div class="flex items-center gap-3 md:hidden">
-              <button
-                type="button"
-                (click)="toggleLanguage()"
-                class="inline-flex h-8 items-center justify-center gap-1.5 rounded-full border border-white/10 px-2.5 text-[0.68rem] font-bold text-white/75 transition-colors hover:border-accent/30 hover:text-accent"
-                [attr.aria-label]="language.current() === 'es' ? 'Cambiar sitio a inglés' : 'Switch site to Spanish'"
-                [attr.title]="language.current() === 'es' ? 'English' : 'Español'"
-                data-testid="app-mobile-language-toggle">
-                <lucide-icon name="languages" [size]="14"></lucide-icon>
-                <span>{{ language.current() === 'es' ? 'EN' : 'ES' }}</span>
-              </button>
-              <button (click)="toggleMobileMenu()" class="text-gray-300 transition-colors hover:text-white" aria-label="Abrir menú" data-testid="app-mobile-menu-button">
-                <lucide-icon [name]="isMobileMenuOpen ? 'x' : 'menu'" [size]="24"></lucide-icon>
-              </button>
-            </div>
-          </div>
-          <!-- Mobile menu -->
-          <div class="md:hidden" [class.hidden]="!isMobileMenuOpen">
-            <div class="space-y-1 border-t border-white/[0.06] px-2 pb-4 pt-3 text-sm font-semibold">
-              <a routerLink="/" fragment="services" (click)="toggleMobileMenu()" class="block rounded-2xl px-3 py-2 text-gray-300 transition-colors hover:bg-white/[0.04] hover:text-white" data-testid="app-mobile-services-link">Qué hago</a>
-              <a routerLink="/trabajos" (click)="toggleMobileMenu()" class="block rounded-2xl px-3 py-2 text-gray-300 transition-colors hover:bg-white/[0.04] hover:text-white" data-testid="app-mobile-portfolio-link">Trabajos</a>
-              <a routerLink="/edicion-de-video" (click)="toggleMobileMenu()" class="block rounded-2xl px-3 py-2 text-gray-300">Edición de video</a>
-              <a routerLink="/" fragment="about" (click)="toggleMobileMenu()" class="block rounded-2xl px-3 py-2 text-gray-300 transition-colors hover:bg-white/[0.04] hover:text-white" data-testid="app-mobile-about-link">Sobre mí</a>
-              <a routerLink="/" fragment="contact" (click)="toggleMobileMenu()" class="block rounded-2xl px-3 py-2 text-gray-300 transition-colors hover:bg-white/[0.04] hover:text-white" data-testid="app-mobile-contact-link">Contacto</a>
-              <a routerLink="/" fragment="contact" (click)="toggleMobileMenu()" class="block rounded-2xl px-3 py-2 text-accent transition-colors hover:bg-accent/10 hover:text-accent/80" data-testid="app-mobile-cta-link">Hablemos</a>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      <router-outlet></router-outlet>
-    </div>
+  <div class="bg" aria-hidden="true">
+    <div class="dots"></div>
+    <div class="glow" style="left: -12%; top: -160px; opacity: .24"></div>
+    <div class="glow b" style="right: -9%; top: 3.5%; opacity: .13"></div>
+    <div class="glow" style="left: 28%; top: 14%; opacity: .17"></div>
+    <div class="glow b" style="right: -12%; top: 27%"></div>
+    <div class="glow" style="left: -14%; top: 40%"></div>
+    <div class="glow b" style="right: 6%; top: 52%; opacity: .12"></div>
+    <div class="glow" style="left: 18%; top: 66%; opacity: .13"></div>
+    <div class="glow b" style="left: -12%; top: 76%"></div>
+    <div class="glow" style="right: -6%; top: 87%; opacity: .24"></div>
   </div>
+
+  <header class="lv" style="max-width: 1280px; margin: 0 auto; padding: 16px clamp(20px, 5.5vw, 80px) 0">
+    <nav class="glass" aria-label="Principal" style="display: flex; align-items: center; justify-content: space-between; gap: 24px; box-sizing: border-box; height: 62px; padding: 0 14px 0 26px; border-radius: 999px">
+      <a routerLink="/" (click)="closeMobileMenu()" style="display: inline-flex; align-items: center; gap: 12px; color: #F4EFE6" data-testid="app-logo"><span class="nav-name" style="font-size: 15px; font-weight: 700; line-height: 1; white-space: nowrap">Lautaro Vulcano<span class="nav-links" style="font-weight: 500; color: #A3ABA6"> · Freelancer</span></span></a>
+      <div class="nav-r" style="display: flex; align-items: center; gap: 28px">
+        <div class="nav-links" style="display: flex; align-items: center; gap: 28px; font-size: 14px; font-weight: 600">
+          <a routerLink="/" fragment="servicios" data-testid="app-services-link">Qué hago</a>
+          <a routerLink="/trabajos" routerLinkActive="nav-on" data-testid="app-portfolio-link">Trabajos</a>
+          <a routerLink="/edicion-de-video" routerLinkActive="nav-on">Edición de video</a>
+          <a routerLink="/" fragment="sobre-mi" data-testid="app-about-link">Sobre mí</a>
+          <a routerLink="/" fragment="contacto" data-testid="app-contact-link">Contacto</a>
+        </div>
+        <a routerLink="/" fragment="contacto" (click)="closeMobileMenu()" class="btn" style="min-height: 40px; padding: 0 18px; color: #F4EFE6" data-testid="app-cta-link">Hablemos</a>
+        <button type="button" (click)="toggleLanguage()"
+          [attr.aria-label]="language.current() === 'es' ? 'Cambiar sitio a inglés' : 'Switch site to Spanish'"
+          style="min-height: 40px; padding: 0 6px; border: 0; background: transparent; color: #A3ABA6; font: inherit; font-size: 13px; font-weight: 700; letter-spacing: .08em; cursor: pointer"
+          data-testid="app-language-toggle">{{ language.current() === 'es' ? 'EN' : 'ES' }}</button>
+        <button type="button" class="nav-menu" (click)="toggleMobileMenu()" [attr.aria-expanded]="isMobileMenuOpen" aria-label="Abrir menú" data-testid="app-mobile-menu-button">
+          <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            @if (isMobileMenuOpen) {
+              <path d="M6 6l12 12"></path><path d="M18 6L6 18"></path>
+            } @else {
+              <path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path>
+            }
+          </svg>
+        </button>
+      </div>
+    </nav>
+    @if (isMobileMenuOpen) {
+      <div class="glass nav-drop">
+        <a routerLink="/" fragment="servicios" (click)="closeMobileMenu()" data-testid="app-mobile-services-link">Qué hago</a>
+        <a routerLink="/trabajos" (click)="closeMobileMenu()" data-testid="app-mobile-portfolio-link">Trabajos</a>
+        <a routerLink="/edicion-de-video" (click)="closeMobileMenu()">Edición de video</a>
+        <a routerLink="/servicio-mensual" (click)="closeMobileMenu()">Servicio mensual</a>
+        <a routerLink="/" fragment="sobre-mi" (click)="closeMobileMenu()" data-testid="app-mobile-about-link">Sobre mí</a>
+        <a routerLink="/" fragment="contacto" (click)="closeMobileMenu()" data-testid="app-mobile-contact-link">Contacto</a>
+      </div>
+    }
+  </header>
+
+  <router-outlet></router-outlet>
 </div>

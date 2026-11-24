@@ -1,148 +1,56 @@
-<section id="flyers-eventos" class="w-full scroll-mt-20 border-y border-white/[0.08] bg-black/10 py-14 md:py-20" aria-labelledby="events-title">
-  <div class="container">
-    <div class="mb-8 max-w-2xl md:mb-10">
-      <p class="section-label mb-4">Eventos · Flyers y motion</p>
-      <h2 id="events-title" class="section-title">Diseño para la escena.</h2>
-      <p class="mt-5 text-base leading-relaxed text-gray-300">Flyers y piezas visuales que le dan <strong class="text-white">identidad a cada fecha</strong>. Música, artistas y encuentros llevados al diseño.</p>
-      <div class="mt-6 flex flex-wrap items-center gap-4">
-        <button type="button" (click)="copyFlyersLink()" title="Copiar enlace de flyers" class="inline-flex items-center gap-2 rounded-lg border border-accent/30 px-4 py-3 text-sm font-bold text-accent hover:bg-accent/10">
-          <lucide-icon name="link" [size]="18" /> Compartir flyers
-        </button>
-        @if (!eventsOnly) {
-          <a routerLink="/flyers" class="inline-flex items-center gap-2 text-sm text-gray-300 hover:text-accent">Ver solo flyers <lucide-icon name="arrow-up-right" [size]="16" /></a>
-        }
-        <span role="status" class="text-sm text-accent">{{ shareStatus() }}</span>
-      </div>
-      @if (shareFallback()) {
-        <input aria-label="Enlace para compartir flyers" readonly [value]="shareFallback()" (focus)="$any($event.target).select()" class="mt-3 w-full min-w-0 rounded-lg border border-white/20 bg-black/20 p-3 text-sm text-white" />
-      }
+<section id="flyers-eventos" class="wrap sec" style="padding-bottom: 88px" [style.padding-top.px]="eventsOnly ? 72 : 0" aria-labelledby="events-title">
+  <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px 48px">
+    <div style="min-width: 0">
+      <h2 id="events-title" class="d" style="font-size: clamp(40px, 5vw, 72px)">Diseño para la escena.</h2>
+      <p class="lead">Flyers y piezas visuales que le dan <strong>identidad a cada fecha</strong>. Música, artistas y encuentros llevados al diseño.</p>
     </div>
-    <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
-      @for (project of eventProjects; track project.id) {
-        <a [routerLink]="['/trabajos', project.id]" [queryParams]="{ from: eventsOnly ? 'flyers' : 'flyers-eventos' }" class="group block min-w-0" [attr.aria-label]="'Ver flyers de ' + project.title" data-testid="event-project-card">
-          <div class="aspect-[9/16] overflow-hidden rounded-lg border border-white/10 bg-black/20 transition-colors duration-300 group-hover:border-accent/50">
-            <img [src]="project.poster" [alt]="project.title" loading="lazy" width="1080" height="1920" class="h-full w-full object-contain">
-          </div>
-          <div class="mt-4 flex items-start justify-between gap-3">
-            <h3 class="font-sans text-base font-bold leading-snug text-white">{{ project.title }}</h3>
-            <lucide-icon name="arrow-right" [size]="18" class="mt-0.5 shrink-0 text-accent transition-transform duration-200 group-hover:translate-x-1" />
-          </div>
-        </a>
-      }
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px">
+      <span role="status" class="share-status">{{ shareStatus() }}</span>
+      <button type="button" (click)="copyFlyersLink()" title="Copiar enlace de flyers" class="btn" style="font: inherit; font-size: 14px; font-weight: 700; color: #F4EFE6; cursor: pointer">Compartir flyers</button>
     </div>
+  </div>
+  @if (shareFallback()) {
+    <input aria-label="Enlace para compartir flyers" readonly [value]="shareFallback()" (focus)="$any($event.target).select()" style="width: 100%; margin-top: 16px; padding: 12px 14px; border: 1px solid rgba(255,255,255,.2); border-radius: 12px; background: rgba(0,0,0,.2); color: #F4EFE6; font: inherit; font-size: 14px">
+  }
+  <div class="cols2" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 48px">
+    @for (project of eventProjects; track project.id) {
+      <a class="cap fly rv" [routerLink]="['/trabajos', project.id]" [queryParams]="{ from: eventsOnly ? 'flyers' : 'flyers-eventos' }" [attr.aria-label]="'Ver flyers de ' + eventTitle(project)" data-testid="event-project-card">
+        <img class="tile" [src]="eventThumb(project)" [alt]="eventTitle(project)" loading="lazy" decoding="async" width="600" height="1067" style="aspect-ratio: 9/16">
+        <strong>{{ eventTitle(project) }}</strong>
+      </a>
+    }
   </div>
 </section>
 
 @if (!eventsOnly) {
-<section id="trabajos-realizados" class="w-full bg-transparent pt-10 pb-24 md:pt-12 md:pb-32" data-testid="behance-archive-section">
-  <div class="container">
-    <header class="archive-intro">
-      <p class="section-label">Trabajos realizados</p>
-      <h2 class="section-title">Archivo visual</h2>
-      <div class="section-copy">
-        <p class="m-0">
-          Este archivo reúne proyectos de <strong>2022 a 2026</strong>. Documenta distintas etapas,
-          clientes y exploraciones que fueron formando mi mirada.
-        </p>
-        <a href="/#monthly-service" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-accent no-underline transition-colors hover:text-white">
-          Conocer el servicio mensual
-          <lucide-icon name="arrow-up-right" [size]="16"></lucide-icon>
-        </a>
-      </div>
-    </header>
-
-    <nav class="mt-12 border-y border-white/10 md:mt-20" aria-label="Filtrar trabajos realizados" data-testid="behance-filter-bar">
-      <div class="flex gap-6 overflow-x-auto [scrollbar-width:none] md:gap-12 [&::-webkit-scrollbar]:hidden">
-        @for (filter of filters; track filter) {
-          <button
-            type="button"
-            (click)="setFilter(filter)"
-            class="relative inline-flex min-h-[3.75rem] shrink-0 items-center gap-2 text-sm font-bold transition-colors after:absolute after:inset-x-0 after:-bottom-px after:h-0.5 after:origin-left after:scale-x-0 after:bg-accent after:transition-transform md:min-h-[4.25rem]"
-            [ngClass]="activeFilter() === filter ? 'text-white after:scale-x-100' : 'text-white/55 hover:text-white'"
-            [attr.aria-pressed]="activeFilter() === filter"
-            data-testid="behance-filter-button">
-            <span>{{ filter === 'Identidad' ? 'Identidad y logos' : filter === 'Musica' ? 'Música' : filter }}</span>
-            <span
-              class="inline-flex h-[1.35rem] min-w-[1.35rem] items-center justify-center rounded-full border px-1.5 text-[0.62rem]"
-              [ngClass]="activeFilter() === filter ? 'border-accent/40 text-accent' : 'border-white/15 text-white/50'">
-              {{ projectCount(filter) }}
-            </span>
-          </button>
-        }
-      </div>
-    </nav>
-
-    <div class="archive-browser" aria-live="polite">
-      @if (featuredProject(); as featured) {
-        <aside class="archive-preview">
-          <a
-            [routerLink]="['/trabajos', projectId(featured)]"
-            class="archive-preview__link"
-            [attr.aria-label]="'Ver ' + featured.title">
-            <div class="archive-preview__media">
-              <img [src]="featured.image" [alt]="featured.title" class="archive-preview__image">
-              <span class="archive-preview__action" aria-hidden="true">
-                <lucide-icon name="arrow-up-right" [size]="19"></lucide-icon>
-              </span>
-            </div>
-            <div class="archive-preview__meta grid grid-cols-[minmax(10rem,.8fr)_minmax(15rem,1.2fr)] items-start gap-[clamp(2rem,5vw,4rem)] pt-5">
-              <div class="archive-preview__heading">
-                <p>{{ featured.category }} <span aria-hidden="true">·</span> <time>{{ projectDate(featured) }}</time></p>
-                <h3>{{ featured.title }}</h3>
-              </div>
-              <p class="m-0 max-w-lg text-sm leading-relaxed text-white/55">{{ featured.description }}</p>
-            </div>
-          </a>
-        </aside>
-      }
-
-      <div class="archive-list">
-        @for (project of visibleProjects(); track project.url) {
-          <article
-            class="archive-row"
-            [class.archive-row--active]="featuredProject().url === project.url"
-            (mouseenter)="setFeaturedProject(project)"
-            (focusin)="setFeaturedProject(project)"
-            data-testid="behance-project-card">
-            <a
-              [routerLink]="['/trabajos', projectId(project)]"
-              class="archive-row__link"
-              [attr.aria-label]="'Ver ' + project.title">
-              <span class="archive-row__number" aria-hidden="true">
-                {{ $index + 1 < 10 ? '0' + ($index + 1) : $index + 1 }}
-              </span>
-              <span class="archive-row__thumb">
-                <img [src]="project.image" [alt]="" loading="lazy">
-              </span>
-              <span class="archive-row__copy">
-                <span class="archive-row__eyebrow">
-                  <span>{{ project.category }}</span>
-                  <time>{{ projectDate(project) }}</time>
-                </span>
-                <strong>{{ project.title }}</strong>
-                <small class="line-clamp-2 overflow-hidden text-[0.7rem] leading-[1.45] text-white/45 max-[899px]:text-xs max-[899px]:leading-normal">
-                  {{ project.description }}
-                </small>
-              </span>
-              <lucide-icon class="archive-row__arrow" name="arrow-up-right" [size]="17"></lucide-icon>
-            </a>
-          </article>
-        }
-      </div>
-    </div>
-
-    @if (filteredProjects().length > 12) {
-      <div class="motion-reveal mt-12 flex justify-center md:mt-16">
-        <button
-          type="button"
-          (click)="toggleShowAll()"
-          class="inline-flex min-h-[3.25rem] items-center justify-center gap-3 rounded-md border border-white/15 bg-white/[0.025] px-5 py-3 text-sm font-bold text-white transition-colors hover:border-accent/40 hover:bg-accent/[0.06] hover:text-accent"
-          data-testid="behance-toggle-button">
-          <span>{{ showAll() ? 'Ver menos trabajos' : 'Explorar los ' + filteredProjects().length + ' trabajos' }}</span>
-          <lucide-icon [name]="showAll() ? 'chevron-up' : 'chevron-down'" [size]="17"></lucide-icon>
+  <section id="trabajos-realizados" class="wrap sec" style="padding-top: 0; padding-bottom: 0" data-testid="behance-archive-section">
+    <h2 class="d" style="font-size: clamp(40px, 5vw, 72px)">Archivo visual</h2>
+    <p class="lead">Este archivo reúne proyectos de <strong>2022 a 2026</strong>. Documenta distintas etapas, clientes y exploraciones que fueron formando mi mirada.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 36px 0 28px" role="group" aria-label="Filtrar trabajos realizados" data-testid="behance-filter-bar">
+      @for (filter of filters; track filter) {
+        <button type="button" class="tab" [class.on]="activeFilter() === filter" [attr.aria-pressed]="activeFilter() === filter" (click)="setFilter(filter)" data-testid="behance-filter-button">
+          <span>{{ filter === 'Identidad' ? 'Identidad y logos' : filter === 'Musica' ? 'Música' : filter }}</span>
+          <b>{{ projectCount(filter) }}</b>
         </button>
-      </div>
-    }
-  </div>
-</section>
+      }
+    </div>
+    <div class="cols" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px" aria-live="polite">
+      @for (project of visibleProjects(); track project.url) {
+        <a class="glass card arc rv" [routerLink]="['/trabajos', projectId(project)]" [attr.aria-label]="'Ver ' + project.title" data-testid="behance-project-card">
+          <img class="tile" [src]="projectThumb(project)" alt="" loading="lazy" decoding="async" style="aspect-ratio: 16/10">
+          <div class="card-b">
+            <h3 class="d" style="font-size: 30px; font-weight: 700">{{ project.title }}</h3>
+            <p class="meta"><span>{{ project.category }}</span>@if (projectDate(project)) {<span> · </span><time>{{ projectDate(project) }}</time>}</p>
+            <p class="desc" style="margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: #A3ABA6">@for (segment of descriptionSegments(project); track $index) {@if (segment.strong) {<strong>{{ segment.text }}</strong>} @else {<span>{{ segment.text }}</span>}}</p>
+          </div>
+        </a>
+      }
+    </div>
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; margin-top: 40px">
+      @if (filteredProjects().length > 12) {
+        <button type="button" (click)="toggleShowAll()" class="btn" style="font: inherit; font-size: 14px; font-weight: 700; background: var(--accent); color: #04130D; cursor: pointer" data-testid="behance-toggle-button">{{ showAll() ? 'Ver menos trabajos' : 'Explorar los ' + filteredProjects().length + ' trabajos' }}</button>
+      }
+      <a routerLink="/servicio-mensual" class="btn" style="color: #F4EFE6">Conocer el servicio mensual</a>
+    </div>
+  </section>
 }

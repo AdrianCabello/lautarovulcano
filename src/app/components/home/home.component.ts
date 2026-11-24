@@ -1,33 +1,11 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HeroComponent } from '../hero/hero.component';
-import { MonthlyServiceComponent } from '../monthly-service/monthly-service.component';
-import { AboutComponent } from '../about/about.component';
-import { ApproachComponent } from '../approach/approach.component';
-import { ContactComponent } from '../contact/contact.component';
+import { RouterLink } from '@angular/router';
 import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [
-    CommonModule,
-    HeroComponent,
-    MonthlyServiceComponent,
-    AboutComponent,
-    ApproachComponent,
-    ContactComponent,
-    FooterComponent
-  ],
-  template: `
-    <main class="flex-grow">
-      <app-hero></app-hero>
-      <app-about></app-about>
-      <app-monthly-service></app-monthly-service>
-      <app-approach></app-approach>
-      <app-contact></app-contact>
-    </main>
-    <app-footer></app-footer>
-  `
+  imports: [RouterLink, FooterComponent],
+  templateUrl: './home.component.html',
 })
 export class HomeComponent {}

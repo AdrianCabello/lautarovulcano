@@ -53,6 +53,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     if (this.isBrowser) {
       this.updateNavState();
       window.setTimeout(() => this.observeSections(), 0);
+      document.addEventListener('play', this.pauseOtherVideos, true);
     }
   }
 
@@ -66,6 +67,9 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     this.observer?.disconnect();
     this.motionObserver?.disconnect();
     this.motionMutationObserver?.disconnect();
+    if (this.isBrowser) {
+      document.removeEventListener('play', this.pauseOtherVideos, true);
+    }
   }
 
   @HostListener('window:scroll')
@@ -76,6 +80,23 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
+
+  closeMobileMenu(): void {
+    this.isMobileMenuOpen = false;
+  }
+
+  /** Al reproducir un video se pausan los demás (el evento play no burbujea: se escucha en captura). */
+  private readonly pauseOtherVideos = (event: Event): void => {
+    const playing = event.target;
+    if (!(playing instanceof HTMLVideoElement)) {
+      return;
+    }
+    document.querySelectorAll('video').forEach((video) => {
+      if (video !== playing && !video.paused) {
+        video.pause();
+      }
+    });
+  };
 
   toggleLanguage(): void {
     this.language.toggle();

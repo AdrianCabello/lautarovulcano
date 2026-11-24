@@ -1,7 +1,6 @@
 import { Component, Input, computed, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { LucideModule } from '../../shared/lucide.module';
 
 interface BehanceProject {
   id?: string;
@@ -18,9 +17,9 @@ type WorkFilter = 'Todos' | 'Identidad' | 'Redes' | 'Eventos' | 'Logos' | 'Music
 @Component({
   selector: 'app-behance-archive',
   standalone: true,
-  imports: [CommonModule, LucideModule, RouterLink],
+  imports: [CommonModule, RouterLink],
   templateUrl: './behance-archive.component.html',
-  styleUrls: ['./behance-archive.component.scss'],
+  styles: [':host { display: block; }'],
 })
 export class BehanceArchiveComponent {
   @Input() eventsOnly = false;
@@ -166,6 +165,58 @@ export class BehanceArchiveComponent {
     poster: `/assets/work-gallery/${project.url.split('/')[4]}/${project.title === 'QuadSkate Tandil' ? '1-view.png' : project.title === 'Flyer + Animacion Detroit Techno' ? '1-full.jpg' : '1-full.png'}`,
   }))];
   readonly archiveProjects = this.projects.filter(project => project.filter !== 'Eventos');
+
+  /** Portadas livianas (600 px) de los flyers para la grilla; el detalle usa las originales. */
+  private readonly eventThumbs: Record<string, string> = {
+    'beetz': 'ev-beetz', '218655779': 'ev-positive-beico', 'positive-sunset': 'ev-sunset',
+    'positive-new-year-2026': 'ev-newyear-2026', 'positive-dont-blink': 'ev-dont-blink', '218415241': 'ev-positive-newyear',
+    'bresh-1': 'ev-bresh-1', 'bresh-2': 'ev-bresh-2', 'navidad-markama': 'ev-navidad',
+    'fiesta-de-la-cerveza': 'ev-cerveza', '229673981': 'ev-detroit', '178973521': 'ev-quadskate',
+  };
+  private readonly eventTitles: Record<string, string> = {
+    '229673981': 'Detroit Techno · Flyer y animación',
+  };
+  /** Frase a resaltar dentro de la descripción de cada proyecto. */
+  private readonly emphasis: Record<string, string> = {
+    'la-oriental': 'logo para una marca de stickers',
+    'eventloop-identidad': 'Manual de marca',
+    'katmandu': 'Identidad y manual de marca',
+    'varek': 'Identidad y manual de marca',
+    'hornero-serrano': 'Sistema de identidad',
+    'inflables-tandil': 'Identidad y manual de marca',
+    '227243323': 'personaje ilustrado',
+    '223159479': 'Sistema de contenidos',
+    '219431403': 'academia de trading',
+    '194214267': 'paseos de mascotas',
+    '218872431': 'logotipo e isotipo',
+    '218823099': 'plataforma de eventos',
+  };
+
+  eventThumb(project: { id: string; poster: string }): string {
+    const thumb = this.eventThumbs[project.id];
+    return thumb ? `assets/lv/${thumb}.jpg` : project.poster;
+  }
+
+  eventTitle(project: { id: string; title: string }): string {
+    return this.eventTitles[project.id] ?? project.title;
+  }
+
+  projectThumb(project: BehanceProject): string {
+    return project.id === 'la-oriental' ? 'assets/lv/id-oriental.jpg' : project.image;
+  }
+
+  descriptionSegments(project: BehanceProject): { text: string; strong: boolean }[] {
+    const phrase = this.emphasis[this.projectId(project)];
+    const index = phrase ? project.description.indexOf(phrase) : -1;
+    if (!phrase || index < 0) {
+      return [{ text: project.description, strong: false }];
+    }
+    return [
+      { text: project.description.slice(0, index), strong: false },
+      { text: phrase, strong: true },
+      { text: project.description.slice(index + phrase.length), strong: false },
+    ].filter(segment => segment.text.length > 0);
+  }
 
   readonly filteredProjects = computed(() => {
     const filter = this.activeFilter();
