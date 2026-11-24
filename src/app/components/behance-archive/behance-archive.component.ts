@@ -78,8 +78,8 @@ export class BehanceArchiveComponent {
   };
 
   readonly projects: BehanceProject[] = [
-    { id: 'la-oriental', title: 'La Oriental', category: 'Identidad visual', description: 'Diseño de logo para una marca de stickers: personaje ilustrado, lettering, versiones de color y aplicaciones en indumentaria y packaging.', filter: 'Identidad', image: 'assets/work-gallery/la-oriental/01.png', url: '/trabajos/la-oriental' },
-    { id: 'eventloop-identidad', title: 'Eventloop', category: 'Identidad visual', description: 'Manual de marca: logotipo e isotipo, versiones, fondos, área de protección y criterios de uso.', filter: 'Identidad', image: 'assets/work-gallery/eventloop-identidad/portada.png', url: '/trabajos/eventloop-identidad' },
+    { id: 'la-oriental', title: 'La Oriental', category: 'Identidad visual', description: 'Diseño de logo para una marca de stickers: personaje ilustrado, lettering, versiones de color y aplicaciones en indumentaria y packaging.', filter: 'Identidad', image: 'assets/work-gallery/la-oriental/01.jpg', url: '/trabajos/la-oriental' },
+    { id: 'eventloop-identidad', title: 'Eventloop', category: 'Identidad visual', description: 'Manual de marca: logotipo e isotipo, versiones, fondos, área de protección y criterios de uso.', filter: 'Identidad', image: 'assets/work-gallery/eventloop-identidad/portada.jpg', url: '/trabajos/eventloop-identidad' },
     { id: 'katmandu', title: 'Katmandu', category: 'Identidad visual', description: 'Identidad y manual de marca para diseño para gatos: logotipo, símbolo, colores, tipografía y aplicaciones en producto y packaging.', filter: 'Identidad', image: 'assets/work-gallery/katmandu/portada.png', url: '/trabajos/katmandu' },
     { id: 'varek', title: 'VAREK', category: 'Identidad visual', description: 'Identidad y manual de marca para filtros de ducha: isotipo, logotipo, tipografía, colores y aplicaciones en producto y packaging.', filter: 'Identidad', image: 'assets/work-gallery/varek/01.png', url: '/trabajos/varek' },
     { id: 'hornero-serrano', title: 'Hornero Serrano', category: 'Identidad visual', description: 'Sistema de identidad y manual de marca: símbolo, logotipo, colores, tipografía y aplicaciones en cerámica y packaging.', filter: 'Identidad', image: 'assets/work-gallery/hornero-serrano/portada.png', url: '/trabajos/hornero-serrano' },
@@ -126,11 +126,11 @@ export class BehanceArchiveComponent {
   }, {
     id: '218655779',
     title: 'Positive · Beico',
-    poster: '/assets/work-gallery/218655779/2-full.png',
+    poster: '/assets/work-gallery/218655779/2-full.jpg',
   }, {
     id: 'positive-sunset',
     title: 'Sunset · Markama & Positive',
-    poster: '/assets/work-gallery/218655779/10-full.png',
+    poster: '/assets/work-gallery/218655779/10-full.jpg',
   }, {
     id: 'positive-new-year-2026',
     title: 'Positive · Año Nuevo 2026',
@@ -142,7 +142,7 @@ export class BehanceArchiveComponent {
   }, {
     id: '218415241',
     title: 'Positive New Year',
-    poster: '/assets/work-gallery/218415241/1-full.png',
+    poster: '/assets/work-gallery/218415241/1-full.jpg',
   }, {
     id: 'bresh-1',
     title: 'BRESH 1 · Necochea',
@@ -162,7 +162,7 @@ export class BehanceArchiveComponent {
   }, ...this.projects.filter(project => project.filter === 'Eventos' && !['218415241', '218655779'].includes(project.url.split('/')[4])).map(project => ({
     id: project.url.split('/')[4],
     title: project.title,
-    poster: `/assets/work-gallery/${project.url.split('/')[4]}/${project.title === 'QuadSkate Tandil' ? '1-view.png' : project.title === 'Flyer + Animacion Detroit Techno' ? '1-full.jpg' : '1-full.png'}`,
+    poster: `/assets/work-gallery/${project.url.split('/')[4]}/${project.title === 'QuadSkate Tandil' ? '1-view.jpg' : project.title === 'Flyer + Animacion Detroit Techno' ? '1-full.jpg' : '1-full.png'}`,
   }))];
   readonly archiveProjects = this.projects.filter(project => project.filter !== 'Eventos');
 
