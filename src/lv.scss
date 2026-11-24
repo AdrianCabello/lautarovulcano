@@ -155,6 +155,15 @@ nav.glass .btn{padding:0 15px !important}
 .nav-drop a{display:block;padding:12px 14px;border-radius:16px;color:#F4EFE6}
 .nav-drop a:hover{background:rgba(255,255,255,.07)}
 .share-status{font-size:14px;font-weight:600;color:var(--accent)}
+.nav-links a{white-space:nowrap}
+/* En tablet los links no entran en una línea: pasan al menú desplegable. */
+@media (max-width:1100px){
+nav.glass .nav-r>.nav-links{display:none !important}
+.nav-menu{display:inline-flex}
+}
+@media (min-width:761px) and (max-width:1100px){
+.nav-r{gap:10px !important}
+}
 @media (max-width:760px){
 .nav-menu{display:inline-flex}
 nav.glass{padding-right:6px !important}
